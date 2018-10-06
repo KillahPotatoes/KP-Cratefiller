@@ -57,8 +57,16 @@ if (_catIndex == 2) then {
     } forEach KPCF_grenades;
 };
 
-// Items
+// Explosives
 if (_catIndex == 3) then {
+    {
+        private _config = [_x] call KPCF_fnc_getConfigPath;
+        _ctrlEquipment lbAdd (getText (configFile >> _config >> _x >> "displayName"));
+    } forEach KPCF_explosives;
+};
+
+// Items
+if (_catIndex == 4) then {
     {
         private _config = [_x] call KPCF_fnc_getConfigPath;
         _ctrlEquipment lbAdd (getText (configFile >> _config >> _x >> "displayName"));

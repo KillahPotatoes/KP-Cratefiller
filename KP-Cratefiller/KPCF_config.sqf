@@ -33,6 +33,12 @@ KPCF_grenades = [
     "MiniGrenade"
 ];
 
+// Defines the available explosives
+KPCF_explosives = [
+    "DemoCharge_Remote_Mag",
+    "ATMine_Range_Mag"
+];
+
 // Defines the available items
 KPCF_items = [
     "FirstAidKit",

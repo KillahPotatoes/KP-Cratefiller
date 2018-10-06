@@ -46,6 +46,11 @@
         <English>Grenades</English>
         <German>Granaten</German>
     </Key>
+    <Key ID="STR_KPCF_LISTEXPLOSIVES">
+        <Original>Explosives</Original>
+        <English>Explosives</English>
+        <German>Sprengstoffe</German>
+    </Key>
     <Key ID="STR_KPCF_LISTVARIOUS">
         <Original>Others</Original>
         <English>Others</English>
