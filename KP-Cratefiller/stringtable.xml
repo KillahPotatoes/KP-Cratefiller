@@ -2,7 +2,7 @@
 <Project name="KPCF">
     <!-- English and German localization by Dubjunk: https://github.com/Dubjunk -->
     <Key ID="STR_KPCF_ACTIONOPEN">
-        <Original>-- KP Player Menu --</Original>
+        <Original>-- KP Cratefiller --</Original>
         <English>-- KP Cratefiller --</English>
         <German>-- KP Kistenfüller --</German>
     </Key>
