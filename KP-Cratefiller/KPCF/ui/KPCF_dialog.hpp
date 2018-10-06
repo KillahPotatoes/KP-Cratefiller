@@ -95,13 +95,26 @@ class KPCF_dialog {
             x = KP_GETCX(KP_X_VAL_C,KP_WIDTH_VAL_C,7,8);
             y = KP_GETCY(KP_Y_VAL_C,KP_HEIGHT_VAL_C,16,48);
             w = KP_GETW(KP_WIDTH_VAL_C,8);
-            h = KP_GETH(KP_HEIGHT_VAL_C,3);
+            h = KP_GETH(KP_HEIGHT_VAL_C,6);
             onButtonClick = "[1] call KPCF_fnc_addEquipment";
         };
 
+        class KP_ButtonAddEquipment5: KP_ButtonAddEquipment {
+            text = "+ 5";
+            y = KP_GETCY(KP_Y_VAL_C,KP_HEIGHT_VAL_C,24,48);
+            onButtonClick = "[5] call KPCF_fnc_addEquipment";
+        };
+
         class KP_ButtonRemoveEquipment: KP_ButtonAddEquipment {
-            text = "-";
+            text = "- 1";
             y = KP_GETCY(KP_Y_VAL_C,KP_HEIGHT_VAL_C,32,48);
+            onButtonClick = "[1] call KPCF_fnc_removeEquipment";
+        };
+
+        class KP_ButtonRemoveEquipment5: KP_ButtonAddEquipment {
+            text = "- 5";
+            y = KP_GETCY(KP_Y_VAL_C,KP_HEIGHT_VAL_C,40,48);
+            onButtonClick = "[5] call KPCF_fnc_removeEquipment";
         };
 
     };

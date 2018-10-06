@@ -38,6 +38,9 @@ class KPCF {
         // Open the dialog
         class openDialog {};
 
+        // Removes the given amount of the selected item in the crate.
+        class removeEquipment {};
+
         // Spawns the selected crate
         class spawnCrate {};
     };

@@ -17,8 +17,7 @@ KPCF_cratefiller_spawn = KPCF_spawn;
 // Defines the available crates
 KPCF_crates = [
     "B_supplyCrate_F",
-    "CargoNet_01_box_F",
-    "Land_CargoBox_V1_F"
+    "CargoNet_01_box_F"
 ];
 
 // Defines the available weapons
