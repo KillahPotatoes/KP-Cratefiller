@@ -15,6 +15,9 @@
 // Read the config file
 call compile preprocessFileLineNumbers "KPCF_config.sqf";
 
+// Read the variables
+call compile preprocessFileLineNumbers "KPCF\variables.sqf";
+
 // Check for ACE
 KPCF_ace = isClass (configfile >> "CfgPatches" >> "ace_common");
 

@@ -21,6 +21,7 @@ private _ctrlEquipment = _dialog displayCtrl 75804;
 
 // Clear the lists
 lbClear _ctrlEquipment;
+KPCF_activeCategory = [];
 
 // Read the combobox
 private _weaponIndex = lbCurSel _ctrlWeapon;
@@ -34,6 +35,7 @@ private _weaponType = (KPCF_weapons select _weaponIndex);
 // Get compatible magazines
 private _config = [_weaponType] call KPCF_fnc_getConfigPath;
 KPCF_tempMagazines = getArray (configFile >> _config >> _weaponType >> "magazines");
+KPCF_activeCategory = KPCF_tempMagazines;
 
 // Fill the list
 {

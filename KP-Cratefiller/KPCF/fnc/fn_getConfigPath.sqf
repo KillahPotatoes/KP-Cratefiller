@@ -14,7 +14,7 @@
     STRING
 */
 
-params[
+params [
     "_item"
 ];
 

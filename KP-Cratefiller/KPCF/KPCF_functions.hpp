@@ -17,6 +17,9 @@ class KPCF {
             postInit = 1;
         };
 
+        // Adds the given amount of the selected item to the crate.
+        class addEquipment {};
+
         // Deletes the nearest crate
         class deleteCrate {};
 

@@ -33,6 +33,8 @@ if (!(((getPos KPCF_cratefiller_spawn) nearEntities 5) isEqualTo [])) exitWith {
 // Crate spawn
 private _crate = createVehicle [_crateType, (getPos KPCF_cratefiller_spawn), [], 0, "NONE"];
 
+KPCF_activeCrate = _crate;
+
 clearWeaponCargoGlobal _crate;
 clearMagazineCargoGlobal _crate;
 clearItemCargoGlobal _crate;

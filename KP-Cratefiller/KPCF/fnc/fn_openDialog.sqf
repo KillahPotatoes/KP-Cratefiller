@@ -27,6 +27,17 @@ private _ctrlEquipment = _dialog displayCtrl 75804;
 
 _ctrlWeapon ctrlShow false;
 
+// Check for an active or near box
+if (isNull KPCF_activeCrate) then {
+    // Get the nearest crates
+    private _objs = nearestObjects [getPos KPCF_cratefiller_spawn, KPCF_crates, 10];
+    if ((count _objs) == 0 ) then {
+        KPCF_activeCrate = objNull;
+    } else {
+        KPCF_activeCrate = _objs select 0;
+    };
+};
+
 // Fill the controls
 {
     _config = [_x] call KPCF_fnc_getConfigPath;

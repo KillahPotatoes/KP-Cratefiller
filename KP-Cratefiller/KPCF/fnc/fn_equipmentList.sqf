@@ -24,6 +24,8 @@ private _ctrlEquipment = _dialog displayCtrl 75804;
 lbClear _ctrlWeapon;
 lbClear _ctrlEquipment;
 
+KPCF_activeCategory = [];
+
 _ctrlWeapon ctrlShow false;
 
 // Read the combobox
@@ -34,6 +36,7 @@ if (_catIndex == -1) exitWith {};
 
 // Weapons
 if (_catIndex == 0) then {
+    KPCF_activeCategory = KPCF_weapons;
     {
         private _config = [_x] call KPCF_fnc_getConfigPath;
         _ctrlEquipment lbAdd (getText (configFile >> _config >> _x >> "displayName"));
@@ -51,6 +54,7 @@ if (_catIndex == 1) then {
 
 // Grenades
 if (_catIndex == 2) then {
+    KPCF_activeCategory = KPCF_grenades;
     {
         private _config = [_x] call KPCF_fnc_getConfigPath;
         _ctrlEquipment lbAdd (getText (configFile >> _config >> _x >> "displayName"));
@@ -59,6 +63,7 @@ if (_catIndex == 2) then {
 
 // Explosives
 if (_catIndex == 3) then {
+    KPCF_activeCategory = KPCF_explosives;
     {
         private _config = [_x] call KPCF_fnc_getConfigPath;
         _ctrlEquipment lbAdd (getText (configFile >> _config >> _x >> "displayName"));
@@ -67,6 +72,7 @@ if (_catIndex == 3) then {
 
 // Items
 if (_catIndex == 4) then {
+    KPCF_activeCategory = KPCF_items;
     {
         private _config = [_x] call KPCF_fnc_getConfigPath;
         _ctrlEquipment lbAdd (getText (configFile >> _config >> _x >> "displayName"));

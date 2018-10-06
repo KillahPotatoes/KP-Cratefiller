@@ -21,5 +21,10 @@ private _objs = nearestObjects [getPos KPCF_cratefiller_spawn, KPCF_crates, 10];
 if ((count _objs) == 0) exitWith {};
 
 // Delete the nearest crate
-_crate = _objs select 0;
+private _crate = _objs select 0;
+
+if (KPCF_activeCrate == _crate) then {
+    KPCF_activeCrate = objNull;
+};
+
 deleteVehicle _crate;

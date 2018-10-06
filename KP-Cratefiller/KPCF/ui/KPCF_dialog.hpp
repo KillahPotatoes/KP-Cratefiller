@@ -91,11 +91,12 @@ class KPCF_dialog {
         };
 
         class KP_ButtonAddEquipment: KP_InlineButton {
-            text = "+";
+            text = "+ 1";
             x = KP_GETCX(KP_X_VAL_C,KP_WIDTH_VAL_C,7,8);
             y = KP_GETCY(KP_Y_VAL_C,KP_HEIGHT_VAL_C,16,48);
             w = KP_GETW(KP_WIDTH_VAL_C,8);
             h = KP_GETH(KP_HEIGHT_VAL_C,3);
+            onButtonClick = "[1] call KPCF_fnc_addEquipment";
         };
 
         class KP_ButtonRemoveEquipment: KP_ButtonAddEquipment {
