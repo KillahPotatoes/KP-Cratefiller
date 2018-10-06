@@ -24,6 +24,8 @@ private _ctrlEquipment = _dialog displayCtrl 75804;
 lbClear _ctrlWeapon;
 lbClear _ctrlEquipment;
 
+_ctrlWeapon ctrlShow false;
+
 // Read the combobox
 private _catIndex = lbCurSel _ctrlCat;
 
@@ -32,28 +34,33 @@ if (_catIndex == -1) exitWith {};
 
 // Weapons
 if (_catIndex == 0) then {
-{
-    _ctrlEquipment lbAdd (getText (configFile >> "CfgWeapons" >> _x >> "displayName"));
-} forEach KPCF_weapons;
+    {
+        private _config = [_x] call KPCF_fnc_getConfigPath;
+        _ctrlEquipment lbAdd (getText (configFile >> _config >> _x >> "displayName"));
+    } forEach KPCF_weapons;
 };
 
 // Magazines
 if (_catIndex == 1) then {
-{
-    _ctrlWeapon lbAdd (getText (configFile >> "CfgWeapons" >> _x >> "displayName"));
-} forEach KPCF_weapons;
+    _ctrlWeapon ctrlShow true;
+    {
+        private _config = [_x] call KPCF_fnc_getConfigPath;
+        _ctrlWeapon lbAdd (getText (configFile >> _config >> _x >> "displayName"));
+    } forEach KPCF_weapons;
 };
 
 // Grenades
 if (_catIndex == 2) then {
-{
-    _ctrlEquipment lbAdd (getText (configFile >> "CfgMagazines" >> _x >> "displayName"));
-} forEach KPCF_grenades;
+    {
+        private _config = [_x] call KPCF_fnc_getConfigPath;
+        _ctrlEquipment lbAdd (getText (configFile >> _config >> _x >> "displayName"));
+    } forEach KPCF_grenades;
 };
 
 // Items
 if (_catIndex == 3) then {
-{
-    _ctrlEquipment lbAdd (getText (configFile >> "CfgWeapons" >> _x >> "displayName"));
-} forEach KPCF_items;
+    {
+        private _config = [_x] call KPCF_fnc_getConfigPath;
+        _ctrlEquipment lbAdd (getText (configFile >> _config >> _x >> "displayName"));
+    } forEach KPCF_items;
 };

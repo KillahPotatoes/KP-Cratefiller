@@ -32,9 +32,11 @@ if (_weaponIndex == -1) exitWith {};
 private _weaponType = (KPCF_weapons select _weaponIndex);
 
 // Get compatible magazines
-KPCF_temp_magazines = getArray (configFile >> "CfgWeapons" >> _weaponType >> "magazines");
+private _config = [_weaponType] call KPCF_fnc_getConfigPath;
+KPCF_tempMagazines = getArray (configFile >> _config >> _weaponType >> "magazines");
 
 // Fill the list
 {
-    _ctrlEquipment lbAdd (getText (configFile >> "CfgMagazines" >> _x >> "displayName"));
-} forEach KPCF_temp_magazines;
+    private _config = [_x] call KPCF_fnc_getConfigPath;
+    _ctrlEquipment lbAdd (getText (configFile >> _config >> _x >> "displayName"));
+} forEach KPCF_tempMagazines;

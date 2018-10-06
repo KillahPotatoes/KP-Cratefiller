@@ -14,8 +14,6 @@
     NONE
 */
 
-private _cfg = configfile >> "CfgVehicles";
-
 // Create cratefiller dialog
 createDialog "KPCF_dialog";
 disableSerialization;
@@ -27,9 +25,12 @@ private _ctrlCat = _dialog displayCtrl 75802;
 private _ctrlWeapon = _dialog displayCtrl 75803;
 private _ctrlEquipment = _dialog displayCtrl 75804;
 
+_ctrlWeapon ctrlShow false;
+
 // Fill the controls
 {
-    _ctrlCrate lbAdd (getText (_cfg >> _x >> "displayName"));
+    _config = [_x] call KPCF_fnc_getConfigPath;
+    _ctrlCrate lbAdd (getText (configFile >> _config >> _x >> "displayName"));
 } forEach KPCF_crates;
 
 _ctrlCat lbAdd localize "STR_KPCF_LISTWEAPONS";

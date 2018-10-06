@@ -23,6 +23,9 @@ class KPCF {
         // Changes the shown equipment category
         class equipmentList {};
 
+        // Gets the config path for the given classname
+        class getConfigPath {};
+
         // Changes the shown magazines
         class magazineList {};
 
