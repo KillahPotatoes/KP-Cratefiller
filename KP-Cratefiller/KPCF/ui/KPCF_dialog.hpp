@@ -87,7 +87,7 @@ class KPCF_dialog {
             x = KP_GETCX(KP_X_VAL_C,KP_WIDTH_VAL_C,0,4);
             y = KP_GETCY(KP_Y_VAL_C,KP_HEIGHT_VAL_C,16,48);
             w = KP_GETW(KP_WIDTH_VAL_C,(8/7));
-            h = KP_GETH(KP_HEIGHT_VAL_C,2);
+            h = KP_GETH(KP_HEIGHT_VAL_C,(48/32));
         };
 
         class KP_ButtonAddEquipment: KP_InlineButton {
@@ -95,12 +95,12 @@ class KPCF_dialog {
             x = KP_GETCX(KP_X_VAL_C,KP_WIDTH_VAL_C,7,8);
             y = KP_GETCY(KP_Y_VAL_C,KP_HEIGHT_VAL_C,16,48);
             w = KP_GETW(KP_WIDTH_VAL_C,8);
-            h = KP_GETH(KP_HEIGHT_VAL_C,4);
+            h = KP_GETH(KP_HEIGHT_VAL_C,3);
         };
 
         class KP_ButtonRemoveEquipment: KP_ButtonAddEquipment {
             text = "-";
-            y = KP_GETCY(KP_Y_VAL_C,KP_HEIGHT_VAL_C,28,48);
+            y = KP_GETCY(KP_Y_VAL_C,KP_HEIGHT_VAL_C,32,48);
         };
 
     };
