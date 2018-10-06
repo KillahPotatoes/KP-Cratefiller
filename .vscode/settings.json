@@ -1,0 +1,7 @@
+{
+    "sqf.enableCBA": true,
+    "sqf.enableACE3": true,
+    "sqflint.ignoredVariables": [
+
+    ]
+}
