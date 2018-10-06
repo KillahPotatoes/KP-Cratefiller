@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Project name="KPCF">
+    <!-- English and German localization by Dubjunk: https://github.com/Dubjunk -->
+    <Key ID="STR_KPCF_ACTIONOPEN">
+        <Original>-- KP Player Menu --</Original>
+        <English>-- KP Cratefiller --</English>
+        <German>-- KP Kistenfüller --</German>
+    </Key>
+    <Key ID="STR_KPCF_TITLE">
+        <Original>KP Cratefiller</Original>
+        <English>KP Cratefiller</English>
+        <German>KP Kistenfüller</German>
+    </Key>
+    <Key ID="STR_KPCF_TITLETRANSPORT">
+        <Original>Transport Medium</Original>
+        <English>Transport Medium</English>
+        <German>Transportmedium</German>
+    </Key>
+    <Key ID="STR_KPCF_SPAWNCRATE">
+        <Original>Provide crate</Original>
+        <English>Provide crate</English>
+        <German>Kiste bereitstellen</German>
+    </Key>
+    <Key ID="STR_KPCF_DELETECRATE">
+        <Original>Store crate</Original>
+        <English>Store crate</English>
+        <German>Kiste einlagern</German>
+    </Key>
+    <Key ID="STR_KPCF_TITLEEQUIPMENT">
+        <Original>Equipment</Original>
+        <English>Equipment</English>
+        <German>Ausrüstung</German>
+    </Key>
+    <Key ID="STR_KPCF_LISTWEAPONS">
+        <Original>Weapons</Original>
+        <English>Weapons</English>
+        <German>Waffen</German>
+    </Key>
+    <Key ID="STR_KPCF_LISTMAGAZINES">
+        <Original>Magazines</Original>
+        <English>Magazines</English>
+        <German>Magazine</German>
+    </Key>
+    <Key ID="STR_KPCF_LISTGRENADES">
+        <Original>Grenades</Original>
+        <English>Grenades</English>
+        <German>Granaten</German>
+    </Key>
+    <Key ID="STR_KPCF_LISTVARIOUS">
+        <Original>Others</Original>
+        <English>Others</English>
+        <German>Sonstiges</German>
+    </Key>
+</Project>
