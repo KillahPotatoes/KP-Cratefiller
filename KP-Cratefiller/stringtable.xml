@@ -22,8 +22,8 @@
         <German>Neue Kiste:</German>
     </Key>
     <Key ID="STR_KPCF_AVAILABLEINVENTORY">
-        <Original>Available inventorys:</Original>
-        <English>Available inventorys:</English>
+        <Original>Available inventories:</Original>
+        <English>Available inventories:</English>
         <German>Verfügbarer Laderaum:</German>
     </Key>
     <Key ID="STR_KPCF_SPAWNCRATE">
