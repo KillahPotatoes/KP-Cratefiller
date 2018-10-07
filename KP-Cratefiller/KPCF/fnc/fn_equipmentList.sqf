@@ -22,6 +22,7 @@ private _ctrlCat = _dialog displayCtrl 75810;
 private _ctrlWeapon = _dialog displayCtrl 75811;
 private _ctrlEquipment = _dialog displayCtrl 75812;
 private _ctrlInventory = _dialog displayCtrl 75820;
+private _ctrlInventoryAmount = _dialog displayCtrl 75821;
 
 // Clear the lists
 lbClear _ctrlWeapon;

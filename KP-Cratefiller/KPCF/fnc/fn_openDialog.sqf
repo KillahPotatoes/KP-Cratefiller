@@ -26,6 +26,7 @@ private _ctrlCat = _dialog displayCtrl 75810;
 private _ctrlWeapon = _dialog displayCtrl 75811;
 private _ctrlEquipment = _dialog displayCtrl 75812;
 private _ctrlInventory = _dialog displayCtrl 75820;
+private _ctrlInventoryAmount = _dialog displayCtrl 75821;
 
 _ctrlWeapon ctrlShow false;
 
@@ -37,9 +38,10 @@ if (isNull KPCF_activeCrate) then {
         KPCF_activeCrate = objNull;
     } else {
         KPCF_activeCrate = _objs select 0;
-        call KPCF_fnc_getInventory;
     };
 };
+
+call KPCF_fnc_getInventory;
 
 // Fill the controls
 {

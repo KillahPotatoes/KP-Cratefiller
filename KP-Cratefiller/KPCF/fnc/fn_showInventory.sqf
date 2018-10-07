@@ -22,10 +22,16 @@ private _ctrlCat = _dialog displayCtrl 75810;
 private _ctrlWeapon = _dialog displayCtrl 75811;
 private _ctrlEquipment = _dialog displayCtrl 75812;
 private _ctrlInventory = _dialog displayCtrl 75820;
+private _ctrlInventoryAmount = _dialog displayCtrl 75821;
 
 lbClear _ctrlInventory;
+lbClear _ctrlInventoryAmount;
 
 {
     private _config = [_x] call KPCF_fnc_getConfigPath;
     _ctrlInventory lbAdd (getText (configFile >> _config >> _x >> "displayName"));
 } forEach KPCF_inventory;
+
+{
+    _ctrlInventoryAmount lbAdd str _x;
+} forEach KPCF_inventoryAmount;

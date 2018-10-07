@@ -28,3 +28,5 @@ if (KPCF_activeCrate == _crate) then {
 };
 
 deleteVehicle _crate;
+
+call KPCF_fnc_getInventory;
