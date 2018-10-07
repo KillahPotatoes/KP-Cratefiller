@@ -16,9 +16,12 @@
 
 // Dialog controls
 private _dialog = findDisplay 758067;
-private _ctrlCat = _dialog displayCtrl 75802;
-private _ctrlWeapon = _dialog displayCtrl 75803;
-private _ctrlEquipment = _dialog displayCtrl 75804;
+private _ctrlCrate = _dialog displayCtrl 75801;
+private _ctrlCargo = _dialog displayCtrl 75802;
+private _ctrlCat = _dialog displayCtrl 75810;
+private _ctrlWeapon = _dialog displayCtrl 75811;
+private _ctrlEquipment = _dialog displayCtrl 75812;
+private _ctrlInventory = _dialog displayCtrl 75820;
 
 // Clear the lists
 lbClear _ctrlWeapon;
