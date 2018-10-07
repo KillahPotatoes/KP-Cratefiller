@@ -14,107 +14,182 @@ class KPCF_dialog {
 
     class controlsBackground {
 
-        class KP_DialogTitle: KP_DialogTitleC {
+        class KP_DialogTitle: KP_DialogTitleS {
             text = "$STR_KPCF_TITLE";
         };
 
-        class KP_DialogArea: KP_DialogBackgroundC {};
+        class KP_DialogArea: KP_DialogBackgroundS {};
 
         // Crates
 
         class KP_TransportTitle: KP_InlineTitle {
             text = "$STR_KPCF_TITLETRANSPORT";
-            x = KP_GETCX(KP_X_VAL_C,KP_WIDTH_VAL_C,0,1);
-            y = KP_GETCY(KP_Y_VAL_C,KP_HEIGHT_VAL_C,0,48);
-            w = KP_GETW(KP_WIDTH_VAL_C,1);
-            h = KP_GETH(KP_HEIGHT_VAL_C,16);
+            x = KP_GETCX(KP_X_VAL_S,KP_WIDTH_VAL_S,0,1);
+            y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,0,48);
+            w = KP_GETW(KP_WIDTH_VAL_S,1);
+            h = KP_GETH(KP_HEIGHT_VAL_S,16);
+        };
+
+        class KP_TextNewCrate: KP_Text {
+            text = "$STR_KPCF_NEWCRATE";
+            x = KP_GETCX(KP_X_VAL_S,KP_WIDTH_VAL_S,0,1);
+            y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,3,48);
+            w = KP_GETW(KP_WIDTH_VAL_S,4);
+            h = KP_GETH(KP_HEIGHT_VAL_S,24);
+        };
+
+        class KP_TextAvailableInventory: KP_TextNewCrate {
+            text = "$STR_KPCF_AVAILABLEINVENTORY";
+            x = KP_GETCX(KP_X_VAL_S,KP_WIDTH_VAL_S,1,2);
         };
 
         // Equipment
 
-        class KP_EquipmentTitle: KP_TransportTitle {
+        class KP_EquipmentTitle: KP_InlineTitle {
             text = "$STR_KPCF_TITLEEQUIPMENT";
-            y = KP_GETCY(KP_Y_VAL_C,KP_HEIGHT_VAL_C,9,48);
+            x = KP_GETCX(KP_X_VAL_S,KP_WIDTH_VAL_S,0,1);
+            y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,7,48);
+            w = KP_GETW(KP_WIDTH_VAL_S,2);
+            h = KP_GETH(KP_HEIGHT_VAL_S,16);
+        };
+
+        // Inventory
+
+        class KP_InventoryTitle: KP_InlineTitle {
+            text = "$STR_KPCF_TITLEINVENTORY";
+            x = KP_GETCX(KP_X_VAL_S,KP_WIDTH_VAL_S,1,2);
+            y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,7,48);
+            w = KP_GETW(KP_WIDTH_VAL_S,2);
+            h = KP_GETH(KP_HEIGHT_VAL_S,16);
         };
 
     };
 
     class controls {
 
-        class KP_DialogCross: KP_DialogCrossC {};
+        class KP_DialogCross: KP_DialogCrossS {};
 
         // Crates
 
         class KP_ComboCrate: KP_Combo {
             idc = 75801;
-            x = KP_GETCX(KP_X_VAL_C,KP_WIDTH_VAL_C,0,1);
-            y = KP_GETCY(KP_Y_VAL_C,KP_HEIGHT_VAL_C,3,48);
-            w = KP_GETW(KP_WIDTH_VAL_C,1);
-            h = KP_GETH(KP_HEIGHT_VAL_C,24);
+            x = KP_GETCX(KP_X_VAL_S,KP_WIDTH_VAL_S,1,4);
+            y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,3,48);
+            w = KP_GETW(KP_WIDTH_VAL_S,4);
+            h = KP_GETH(KP_HEIGHT_VAL_S,24);
+        };
+
+        class KP_ComboCargo: KP_ComboCrate {
+            idc = 75802;
+            x = KP_GETCX(KP_X_VAL_S,KP_WIDTH_VAL_S,3,4);
+            y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,3,48);
+            w = KP_GETW(KP_WIDTH_VAL_S,4);
+            h = KP_GETH(KP_HEIGHT_VAL_S,24);
         };
 
         class KP_ButtonSpawnCrate: KP_InlineButton {
             text = "$STR_KPCF_SPAWNCRATE";
-            x = KP_GETCX(KP_X_VAL_C,KP_WIDTH_VAL_C,0,1);
-            y = KP_GETCY(KP_Y_VAL_C,KP_HEIGHT_VAL_C,5,48);
-            w = KP_GETW(KP_WIDTH_VAL_C,1);
-            h = KP_GETH(KP_HEIGHT_VAL_C,24);
+            x = KP_GETCX(KP_X_VAL_S,KP_WIDTH_VAL_S,0,1);
+            y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,5,48);
+            w = KP_GETW(KP_WIDTH_VAL_S,2);
+            h = KP_GETH(KP_HEIGHT_VAL_S,24);
             onButtonClick = "call KPCF_fnc_spawnCrate";
         };
 
         class KP_ButtonDeleteCrate: KP_ButtonSpawnCrate {
             text = "$STR_KPCF_DELETECRATE";
-            y = KP_GETCY(KP_Y_VAL_C,KP_HEIGHT_VAL_C,7,48);
+            x = KP_GETCX(KP_X_VAL_S,KP_WIDTH_VAL_S,1,2);
+            y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,5,48);
             onButtonClick = "call KPCF_fnc_deleteCrate";
         };
 
         // Equipment
 
-        class KP_ComboEquipment: KP_ComboCrate {
-            idc = 75802;
-            y = KP_GETCY(KP_Y_VAL_C,KP_HEIGHT_VAL_C,12,48);
+        class KP_ComboEquipment: KP_Combo {
+            idc = 75810;
+            x = KP_GETCX(KP_X_VAL_S,KP_WIDTH_VAL_S,0,1);
+            y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,10,48);
+            w = KP_GETW(KP_WIDTH_VAL_S,2);
+            h = KP_GETH(KP_HEIGHT_VAL_S,24);
             onLBSelChanged = "call KPCF_fnc_equipmentList";
         };
 
-        class KP_ComboWeapons: KP_ComboCrate {
-            idc = 75803;
-            y = KP_GETCY(KP_Y_VAL_C,KP_HEIGHT_VAL_C,14,48);
+        class KP_ComboWeapons: KP_ComboEquipment {
+            idc = 75811;
+            y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,12,48);
             onLBSelChanged = "call KPCF_fnc_magazineList";
         };
 
         class KP_EquipmentList: KP_ListBox {
-            idc = 75804;
-            x = KP_GETCX(KP_X_VAL_C,KP_WIDTH_VAL_C,0,4);
-            y = KP_GETCY(KP_Y_VAL_C,KP_HEIGHT_VAL_C,16,48);
-            w = KP_GETW(KP_WIDTH_VAL_C,(8/7));
-            h = KP_GETH(KP_HEIGHT_VAL_C,(48/32));
+            idc = 75812;
+            x = KP_GETCX(KP_X_VAL_S,KP_WIDTH_VAL_S,0,1);
+            y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,14,48);
+            w = KP_GETW(KP_WIDTH_VAL_S,(16/7));
+            h = KP_GETH(KP_HEIGHT_VAL_S,(48/34));
         };
 
         class KP_ButtonAddEquipment: KP_InlineButton {
             text = "+ 1";
-            x = KP_GETCX(KP_X_VAL_C,KP_WIDTH_VAL_C,7,8);
-            y = KP_GETCY(KP_Y_VAL_C,KP_HEIGHT_VAL_C,16,48);
-            w = KP_GETW(KP_WIDTH_VAL_C,8);
-            h = KP_GETH(KP_HEIGHT_VAL_C,6);
+            x = KP_GETCX(KP_X_VAL_S,KP_WIDTH_VAL_S,7,16);
+            y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,14,48);
+            w = KP_GETW(KP_WIDTH_VAL_S,16);
+            h = KP_GETH(KP_HEIGHT_VAL_S,(48/8.5));
             onButtonClick = "[1] call KPCF_fnc_addEquipment";
         };
 
         class KP_ButtonAddEquipment5: KP_ButtonAddEquipment {
             text = "+ 5";
-            y = KP_GETCY(KP_Y_VAL_C,KP_HEIGHT_VAL_C,24,48);
+            y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,22.5,48);
             onButtonClick = "[5] call KPCF_fnc_addEquipment";
         };
 
-        class KP_ButtonRemoveEquipment: KP_ButtonAddEquipment {
+        class KP_ButtonAddEquipment10: KP_ButtonAddEquipment {
+            text = "+ 10";
+            y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,31,48);
+            onButtonClick = "[10] call KPCF_fnc_addEquipment";
+        };
+
+        class KP_ButtonAddEquipment20: KP_ButtonAddEquipment {
+            text = "+ 20";
+            y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,39.5,48);
+            onButtonClick = "[20] call KPCF_fnc_addEquipment";
+        };
+
+        // Inventory
+
+        class KP_InventoryList: KP_ListBox {
+            idc = 75820;
+            x = KP_GETCX(KP_X_VAL_S,KP_WIDTH_VAL_S,1,2);
+            y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,10,48);
+            w = KP_GETW(KP_WIDTH_VAL_S,(16/7));
+            h = KP_GETH(KP_HEIGHT_VAL_S,(48/38));
+        };
+
+        class KP_ButtonRemoveEquipment: KP_InlineButton {
             text = "- 1";
-            y = KP_GETCY(KP_Y_VAL_C,KP_HEIGHT_VAL_C,32,48);
+            x = KP_GETCX(KP_X_VAL_S,KP_WIDTH_VAL_S,15,16);
+            y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,10,48);
+            w = KP_GETW(KP_WIDTH_VAL_S,16);
+            h = KP_GETH(KP_HEIGHT_VAL_S,(48/9.5));
             onButtonClick = "[1] call KPCF_fnc_removeEquipment";
         };
 
-        class KP_ButtonRemoveEquipment5: KP_ButtonAddEquipment {
+        class KP_ButtonRemoveEquipment5: KP_ButtonRemoveEquipment {
             text = "- 5";
-            y = KP_GETCY(KP_Y_VAL_C,KP_HEIGHT_VAL_C,40,48);
+            y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,19.5,48);
             onButtonClick = "[5] call KPCF_fnc_removeEquipment";
+        };
+
+        class KP_ButtonRemoveEquipment10: KP_ButtonRemoveEquipment {
+            text = "- 10";
+            y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,29,48);
+            onButtonClick = "[10] call KPCF_fnc_removeEquipment";
+        };
+
+        class KP_ButtonRemoveEquipment20: KP_ButtonRemoveEquipment {
+            text = "- 20";
+            y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,38.5,48);
+            onButtonClick = "[20] call KPCF_fnc_removeEquipment";
         };
 
     };

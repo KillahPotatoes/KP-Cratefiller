@@ -330,3 +330,42 @@ class KP_DialogButtonC: KP_Button {
     y = KP_GETY_BELOW(KP_Y_VAL_C,KP_HEIGHT_VAL_C);
     w = KP_GETWPLAIN(KP_WIDTH_VAL_C,1);
 };
+
+/*
+    --- Small dialog components ---
+    (X from 0.3 - 0.7, Y from 0.05 - 0.8)
+*/
+
+#define KP_X_VAL_S                      0.3
+#define KP_Y_VAL_S                      0.05
+
+#define KP_WIDTH_VAL_S                  0.4
+#define KP_HEIGHT_VAL_S                 (0.75 - KP_HEIGTH_TITLE - KP_HEIGTH_BUTTON - 2 * KP_SPACING_Y)
+
+// Title bar
+class KP_DialogTitleS: KP_Title {
+    x = KP_GETX(KP_X_VAL_S,KP_WIDTH_VAL_S,0,1);
+    y = safeZoneY + safeZoneH * KP_Y_VAL_S;
+    w = KP_GETWPLAIN(KP_WIDTH_VAL_S,1);
+};
+
+// Cross symbol
+class KP_DialogCrossS: KP_CloseCross {
+    x = safeZoneX + safeZoneW * (KP_X_VAL_S + KP_WIDTH_VAL_S - 0.02)
+    y = KP_GETY_CROSS(KP_Y_VAL_S);
+};
+
+// Background
+class KP_DialogBackgroundS: KP_Background {
+    x = KP_GETX(KP_X_VAL_S,KP_WIDTH_VAL_S,0,1);
+    y = KP_GETY_AREA(KP_Y_VAL_S);
+    w = KP_GETWPLAIN(KP_WIDTH_VAL_S,1);
+    h = safeZoneH * KP_HEIGHT_VAL_S;
+};
+
+// Button
+class KP_DialogButtonS: KP_Button {
+    x = KP_GETX(KP_X_VAL_S,KP_WIDTH_VAL_S,0,1);
+    y = KP_GETY_BELOW(KP_Y_VAL_S,KP_HEIGHT_VAL_S);
+    w = KP_GETWPLAIN(KP_WIDTH_VAL_S,1);
+};

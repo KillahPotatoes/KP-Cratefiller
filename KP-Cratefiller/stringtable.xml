@@ -16,6 +16,16 @@
         <English>Transport Medium</English>
         <German>Transportmedium</German>
     </Key>
+    <Key ID="STR_KPCF_NEWCRATE">
+        <Original>New crate:</Original>
+        <English>New crate:</English>
+        <German>Neue Kiste:</German>
+    </Key>
+    <Key ID="STR_KPCF_AVAILABLEINVENTORY">
+        <Original>Available inventorys:</Original>
+        <English>Available inventorys:</English>
+        <German>Verfügbarer Laderaum:</German>
+    </Key>
     <Key ID="STR_KPCF_SPAWNCRATE">
         <Original>Provide crate</Original>
         <English>Provide crate</English>
@@ -55,5 +65,10 @@
         <Original>Others</Original>
         <English>Others</English>
         <German>Sonstiges</German>
+    </Key>
+    <Key ID="STR_KPCF_TITLEINVENTORY">
+        <Original>Inventory</Original>
+        <English>Inventory</English>
+        <German>Inventar</German>
     </Key>
 </Project>
