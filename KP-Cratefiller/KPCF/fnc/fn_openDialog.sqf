@@ -37,6 +37,7 @@ if (isNull KPCF_activeCrate) then {
         KPCF_activeCrate = objNull;
     } else {
         KPCF_activeCrate = _objs select 0;
+        call KPCF_fnc_getInventory;
     };
 };
 

@@ -35,5 +35,5 @@ if (_index == -1) exitWith {};
 // Item selection
 private _item = (KPCF_activeCategory select _index);
 
-// Add the given item
+// Remove the given item
 KPCF_activeCrate removeItem _item;

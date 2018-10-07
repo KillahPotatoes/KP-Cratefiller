@@ -29,6 +29,9 @@ class KPCF {
         // Gets the config path for the given classname
         class getConfigPath {};
 
+        // Gets all inventory items of the active crate
+        class getInventory {};
+
         // Changes the shown magazines
         class magazineList {};
 
@@ -40,6 +43,12 @@ class KPCF {
 
         // Removes the given amount of the selected item in the crate.
         class removeEquipment {};
+
+        // Adds the items to the active crate
+        class setInventory {};
+
+        // Displays the items of the active crate
+        class showInventory {};
 
         // Spawns the selected crate
         class spawnCrate {};
