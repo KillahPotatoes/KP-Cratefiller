@@ -8,7 +8,7 @@
     Defines global variables.
 */
 
-KPCF_activeCrate = objNull;
+KPCF_activeStorage = objNull;
 
 KPCF_activeCategory = [];
 

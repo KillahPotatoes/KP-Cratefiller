@@ -17,7 +17,7 @@
 // Dialog controls
 private _dialog = findDisplay 758067;
 private _ctrlCrate = _dialog displayCtrl 75801;
-private _ctrlCargo = _dialog displayCtrl 75802;
+private _ctrlStorage = _dialog displayCtrl 75802;
 private _ctrlCat = _dialog displayCtrl 75810;
 private _ctrlWeapon = _dialog displayCtrl 75811;
 private _ctrlEquipment = _dialog displayCtrl 75812;
@@ -37,8 +37,6 @@ if (!(((getPos KPCF_cratefiller_spawn) nearEntities 5) isEqualTo [])) exitWith {
 
 // Crate spawn
 private _crate = createVehicle [_crateType, (getPos KPCF_cratefiller_spawn), [], 0, "NONE"];
-
-KPCF_activeCrate = _crate;
 
 clearWeaponCargoGlobal _crate;
 clearMagazineCargoGlobal _crate;

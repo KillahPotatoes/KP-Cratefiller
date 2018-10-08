@@ -14,19 +14,12 @@
     NONE
 */
 
-// Get the nearest crates
-private _objs = nearestObjects [getPos KPCF_cratefiller_spawn, KPCF_crates, 10];
+// Check for empty variable
+if (KPCF_activeStorage == objNull) exitWith {};
 
-// Check for empty array
-if ((count _objs) == 0) exitWith {};
+// Check if the active storage is a pre defined createTeam
+if (!(KPCF_activeStorage in KPCF_crates)) exitWith {};
 
-// Delete the nearest crate
-private _crate = _objs select 0;
-
-if (KPCF_activeCrate == _crate) then {
-    KPCF_activeCrate = objNull;
-};
-
-deleteVehicle _crate;
+deleteVehicle KPCF_activeStorage;
 
 call KPCF_fnc_getInventory;

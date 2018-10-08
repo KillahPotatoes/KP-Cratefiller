@@ -17,21 +17,21 @@
 // Dialog controls
 private _dialog = findDisplay 758067;
 private _ctrlCrate = _dialog displayCtrl 75801;
-private _ctrlCargo = _dialog displayCtrl 75802;
+private _ctrlStorage = _dialog displayCtrl 75802;
 private _ctrlCat = _dialog displayCtrl 75810;
 private _ctrlWeapon = _dialog displayCtrl 75811;
 private _ctrlEquipment = _dialog displayCtrl 75812;
 private _ctrlInventory = _dialog displayCtrl 75820;
 private _ctrlInventoryAmount = _dialog displayCtrl 75821;
 
-if (KPCF_activeCrate == objNull) exitWith {};
+if (KPCF_activeStorage == objNull) exitWith {};
 
 KPCF_inventory = [];
 KPCF_inventoryAmount = [];
 
-private _item = getItemCargo KPCF_activeCrate;
-private _weapon = getWeaponCargo KPCF_activeCrate;
-private _magazine = getMagazineCargo KPCF_activeCrate;
+private _item = getItemCargo KPCF_activeStorage;
+private _weapon = getWeaponCargo KPCF_activeStorage;
+private _magazine = getMagazineCargo KPCF_activeStorage;
 
 private _cargo = _item;
 (_cargo select 0) append (_weapon select 0);
