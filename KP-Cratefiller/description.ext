@@ -9,7 +9,7 @@
     Otherwise copy the content below this comment block right at the end of your description.ext file, if you're unsure how to merge them.
 */
 
-#include "KPGUI\KP_uiDefines.hpp"
+#include "KPGUI\KPGUI_defines.hpp"
 #include "KPCF\ui\KPCF_dialog.hpp"
 
 class CfgFunctions {

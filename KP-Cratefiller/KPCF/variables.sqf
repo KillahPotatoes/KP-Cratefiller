@@ -10,7 +10,7 @@
 
 KPCF_activeCrate = objNull;
 
-KPCF_activeCategory = "";
+KPCF_activeCategory = [];
 
 KPCF_inventory = [];
 KPCF_inventoryAmount = [];

@@ -14,15 +14,15 @@ class KPCF_dialog {
 
     class controlsBackground {
 
-        class KP_DialogTitle: KP_DialogTitleS {
+        class KP_DialogTitle: KPGUI_PRE_DialogTitleS {
             text = "$STR_KPCF_TITLE";
         };
 
-        class KP_DialogArea: KP_DialogBackgroundS {};
+        class KP_DialogArea: KPGUI_PRE_DialogBackgroundS {};
 
         // Crates
 
-        class KP_TransportTitle: KP_InlineTitle {
+        class KP_TransportTitle: KPGUI_PRE_InlineTitle {
             text = "$STR_KPCF_TITLETRANSPORT";
             x = KP_GETCX(KP_X_VAL_S,KP_WIDTH_VAL_S,0,1);
             y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,0,48);
@@ -30,7 +30,7 @@ class KPCF_dialog {
             h = KP_GETH(KP_HEIGHT_VAL_S,16);
         };
 
-        class KP_TextNewCrate: KP_Text {
+        class KP_TextNewCrate: KPGUI_PRE_Text {
             text = "$STR_KPCF_NEWCRATE";
             x = KP_GETCX(KP_X_VAL_S,KP_WIDTH_VAL_S,0,1);
             y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,3,48);
@@ -45,33 +45,30 @@ class KPCF_dialog {
 
         // Equipment
 
-        class KP_EquipmentTitle: KP_InlineTitle {
+        class KP_EquipmentTitle: KP_TransportTitle {
             text = "$STR_KPCF_TITLEEQUIPMENT";
-            x = KP_GETCX(KP_X_VAL_S,KP_WIDTH_VAL_S,0,1);
             y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,7,48);
             w = KP_GETW(KP_WIDTH_VAL_S,2);
-            h = KP_GETH(KP_HEIGHT_VAL_S,16);
         };
 
         // Inventory
 
-        class KP_InventoryTitle: KP_InlineTitle {
+        class KP_InventoryTitle: KP_TransportTitle {
             text = "$STR_KPCF_TITLEINVENTORY";
             x = KP_GETCX(KP_X_VAL_S,KP_WIDTH_VAL_S,1,2);
             y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,7,48);
             w = KP_GETW(KP_WIDTH_VAL_S,2);
-            h = KP_GETH(KP_HEIGHT_VAL_S,16);
         };
 
     };
 
     class controls {
 
-        class KP_DialogCross: KP_DialogCrossS {};
+        class KP_DialogCross: KPGUI_PRE_DialogCrossS {};
 
         // Crates
 
-        class KP_ComboCrate: KP_Combo {
+        class KP_ComboCrate: KPGUI_PRE_Combo {
             idc = 75801;
             x = KP_GETCX(KP_X_VAL_S,KP_WIDTH_VAL_S,1,4);
             y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,3,48);
@@ -87,7 +84,7 @@ class KPCF_dialog {
             h = KP_GETH(KP_HEIGHT_VAL_S,24);
         };
 
-        class KP_ButtonSpawnCrate: KP_InlineButton {
+        class KP_ButtonSpawnCrate: KPGUI_PRE_InlineButton {
             text = "$STR_KPCF_SPAWNCRATE";
             x = KP_GETCX(KP_X_VAL_S,KP_WIDTH_VAL_S,0,1);
             y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,5,48);
@@ -105,7 +102,7 @@ class KPCF_dialog {
 
         // Equipment
 
-        class KP_ComboEquipment: KP_Combo {
+        class KP_ComboEquipment: KPGUI_PRE_Combo {
             idc = 75810;
             x = KP_GETCX(KP_X_VAL_S,KP_WIDTH_VAL_S,0,1);
             y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,10,48);
@@ -120,7 +117,7 @@ class KPCF_dialog {
             onLBSelChanged = "call KPCF_fnc_magazineList";
         };
 
-        class KP_EquipmentList: KP_ListBox {
+        class KP_EquipmentList: KPGUI_PRE_ListBox {
             idc = 75812;
             x = KP_GETCX(KP_X_VAL_S,KP_WIDTH_VAL_S,0,1);
             y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,14,48);
@@ -128,7 +125,7 @@ class KPCF_dialog {
             h = KP_GETH(KP_HEIGHT_VAL_S,(48/34));
         };
 
-        class KP_ButtonAddEquipment: KP_InlineButton {
+        class KP_ButtonAddEquipment: KPGUI_PRE_InlineButton {
             text = "+ 1";
             x = KP_GETCX(KP_X_VAL_S,KP_WIDTH_VAL_S,7,16);
             y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,14,48);
@@ -157,7 +154,7 @@ class KPCF_dialog {
 
         // Inventory
 
-        class KP_InventoryList: KP_ListBox {
+        class KP_InventoryList: KPGUI_PRE_ListBox {
             idc = 75820;
             x = KP_GETCX(KP_X_VAL_S,KP_WIDTH_VAL_S,9,16);
             y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,10,48);
@@ -173,7 +170,7 @@ class KPCF_dialog {
             h = KP_GETH(KP_HEIGHT_VAL_S,(48/36));
         };
 
-        class KP_ButtonRemoveEquipment: KP_InlineButton {
+        class KP_ButtonRemoveEquipment: KPGUI_PRE_InlineButton {
             text = "- 1";
             x = KP_GETCX(KP_X_VAL_S,KP_WIDTH_VAL_S,15,16);
             y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,10,48);
