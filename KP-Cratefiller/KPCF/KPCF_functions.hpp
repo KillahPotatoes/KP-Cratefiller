@@ -20,11 +20,14 @@ class KPCF {
         // Adds the given amount of the selected item to the crate.
         class addEquipment {};
 
+        // Changes the shown equipment category
+        class createEquipmentList {};
+
+        // Changes the shown magazines
+        class createMagazineList {};
+
         // Deletes the nearest crate
         class deleteCrate {};
-
-        // Changes the shown equipment category
-        class equipmentList {};
 
         // Gets the config path for the given classname
         class getConfigPath {};
@@ -32,8 +35,8 @@ class KPCF {
         // Gets all inventory items of the active crate
         class getInventory {};
 
-        // Changes the shown magazines
-        class magazineList {};
+        // Scans the spawn area for possible storages
+        class getNearStorages {};
 
         // Manages the actions
         class manageActions {};
@@ -43,6 +46,9 @@ class KPCF {
 
         // Removes the given amount of the selected item in the crate.
         class removeEquipment {};
+
+        //Reads and defines the active inventory from the LB.
+        class setActiveStorage {};
 
         // Adds the items to the active crate
         class setInventory {};

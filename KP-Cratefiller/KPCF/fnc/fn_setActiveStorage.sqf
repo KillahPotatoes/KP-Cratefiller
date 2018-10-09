@@ -5,7 +5,7 @@
     License: GNU General Public License v3.0 - https://www.gnu.org/licenses/gpl-3.0.html
 
     Description:
-    Opens the cratefiller dialog.
+    Reads and defines the active inventory from the Dialog.
 
     Parameter(s):
     NONE
@@ -13,10 +13,6 @@
     Returns:
     NONE
 */
-
-// Create cratefiller dialog
-createDialog "KPCF_dialog";
-disableSerialization;
 
 // Dialog controls
 private _dialog = findDisplay 758067;
@@ -28,18 +24,13 @@ private _ctrlEquipment = _dialog displayCtrl 75812;
 private _ctrlInventory = _dialog displayCtrl 75820;
 private _ctrlInventoryAmount = _dialog displayCtrl 75821;
 
-_ctrlWeapon ctrlShow false;
+// Read the combobox
+private _storageIndex = lbCurSel _ctrlStorage;
 
-// Fill the controls
-{
-    _config = [_x] call KPCF_fnc_getConfigPath;
-    _ctrlCrate lbAdd (getText (configFile >> _config >> _x >> "displayName"));
-} forEach KPCF_crates;
+// Check for empty selection
+if (_storageIndex == -1) exitWith {};
 
-_ctrlCat lbAdd localize "STR_KPCF_LISTWEAPONS";
-_ctrlCat lbAdd localize "STR_KPCF_LISTMAGAZINES";
-_ctrlCat lbAdd localize "STR_KPCF_LISTGRENADES";
-_ctrlCat lbAdd localize "STR_KPCF_LISTEXPLOSIVES";
-_ctrlCat lbAdd localize "STR_KPCF_LISTVARIOUS";
+// Define the active Storage
+KPCF_activeStorage = KPCF_near_storage select _storageIndex;
 
-call KPCF_fnc_getNearStorages;
+call KPCF_fnc_getInventory;

@@ -24,7 +24,7 @@ private _ctrlEquipment = _dialog displayCtrl 75812;
 private _ctrlInventory = _dialog displayCtrl 75820;
 private _ctrlInventoryAmount = _dialog displayCtrl 75821;
 
-if (KPCF_activeStorage == objNull) exitWith {};
+if (isNull KPCF_activeStorage) exitWith {};
 
 KPCF_inventory = [];
 KPCF_inventoryAmount = [];

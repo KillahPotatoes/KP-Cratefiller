@@ -82,6 +82,7 @@ class KPCF_dialog {
             y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,3,48);
             w = KP_GETW(KP_WIDTH_VAL_S,4);
             h = KP_GETH(KP_HEIGHT_VAL_S,24);
+            onLBSelChanged = "call KPCF_fnc_setActiveStorage";
         };
 
         class KP_ButtonSpawnCrate: KPGUI_PRE_InlineButton {
@@ -108,13 +109,13 @@ class KPCF_dialog {
             y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,10,48);
             w = KP_GETW(KP_WIDTH_VAL_S,2);
             h = KP_GETH(KP_HEIGHT_VAL_S,24);
-            onLBSelChanged = "call KPCF_fnc_equipmentList";
+            onLBSelChanged = "call KPCF_fnc_createEquipmentList";
         };
 
         class KP_ComboWeapons: KP_ComboEquipment {
             idc = 75811;
             y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,12,48);
-            onLBSelChanged = "call KPCF_fnc_magazineList";
+            onLBSelChanged = "call KPCF_fnc_createMagazineList";
         };
 
         class KP_EquipmentList: KPGUI_PRE_ListBox {

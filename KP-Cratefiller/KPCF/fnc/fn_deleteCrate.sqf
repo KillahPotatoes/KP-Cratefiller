@@ -15,7 +15,7 @@
 */
 
 // Check for empty variable
-if (KPCF_activeStorage == objNull) exitWith {};
+if (isNull KPCF_activeStorage) exitWith {};
 
 // Check if the active storage is a pre defined createTeam
 if (!(KPCF_activeStorage in KPCF_crates)) exitWith {};
