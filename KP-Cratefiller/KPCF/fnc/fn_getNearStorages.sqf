@@ -29,6 +29,7 @@ KPCF_near_storage = [];
 lbClear _ctrlStorage;
 
 {
+    if (typeOf _x == "GroundWeaponHolder") exitWith {};
     if (_x canAdd "Item_FirstAidKit") then {
         KPCF_near_storage pushBack _x;
     };
@@ -44,4 +45,4 @@ lbClear _ctrlStorage;
 // Check if dialog is closed
 if (isNull _dialog) exitWith {};
 
-[{call KPCF_fnc_getNearStorages;}, [], 10] call CBA_fnc_waitAndExecute;
+[{call KPCF_fnc_getNearStorages;}, [], 5] call CBA_fnc_waitAndExecute;
