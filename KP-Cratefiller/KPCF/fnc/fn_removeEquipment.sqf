@@ -42,4 +42,14 @@ if (_index == -1) exitWith {};
 
 // Item selection
 private _item = (KPCF_inventory select _index);
+private _inventoryIndex = KPCF_inventory find _item;
 
+private _modify = ((KPCF_inventoryAmount select _index) - _amount);
+
+if (_modify < 0) then {
+    _modify = 0;
+};
+
+KPCF_inventoryAmount set [_index, _modify];
+
+call KPCF_fnc_setInventory;
