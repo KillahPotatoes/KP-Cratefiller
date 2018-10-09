@@ -148,7 +148,7 @@ class KPCF_dialog {
             x = KP_GETCX(KP_X_VAL_S,KP_WIDTH_VAL_S,9,16);
             y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,10,48);
             w = KP_GETW(KP_WIDTH_VAL_S,(16/6));
-            h = KP_GETH(KP_HEIGHT_VAL_S,(48/36));
+            h = KP_GETH(KP_HEIGHT_VAL_S,(48/34));
         };
 
         class KP_InventoryAmount: KP_InventoryList {
@@ -156,7 +156,7 @@ class KPCF_dialog {
             x = KP_GETCX(KP_X_VAL_S,KP_WIDTH_VAL_S,1,2);
             y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,10,48);
             w = KP_GETW(KP_WIDTH_VAL_S,16);
-            h = KP_GETH(KP_HEIGHT_VAL_S,(48/36));
+            h = KP_GETH(KP_HEIGHT_VAL_S,(48/34));
         };
 
         class KP_ButtonRemoveEquipment: KPGUI_PRE_InlineButton {
@@ -164,25 +164,25 @@ class KPCF_dialog {
             x = KP_GETCX(KP_X_VAL_S,KP_WIDTH_VAL_S,15,16);
             y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,10,48);
             w = KP_GETW(KP_WIDTH_VAL_S,16);
-            h = KP_GETH(KP_HEIGHT_VAL_S,(48/9));
+            h = KP_GETH(KP_HEIGHT_VAL_S,(48/8.5));
             onButtonClick = "[1] call KPCF_fnc_removeEquipment";
         };
 
         class KP_ButtonRemoveEquipment5: KP_ButtonRemoveEquipment {
             text = "- 5";
-            y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,19,48);
+            y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,18.5,48);
             onButtonClick = "[5] call KPCF_fnc_removeEquipment";
         };
 
         class KP_ButtonRemoveEquipment10: KP_ButtonRemoveEquipment {
             text = "- 10";
-            y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,28,48);
+            y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,27,48);
             onButtonClick = "[10] call KPCF_fnc_removeEquipment";
         };
 
-        class KP_ButtonRemoveEquipment20: KP_ButtonRemoveEquipment {
+        class KP_ButtonRemoveEquipmentClear: KP_ButtonRemoveEquipment {
             text = "Clear";
-            y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,37,48);
+            y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,35.5,48);
             onButtonClick = "[0] call KPCF_fnc_removeEquipment";
         };
 
