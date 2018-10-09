@@ -193,9 +193,9 @@ class KPCF_dialog {
         };
 
         class KP_ButtonRemoveEquipment20: KP_ButtonRemoveEquipment {
-            text = "- 20";
+            text = "Clear";
             y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,37,48);
-            onButtonClick = "[20] call KPCF_fnc_removeEquipment";
+            onButtonClick = "[0] call KPCF_fnc_removeEquipment";
         };
 
     };

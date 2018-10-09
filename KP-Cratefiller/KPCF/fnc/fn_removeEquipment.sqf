@@ -28,11 +28,18 @@ private _ctrlEquipment = _dialog displayCtrl 75812;
 private _ctrlInventory = _dialog displayCtrl 75820;
 private _ctrlInventoryAmount = _dialog displayCtrl 75821;
 
+// Check for inventory clear
+if (_amount == 0) exitWith {
+    KPCF_inventory = [];
+    KPCF_inventoryAmount = [];
+    call KPCF_fnc_setInventory;
+};
+
 private _index = lbCurSel _ctrlInventory;
 
 // Check for empty selection
 if (_index == -1) exitWith {};
 
 // Item selection
-private _item = (KPCF_activeCategory select _index);
+private _item = (KPCF_inventory select _index);
 
