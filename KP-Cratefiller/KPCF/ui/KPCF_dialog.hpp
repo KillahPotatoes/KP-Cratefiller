@@ -30,19 +30,6 @@ class KPCF_dialog {
             h = KP_GETH(KP_HEIGHT_VAL_S,16);
         };
 
-        class KP_TextNewCrate: KPGUI_PRE_Text {
-            text = "$STR_KPCF_NEWCRATE";
-            x = KP_GETCX(KP_X_VAL_S,KP_WIDTH_VAL_S,0,1);
-            y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,3,48);
-            w = KP_GETW(KP_WIDTH_VAL_S,4);
-            h = KP_GETH(KP_HEIGHT_VAL_S,24);
-        };
-
-        class KP_TextAvailableInventory: KP_TextNewCrate {
-            text = "$STR_KPCF_AVAILABLEINVENTORY";
-            x = KP_GETCX(KP_X_VAL_S,KP_WIDTH_VAL_S,1,2);
-        };
-
         // Equipment
 
         class KP_EquipmentTitle: KP_TransportTitle {
@@ -70,18 +57,17 @@ class KPCF_dialog {
 
         class KP_ComboCrate: KPGUI_PRE_Combo {
             idc = 75801;
-            x = KP_GETCX(KP_X_VAL_S,KP_WIDTH_VAL_S,1,4);
+            x = KP_GETCX(KP_X_VAL_S,KP_WIDTH_VAL_S,0,1);
             y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,3,48);
-            w = KP_GETW(KP_WIDTH_VAL_S,4);
+            w = KP_GETW(KP_WIDTH_VAL_S,2);
             h = KP_GETH(KP_HEIGHT_VAL_S,24);
+            tooltip = "$STR_KPCF_TOOLTIPCRATE";
         };
 
         class KP_ComboCargo: KP_ComboCrate {
             idc = 75802;
-            x = KP_GETCX(KP_X_VAL_S,KP_WIDTH_VAL_S,3,4);
-            y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,3,48);
-            w = KP_GETW(KP_WIDTH_VAL_S,4);
-            h = KP_GETH(KP_HEIGHT_VAL_S,24);
+            x = KP_GETCX(KP_X_VAL_S,KP_WIDTH_VAL_S,1,2);
+            tooltip = "$STR_KPCF_TOOLTIPINVENTORY";
             onLBSelChanged = "call KPCF_fnc_setActiveStorage";
         };
 
@@ -109,12 +95,14 @@ class KPCF_dialog {
             y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,10,48);
             w = KP_GETW(KP_WIDTH_VAL_S,2);
             h = KP_GETH(KP_HEIGHT_VAL_S,24);
+            tooltip = "$STR_KPCF_TOOLTIPCATEGORY";
             onLBSelChanged = "call KPCF_fnc_createEquipmentList";
         };
 
         class KP_ComboWeapons: KP_ComboEquipment {
             idc = 75811;
             y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,12,48);
+            tooltip = "$STR_KPCF_TOOLTIPMAGAZINES";
             onLBSelChanged = "call KPCF_fnc_createMagazineList";
         };
 

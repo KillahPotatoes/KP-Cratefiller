@@ -16,20 +16,10 @@
         <English>Transport Medium</English>
         <German>Transportmedium</German>
     </Key>
-    <Key ID="STR_KPCF_NEWCRATE">
-        <Original>New crate:</Original>
-        <English>New crate:</English>
-        <German>Neue Kiste:</German>
-    </Key>
-    <Key ID="STR_KPCF_AVAILABLEINVENTORY">
-        <Original>Available inventories:</Original>
-        <English>Available inventories:</English>
-        <German>Verfügbarer Laderaum:</German>
-    </Key>
     <Key ID="STR_KPCF_SPAWNCRATE">
-        <Original>Provide crate</Original>
-        <English>Provide crate</English>
-        <German>Kiste bereitstellen</German>
+        <Original>Request crate</Original>
+        <English>Request crate</English>
+        <German>Kiste anfordern</German>
     </Key>
     <Key ID="STR_KPCF_DELETECRATE">
         <Original>Store crate</Original>
@@ -70,5 +60,26 @@
         <Original>Inventory</Original>
         <English>Inventory</English>
         <German>Inventar</German>
+    </Key>
+
+    <Key ID="STR_KPCF_TOOLTIPCRATE">
+        <Original>Select a crate that you want to spawn.</Original>
+        <English>Select a crate that you want to spawn.</English>
+        <German>Wähle eine Kiste aus, die gespawnt werden soll.</German>
+    </Key>
+    <Key ID="STR_KPCF_TOOLTIPINVENTORY">
+        <Original>Select an inventory that you want to edit.</Original>
+        <English>Select an inventory that you want to edit.</English>
+        <German>Wähle einen Laderaum aus, den du bearbeiten möchtest.</German>
+    </Key>
+    <Key ID="STR_KPCF_TOOLTIPCATEGORY">
+        <Original>Choose a category from which you want to stow items.</Original>
+        <English>Choose a category from which you want to stow items.</English>
+        <German>Wähle eine Kategorie aus, von der du Gegenstände verladen willst.</German>
+    </Key>
+    <Key ID="STR_KPCF_TOOLTIPMAGAZINES">
+        <Original>Choose a weapon to find the right magazines.</Original>
+        <English>Choose a weapon to find the right magazines.</English>
+        <German>Wähle eine Waffe um die passenden Magazine zu finden.</German>
     </Key>
 </Project>
