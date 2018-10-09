@@ -29,6 +29,7 @@ private _ctrlInventory = _dialog displayCtrl 75820;
 private _ctrlInventoryAmount = _dialog displayCtrl 75821;
 
 _ctrlWeapon ctrlShow false;
+KPCF_activeStorage = objNull;
 
 // Fill the controls
 {
