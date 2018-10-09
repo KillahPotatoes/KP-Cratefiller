@@ -33,12 +33,15 @@ lbClear _ctrlStorage;
         KPCF_near_storage pushBack _x;
     };
 } forEach (nearestObjects [getPos KPCF_cratefiller_spawn, [], KPCF_spawn_radius]);
-systemchat format ["%1", KPCF_near_storage];
+
 // Fill the list
 {
     private _y = typeOf _x;
     private _config = [_y] call KPCF_fnc_getConfigPath;
-    _ctrlStorage lbAdd (getText (configFile >> _config >> _y >> "displayName"));
+    _ctrlStorage lbAdd format ["%1m - %2", floor (KPCF_cratefiller_spawn distance2D KPCF_activeStorage), getText (configFile >> _config >> _y >> "displayName")];
 } forEach KPCF_near_storage;
+
+// Check if dialog is closed
+if (isNull _dialog) exitWith {};
 
 [{call KPCF_fnc_getNearStorages;}, [], 10] call CBA_fnc_waitAndExecute;
