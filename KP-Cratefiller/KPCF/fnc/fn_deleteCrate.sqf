@@ -18,7 +18,7 @@
 if (isNull KPCF_activeStorage) exitWith {};
 
 // Check if the active storage is a pre defined createTeam
-if (!(KPCF_activeStorage in KPCF_crates)) exitWith {};
+if (!((typeOf KPCF_activeStorage) in KPCF_crates)) exitWith {};
 
 deleteVehicle KPCF_activeStorage;
 
