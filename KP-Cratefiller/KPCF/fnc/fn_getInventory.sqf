@@ -27,7 +27,6 @@ private _ctrlInventoryAmount = _dialog displayCtrl 75821;
 if (isNull KPCF_activeStorage) exitWith {};
 
 KPCF_inventory = [];
-KPCF_inventoryAmount = [];
 
 private _item = getItemCargo KPCF_activeStorage;
 private _weapon = getWeaponCargo KPCF_activeStorage;
@@ -43,8 +42,7 @@ private _count = count (_cargo select 0);
 
 // Adapt the cargo into KPCF variable
 for "_i" from 0 to (_count-1) do {
-    KPCF_inventory pushBack ((_cargo select 0) select _i);
-    KPCF_inventoryAmount pushBack ((_cargo select 1) select _i);
+    KPCF_inventory pushBack [(_cargo select 0) select _i, (_cargo select 1) select _i];
 };
 
 call KPCF_fnc_showInventory;

@@ -31,7 +31,6 @@ private _ctrlInventoryAmount = _dialog displayCtrl 75821;
 // Check for inventory clear
 if (_amount == 0) exitWith {
     KPCF_inventory = [];
-    KPCF_inventoryAmount = [];
     call KPCF_fnc_setInventory;
 };
 
@@ -41,15 +40,14 @@ private _index = lbCurSel _ctrlInventory;
 if (_index == -1) exitWith {};
 
 // Item selection
-private _item = (KPCF_inventory select _index);
-private _inventoryIndex = KPCF_inventory find _item;
+private _item = ((KPCF_inventory select _index) select 0);
 
-private _modify = ((KPCF_inventoryAmount select _index) - _amount);
+private _modify = (((KPCF_inventory select _index) select 1) - _amount);
 
 if (_modify < 0) then {
     _modify = 0;
 };
 
-KPCF_inventoryAmount set [_index, _modify];
+(KPCF_inventory select _index) set [1, _modify];
 
 call KPCF_fnc_setInventory;

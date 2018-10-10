@@ -28,10 +28,7 @@ lbClear _ctrlInventory;
 lbClear _ctrlInventoryAmount;
 
 {
-    private _config = [_x] call KPCF_fnc_getConfigPath;
-    _ctrlInventory lbAdd (getText (configFile >> _config >> _x >> "displayName"));
+    private _config = [_x select 0] call KPCF_fnc_getConfigPath;
+    _ctrlInventory lbAdd (getText (configFile >> _config >> _x select 0 >> "displayName"));
+    _ctrlInventoryAmount lbAdd str (_x select 1);
 } forEach KPCF_inventory;
-
-{
-    _ctrlInventoryAmount lbAdd str _x;
-} forEach KPCF_inventoryAmount;

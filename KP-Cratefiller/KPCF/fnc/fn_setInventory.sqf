@@ -42,7 +42,7 @@ private _count = count KPCF_inventory;
 
 // Adapt the cargo into KPCF variable
 for "_i" from 0 to (_count-1) do {
-    KPCF_activeStorage addItemCargoGlobal [KPCF_inventory select _i, KPCF_inventoryAmount select _i];
+    KPCF_activeStorage addItemCargoGlobal [(KPCF_inventory select _i) select 0, (KPCF_inventory select _i) select 1];
 };
 
 call KPCF_fnc_getInventory;

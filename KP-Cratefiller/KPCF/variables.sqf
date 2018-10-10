@@ -13,4 +13,3 @@ KPCF_activeStorage = objNull;
 KPCF_activeCategory = [];
 
 KPCF_inventory = [];
-KPCF_inventoryAmount = [];
