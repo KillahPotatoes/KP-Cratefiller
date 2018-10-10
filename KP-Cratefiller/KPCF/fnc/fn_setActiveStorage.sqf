@@ -31,6 +31,6 @@ private _storageIndex = lbCurSel _ctrlStorage;
 if (_storageIndex == -1) exitWith {};
 
 // Define the active Storage
-KPCF_activeStorage = KPCF_near_storage select _storageIndex;
+KPCF_activeStorage = KPCF_nearStorage select _storageIndex;
 
 call KPCF_fnc_getInventory;

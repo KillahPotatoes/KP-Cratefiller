@@ -9,13 +9,13 @@
 */
 
 // Defines the cratefiller base
-KPCF_cratefiller_base = KPCF_base;
+KPCF_cratefillerBase = KPCF_base;
 
 // Defines the cratefiller spawn
-KPCF_cratefiller_spawn = KPCF_spawn;
+KPCF_cratefillerSpawn = KPCF_spawn;
 
 // Defines the radius of the spawn
-KPCF_spawn_radius = 10;
+KPCF_spawnRadius = 10;
 
 // Defines the available crates
 KPCF_crates = [
