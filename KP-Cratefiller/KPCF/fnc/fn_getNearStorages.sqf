@@ -29,17 +29,20 @@ KPCF_near_storage = [];
 lbClear _ctrlStorage;
 
 {
-    if (typeOf _x == "GroundWeaponHolder") exitWith {};
-    if (_x canAdd "Item_FirstAidKit") then {
+    private _type = typeOf _x;
+    if (_type == "GroundWeaponHolder") exitWith {};
+    private _config = [_type] call KPCF_fnc_getConfigPath;
+    private _number = getNumber (configfile >> _config >> _type >> "maximumLoad");
+    if (_number > 0) then {
         KPCF_near_storage pushBack _x;
     };
-} forEach (nearestObjects [getPos KPCF_cratefiller_spawn, [], KPCF_spawn_radius]);
+} forEach (KPCF_cratefiller_spawn nearObjects KPCF_spawn_radius);
 
 // Fill the list
 {
-    private _y = typeOf _x;
-    private _config = [_y] call KPCF_fnc_getConfigPath;
-    _ctrlStorage lbAdd format ["%1m - %2", floor (KPCF_cratefiller_spawn distance2D KPCF_activeStorage), getText (configFile >> _config >> _y >> "displayName")];
+    private _type = typeOf _x;
+    private _config = [_type] call KPCF_fnc_getConfigPath;
+    _ctrlStorage lbAdd format ["%1m - %2", round (KPCF_cratefiller_spawn distance2D _x), getText (configFile >> _config >> _type >> "displayName")];
 } forEach KPCF_near_storage;
 
 // Check if dialog is closed
