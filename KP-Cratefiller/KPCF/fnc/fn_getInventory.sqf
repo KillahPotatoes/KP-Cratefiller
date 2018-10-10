@@ -15,7 +15,10 @@
 */
 
 // Check for an active storage
-if (isNull KPCF_activeStorage) exitWith {};
+if (isNull KPCF_activeStorage) exitWith {
+    hint localize "STR_KPCF_HINTSELECTION";
+    [{hintSilent "";}, [], 3] call CBA_fnc_waitAndExecute;
+};
 
 // Reset variables
 KPCF_inventory = [];

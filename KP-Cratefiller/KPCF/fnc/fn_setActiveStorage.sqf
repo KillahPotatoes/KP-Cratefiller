@@ -22,7 +22,10 @@ private _ctrlStorage = _dialog displayCtrl 75802;
 private _storageIndex = lbCurSel _ctrlStorage;
 
 // Check for empty selection
-if (_storageIndex == -1) exitWith {};
+if (_storageIndex == -1) exitWith {
+    hint localize "STR_KPCF_HINTSELECTION";
+    [{hintSilent "";}, [], 3] call CBA_fnc_waitAndExecute;
+};
 
 // Define active Storage
 KPCF_activeStorage = KPCF_nearStorage select _storageIndex;

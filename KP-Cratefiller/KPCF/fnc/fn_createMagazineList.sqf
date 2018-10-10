@@ -29,7 +29,10 @@ KPCF_activeCategory = [];
 private _weaponIndex = lbCurSel _ctrlWeapon;
 
 // Check for empty selection
-if (_weaponIndex == -1) exitWith {};
+if (_weaponIndex == -1) exitWith {
+    hint localize "STR_KPCF_HINTSELECTION";
+    [{hintSilent "";}, [], 3] call CBA_fnc_waitAndExecute;
+};
 
 // Weapon selection
 private _weaponType = (KPCF_weapons select _weaponIndex);

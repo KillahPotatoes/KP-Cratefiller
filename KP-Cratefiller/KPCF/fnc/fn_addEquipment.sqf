@@ -26,7 +26,10 @@ private _ctrlEquipment = _dialog displayCtrl 75812;
 private _index = lbCurSel _ctrlEquipment;
 
 // Check for empty selection
-if (_index == -1) exitWith {};
+if (_index == -1) exitWith {
+    hint localize "STR_KPCF_HINTSELECTION";
+    [{hintSilent "";}, [], 3] call CBA_fnc_waitAndExecute;
+};
 
 // Item selection
 private _item = (KPCF_activeCategory select _index);
@@ -35,3 +38,8 @@ private _item = (KPCF_activeCategory select _index);
 KPCF_activeStorage addItemCargoGlobal [_item, _amount];
 
 call KPCF_fnc_getInventory;
+
+private _config = [_item] call KPCF_fnc_getConfigPath;
+private _name = (getText (configFile >> _config >> _item >> "displayName"));
+hint format [localize "STR_KPCF_HINTADDED", _name, _amount];
+[{hintSilent "";}, [], 3] call CBA_fnc_waitAndExecute;

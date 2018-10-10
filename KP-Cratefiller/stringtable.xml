@@ -12,8 +12,8 @@
         <German>KP Kistenfüller</German>
     </Key>
     <Key ID="STR_KPCF_TITLETRANSPORT">
-        <Original>Transport Medium</Original>
-        <English>Transport Medium</English>
+        <Original>Transport medium</Original>
+        <English>Transport medium</English>
         <German>Transportmedium</German>
     </Key>
     <Key ID="STR_KPCF_SPAWNCRATE">
@@ -81,5 +81,45 @@
         <Original>Choose a weapon to find the right magazines.</Original>
         <English>Choose a weapon to find the right magazines.</English>
         <German>Wähle eine Waffe um die passenden Magazine zu finden.</German>
+    </Key>
+    <Key ID="STR_KPCF_HINTSELECTION">
+        <Original>Incomplete selection!</Original>
+        <English>Incomplete selection!</English>
+        <German>Unvollständige Auswahl!</German>
+    </Key>
+    <Key ID="STR_KPCF_HINTADDED">
+        <Original>%1 was loaded %2 times!</Original>
+        <English>%1 was loaded %2 times!</English>
+        <German>%1 wurde %2 mal geladen!</German>
+    </Key>
+    <Key ID="STR_KPCF_HINTNONDELETEABLE">
+        <Original>Selected transport medium can't be stored!</Original>
+        <English>Selected transport medium can't be stored!</English>
+        <German>Ausgewähltes Transportmedium kann nicht eingelagert werden!</German>
+    </Key>
+    <Key ID="STR_KPCF_HINTDELETE">
+        <Original>%1 was stored!</Original>
+        <English>%1 was stored!</English>
+        <German>%1 wurde eingelagert!</German>
+    </Key>
+    <Key ID="STR_KPCF_HINTCLEARFULL">
+        <Original>Selected storage is emptied!</Original>
+        <English>Selected storage is emptied!</English>
+        <German>Ausgewählter Laderaum wurde geleert!</German>
+    </Key>
+    <Key ID="STR_KPCF_HINTCLEAR">
+        <Original>%1 was unloaded %2 times!</Original>
+        <English>%1 was unloaded %2 times!</English>
+        <German>%1 wurde %2 mal entladen!</German>
+    </Key>
+    <Key ID="STR_KPCF_HINTZONE">
+        <Original>The loading zone is busy!</Original>
+        <English>The loading zone is busy!</English>
+        <German>Die Ladezone ist besetzt!</German>
+    </Key>
+    <Key ID="STR_KPCF_HINTSPAWN">
+        <Original>%1 was provided!</Original>
+        <English>%1 was provided!</English>
+        <German>%1 wurde bereitgestellt!</German>
     </Key>
 </Project>

@@ -26,13 +26,18 @@ private _ctrlInventory = _dialog displayCtrl 75820;
 if (_amount == 0) exitWith {
     KPCF_inventory = [];
     call KPCF_fnc_setInventory;
+    hint localize "STR_KPCF_HINTCLEARFULL";
+    [{hintSilent "";}, [], 3] call CBA_fnc_waitAndExecute;
 };
 
 // Read controls
 private _index = lbCurSel _ctrlInventory;
 
 // Check for empty selection
-if (_index == -1) exitWith {};
+if (_index == -1) exitWith {
+    hint localize "STR_KPCF_HINTSELECTION";
+    [{hintSilent "";}, [], 3] call CBA_fnc_waitAndExecute;
+};
 
 // Item selection
 private _item = ((KPCF_inventory select _index) select 0);
@@ -49,3 +54,8 @@ if (_modify < 0) then {
 (KPCF_inventory select _index) set [1, _modify];
 
 call KPCF_fnc_setInventory;
+
+private _config = [_item] call KPCF_fnc_getConfigPath;
+private _name = (getText (configFile >> _config >> _item >> "displayName"));
+hint format [localize "STR_KPCF_HINTCLEAR", _name, _amount];
+[{hintSilent "";}, [], 3] call CBA_fnc_waitAndExecute;

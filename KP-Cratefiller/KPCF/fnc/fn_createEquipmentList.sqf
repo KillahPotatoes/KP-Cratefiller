@@ -34,7 +34,10 @@ _ctrlWeapon ctrlShow false;
 private _catIndex = lbCurSel _ctrlCat;
 
 // Check for empty selection
-if (_catIndex == -1) exitWith {};
+if (_catIndex == -1) exitWith {
+    hint localize "STR_KPCF_HINTSELECTION";
+    [{hintSilent "";}, [], 3] call CBA_fnc_waitAndExecute;
+};
 
 // Weapons
 if (_catIndex == 0) then {
