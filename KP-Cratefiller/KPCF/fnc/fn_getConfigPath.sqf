@@ -18,6 +18,7 @@ params [
     "_item"
 ];
 
+// find configclass
 switch true do
 {
     case (isClass(configFile >> "CfgMagazines" >> _item)): {"CfgMagazines"};

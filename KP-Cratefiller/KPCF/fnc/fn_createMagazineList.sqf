@@ -16,19 +16,16 @@
 
 // Dialog controls
 private _dialog = findDisplay 758067;
-private _ctrlCrate = _dialog displayCtrl 75801;
-private _ctrlStorage = _dialog displayCtrl 75802;
-private _ctrlCat = _dialog displayCtrl 75810;
 private _ctrlWeapon = _dialog displayCtrl 75811;
 private _ctrlEquipment = _dialog displayCtrl 75812;
-private _ctrlInventory = _dialog displayCtrl 75820;
-private _ctrlInventoryAmount = _dialog displayCtrl 75821;
 
 // Clear the lists
 lbClear _ctrlEquipment;
+
+// Reset variables
 KPCF_activeCategory = [];
 
-// Read the combobox
+// Read controls
 private _weaponIndex = lbCurSel _ctrlWeapon;
 
 // Check for empty selection
@@ -42,7 +39,7 @@ private _config = [_weaponType] call KPCF_fnc_getConfigPath;
 KPCF_tempMagazines = getArray (configFile >> _config >> _weaponType >> "magazines");
 KPCF_activeCategory = KPCF_tempMagazines;
 
-// Fill the list
+// Fill controls
 {
     private _config = [_x] call KPCF_fnc_getConfigPath;
     _ctrlEquipment lbAdd (getText (configFile >> _config >> _x >> "displayName"));

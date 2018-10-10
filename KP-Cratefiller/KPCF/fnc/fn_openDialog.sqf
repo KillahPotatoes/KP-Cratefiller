@@ -14,21 +14,20 @@
     NONE
 */
 
-// Create cratefiller dialog
+// Create dialog
 createDialog "KPCF_dialog";
 disableSerialization;
 
 // Dialog controls
 private _dialog = findDisplay 758067;
 private _ctrlCrate = _dialog displayCtrl 75801;
-private _ctrlStorage = _dialog displayCtrl 75802;
 private _ctrlCat = _dialog displayCtrl 75810;
 private _ctrlWeapon = _dialog displayCtrl 75811;
-private _ctrlEquipment = _dialog displayCtrl 75812;
-private _ctrlInventory = _dialog displayCtrl 75820;
-private _ctrlInventoryAmount = _dialog displayCtrl 75821;
 
+// Hide controls
 _ctrlWeapon ctrlShow false;
+
+// Reset variables
 KPCF_activeStorage = objNull;
 
 // Fill the controls

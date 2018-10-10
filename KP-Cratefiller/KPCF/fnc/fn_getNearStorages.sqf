@@ -16,18 +16,15 @@
 
 // Dialog controls
 private _dialog = findDisplay 758067;
-private _ctrlCrate = _dialog displayCtrl 75801;
 private _ctrlStorage = _dialog displayCtrl 75802;
-private _ctrlCat = _dialog displayCtrl 75810;
-private _ctrlWeapon = _dialog displayCtrl 75811;
-private _ctrlEquipment = _dialog displayCtrl 75812;
-private _ctrlInventory = _dialog displayCtrl 75820;
-private _ctrlInventoryAmount = _dialog displayCtrl 75821;
 
-KPCF_nearStorage = [];
-
+// Clear the lists
 lbClear _ctrlStorage;
 
+// Reset variables
+KPCF_nearStorage = [];
+
+// Get near objects and check for storage capacity
 {
     private _type = typeOf _x;
     if (_type == "GroundWeaponHolder") exitWith {};

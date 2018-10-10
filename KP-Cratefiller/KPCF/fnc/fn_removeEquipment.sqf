@@ -20,13 +20,7 @@ params [
 
 // Dialog controls
 private _dialog = findDisplay 758067;
-private _ctrlCrate = _dialog displayCtrl 75801;
-private _ctrlStorage = _dialog displayCtrl 75802;
-private _ctrlCat = _dialog displayCtrl 75810;
-private _ctrlWeapon = _dialog displayCtrl 75811;
-private _ctrlEquipment = _dialog displayCtrl 75812;
 private _ctrlInventory = _dialog displayCtrl 75820;
-private _ctrlInventoryAmount = _dialog displayCtrl 75821;
 
 // Check for inventory clear
 if (_amount == 0) exitWith {
@@ -34,6 +28,7 @@ if (_amount == 0) exitWith {
     call KPCF_fnc_setInventory;
 };
 
+// Read controls
 private _index = lbCurSel _ctrlInventory;
 
 // Check for empty selection
@@ -42,12 +37,15 @@ if (_index == -1) exitWith {};
 // Item selection
 private _item = ((KPCF_inventory select _index) select 0);
 
+// New item amount
 private _modify = (((KPCF_inventory select _index) select 1) - _amount);
 
+// Check if the amount is negative
 if (_modify < 0) then {
     _modify = 0;
 };
 
+// Modify array
 (KPCF_inventory select _index) set [1, _modify];
 
 call KPCF_fnc_setInventory;

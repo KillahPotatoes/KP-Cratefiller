@@ -17,13 +17,8 @@
 // Dialog controls
 private _dialog = findDisplay 758067;
 private _ctrlCrate = _dialog displayCtrl 75801;
-private _ctrlStorage = _dialog displayCtrl 75802;
-private _ctrlCat = _dialog displayCtrl 75810;
-private _ctrlWeapon = _dialog displayCtrl 75811;
-private _ctrlEquipment = _dialog displayCtrl 75812;
-private _ctrlInventory = _dialog displayCtrl 75820;
 
-// Read the combobox
+// Read the controls
 private _crateIndex = lbCurSel _ctrlCrate;
 
 // Check for empty selection
@@ -32,12 +27,13 @@ if (_crateIndex == -1) exitWith {};
 // Crate selection
 private _crateType = (KPCF_crates select _crateIndex);
 
-// Check the spawnpoint
+// Check if spawnpoint is clear
 if (!(((getPos KPCF_cratefillerSpawn) nearEntities 5) isEqualTo [])) exitWith {};
 
-// Crate spawn
+// Spawn crate
 private _crate = createVehicle [_crateType, (getPos KPCF_cratefillerSpawn), [], 0, "NONE"];
 
+// Clear the storage
 clearWeaponCargoGlobal _crate;
 clearMagazineCargoGlobal _crate;
 clearItemCargoGlobal _crate;

@@ -14,16 +14,6 @@
     NONE
 */
 
-// Dialog controls
-private _dialog = findDisplay 758067;
-private _ctrlCrate = _dialog displayCtrl 75801;
-private _ctrlStorage = _dialog displayCtrl 75802;
-private _ctrlCat = _dialog displayCtrl 75810;
-private _ctrlWeapon = _dialog displayCtrl 75811;
-private _ctrlEquipment = _dialog displayCtrl 75812;
-private _ctrlInventory = _dialog displayCtrl 75820;
-private _ctrlInventoryAmount = _dialog displayCtrl 75821;
-
 // Check if the storage will be empty
 if (count KPCF_inventory == 0) exitWith {
     clearWeaponCargoGlobal KPCF_activeStorage;
@@ -33,11 +23,13 @@ if (count KPCF_inventory == 0) exitWith {
     call KPCF_fnc_getInventory;
 };
 
+// Clear the storage
 clearWeaponCargoGlobal KPCF_activeStorage;
 clearMagazineCargoGlobal KPCF_activeStorage;
 clearItemCargoGlobal KPCF_activeStorage;
 clearBackpackCargoGlobal KPCF_activeStorage;
 
+// Count the variable index
 private _count = count KPCF_inventory;
 
 // Adapt the cargo into KPCF variable

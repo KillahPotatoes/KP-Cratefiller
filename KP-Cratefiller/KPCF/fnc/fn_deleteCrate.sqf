@@ -17,9 +17,10 @@
 // Check for empty variable
 if (isNull KPCF_activeStorage) exitWith {};
 
-// Check if the active storage is a pre defined createTeam
+// Check if the active storage is a pre defined crate
 if (!((typeOf KPCF_activeStorage) in KPCF_crates)) exitWith {};
 
+// Delete crate
 deleteVehicle KPCF_activeStorage;
 
 call KPCF_fnc_getInventory;

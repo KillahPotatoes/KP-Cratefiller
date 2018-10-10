@@ -14,30 +14,23 @@
     NONE
 */
 
-// Dialog controls
-private _dialog = findDisplay 758067;
-private _ctrlCrate = _dialog displayCtrl 75801;
-private _ctrlStorage = _dialog displayCtrl 75802;
-private _ctrlCat = _dialog displayCtrl 75810;
-private _ctrlWeapon = _dialog displayCtrl 75811;
-private _ctrlEquipment = _dialog displayCtrl 75812;
-private _ctrlInventory = _dialog displayCtrl 75820;
-private _ctrlInventoryAmount = _dialog displayCtrl 75821;
-
+// Check for an active storage
 if (isNull KPCF_activeStorage) exitWith {};
 
+// Reset variables
 KPCF_inventory = [];
 
+// Get all cargo
 private _item = getItemCargo KPCF_activeStorage;
 private _weapon = getWeaponCargo KPCF_activeStorage;
 private _magazine = getMagazineCargo KPCF_activeStorage;
-
 private _cargo = _item;
 (_cargo select 0) append (_weapon select 0);
 (_cargo select 1) append (_weapon select 1);
 (_cargo select 0) append (_magazine select 0);
 (_cargo select 1) append (_magazine select 1);
 
+// Count the variable index
 private _count = count (_cargo select 0);
 
 // Adapt the cargo into KPCF variable
