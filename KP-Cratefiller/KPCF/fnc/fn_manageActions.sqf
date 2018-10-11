@@ -15,4 +15,4 @@
 */
 
 // Add the action
-KPCF_cratefillerBase addAction ["<t color='#FF8000'>" + localize "STR_KPCF_ACTIONOPEN" + "</t>", {[] call KPCF_fnc_openDialog;}, nil, 1, false, true, "", "true", 5];
+KPCF_cratefillerBase addAction ["<t color='#FF8000'>" + localize "STR_KPCF_ACTIONOPEN" + "</t>", {[] call KPCF_fnc_openDialog;}, nil, 1, false, true, "", "true", KPCF_interactRadius];

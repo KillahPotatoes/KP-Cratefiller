@@ -17,6 +17,9 @@ KPCF_cratefillerSpawn = KPCF_spawn;
 // Defines the radius of the spawn
 KPCF_spawnRadius = 10;
 
+// Defines the distance for the interaction (addAction / ACE)
+KPCF_interactRadius = 5;
+
 // Defines the available crates
 KPCF_crates = [
     "B_supplyCrate_F",

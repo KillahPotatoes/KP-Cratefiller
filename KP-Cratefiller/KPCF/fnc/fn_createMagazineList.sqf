@@ -39,11 +39,11 @@ private _weaponType = (KPCF_weapons select _weaponIndex);
 
 // Get compatible magazines
 private _config = [_weaponType] call KPCF_fnc_getConfigPath;
-KPCF_tempMagazines = getArray (configFile >> _config >> _weaponType >> "magazines");
-KPCF_activeCategory = KPCF_tempMagazines;
+private _tempMagazines = getArray (configFile >> _config >> _weaponType >> "magazines");
+KPCF_activeCategory = _tempMagazines;
 
 // Fill controls
 {
     private _config = [_x] call KPCF_fnc_getConfigPath;
     _ctrlEquipment lbAdd (getText (configFile >> _config >> _x >> "displayName"));
-} forEach KPCF_tempMagazines;
+} forEach _tempMagazines;
