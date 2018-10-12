@@ -34,6 +34,12 @@ if (_index == -1) exitWith {
 // Item selection
 private _item = (KPCF_activeCategory select _index);
 
+// Check for enough inventory capacity
+if (!(KPCF_activeStorage canAdd _item)) exitWith {
+    hint format [localize "STR_KPCF_HINTFULL"];
+    [{hintSilent "";}, [], 3] call CBA_fnc_waitAndExecute;
+};
+
 // Add the given item
 KPCF_activeStorage addItemCargoGlobal [_item, _amount];
 

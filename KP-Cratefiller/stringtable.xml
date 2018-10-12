@@ -122,4 +122,9 @@
         <English>%1 was provided!</English>
         <German>%1 wurde bereitgestellt!</German>
     </Key>
+    <Key ID="STR_KPCF_HINTFULL">
+        <Original>The selected storage is full!</Original>
+        <English>The selected storage is full!</English>
+        <German>Der ausgewählte Laderaum ist voll!</German>
+    </Key>
 </Project>
