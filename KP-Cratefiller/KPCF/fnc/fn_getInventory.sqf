@@ -14,6 +14,15 @@
     NONE
 */
 
+// Dialog controls
+private _dialog = findDisplay 758067;
+
+// Check if script runs on server
+if (!hasInterface) exitWith {};
+
+// Check if dialog is open
+if (isNull _dialog) exitWith {};
+
 // Check for an active storage
 if (isNull KPCF_activeStorage) exitWith {
     hint localize "STR_KPCF_HINTSELECTION";

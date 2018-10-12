@@ -37,7 +37,7 @@ private _item = (KPCF_activeCategory select _index);
 // Add the given item
 KPCF_activeStorage addItemCargoGlobal [_item, _amount];
 
-call KPCF_fnc_getInventory;
+remoteExecCall ["KPCF_fnc_getInventory"];
 
 private _config = [_item] call KPCF_fnc_getConfigPath;
 private _name = (getText (configFile >> _config >> _item >> "displayName"));
