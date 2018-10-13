@@ -65,7 +65,6 @@ For Support join the Killah Potatoes discord and move in the `#kp-mods`channel.
 
 * Automatic generated item lists with blacklist
 * More equipment categorys
-* Indicator of the present fill level
 * Export and import function for created inventories
 
 ## Licence
