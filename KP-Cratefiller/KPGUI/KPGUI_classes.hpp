@@ -571,6 +571,16 @@ class KPGUI_PRE_EditBox {
     canModify = 1;
 };
 
+// Progress bar
+class KPGUI_PRE_ProgressBar
+{
+    type = 8;
+    style = 0;
+    colorFrame[] = {0,0,0,0};
+    colorBar[] = KP_COLOR_PLAYERDEFINE;
+    texture = "";
+};
+
 // MapControl
 class KPGUI_PRE_MapControl {
     deletable = 0;

@@ -20,7 +20,7 @@ params [
 
 // Dialog controls
 private _dialog = findDisplay 758067;
-private _ctrlInventory = _dialog displayCtrl 75820;
+private _ctrlInventory = _dialog displayCtrl 75822;
 
 // Check for inventory clear
 if (_amount == 0) exitWith {
