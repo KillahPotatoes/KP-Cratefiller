@@ -37,10 +37,7 @@ private _type = "";
 private _config = "";
 private _itemMass = 0;
 
-// Count the variable index
-private _count = count KPCF_inventory;
-
-// Adapt the cargo into KPCF variable
+// Get the mass of each item
 {
     _type = (_x select 0);
     _config = [_type] call KPCF_fnc_getConfigPath;
