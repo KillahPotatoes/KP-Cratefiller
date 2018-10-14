@@ -16,6 +16,7 @@ You can spawn and delete defined crates, fill these crates and also other object
 ## Features
 
 * Clear designed dialog
+* detection of cratefiller objects via classname
 * Own config file for several things (base and spawn object, working radius, crates and available items)
 * Spawn and delete defined crates
 * Generated selection of magazines for a pre selected weapon
