@@ -31,13 +31,13 @@ if (_crateIndex == -1) exitWith {
 private _crateType = (KPCF_crates select _crateIndex);
 
 // Check if spawnpoint is clear
-if (!(((getPos KPCF_cratefillerSpawn) nearEntities 5) isEqualTo [])) exitWith {
+if (!(((getPos KPCF_activeSpawn) nearEntities 5) isEqualTo [])) exitWith {
     hint localize "STR_KPCF_HINTZONE";
     [{hintSilent "";}, [], 3] call CBA_fnc_waitAndExecute;
 };
 
 // Spawn crate
-private _crate = createVehicle [_crateType, (getPos KPCF_cratefillerSpawn), [], 0, "NONE"];
+private _crate = createVehicle [_crateType, (getPos KPCF_activeSpawn), [], 0, "NONE"];
 
 // Clear the storage
 clearWeaponCargoGlobal _crate;

@@ -8,11 +8,22 @@
     Opens the cratefiller dialog.
 
     Parameter(s):
-    NONE
+    0 : ARRAY - gets all data from the used base object
 
     Returns:
     NONE
 */
+
+params ["_data"];
+
+KPCF_activeBase = _data select 0;
+
+KPCF_activeSpawn = nearestObject [getPos KPCF_activeBase, KPCF_cratefillerSpawn];
+
+if (isNull KPCF_activeSpawn) exitWith {
+    hint localize "STR_KPCF_NOSPAWN";
+    [{hintSilent "";}, [], 3] call CBA_fnc_waitAndExecute;
+};
 
 // Create dialog
 createDialog "KPCF_dialog";

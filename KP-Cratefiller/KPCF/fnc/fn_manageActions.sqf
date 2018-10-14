@@ -14,5 +14,20 @@
     NONE
 */
 
+private _foundBase = [];
+
+{
+    _foundBase append ((getPos player) nearObjects [_x, 500]);
+} forEach KPCF_cratefillerBase;
+
+systemchat format ["%1", _foundBase];
+
 // Add the action
-KPCF_cratefillerBase addAction ["<t color='#FF8000'>" + localize "STR_KPCF_ACTIONOPEN" + "</t>", {[] call KPCF_fnc_openDialog;}, nil, 1, false, true, "", "true", KPCF_interactRadius];
+{
+    if (!(_x in KPCF_usedBase)) then {
+        _x addAction ["<t color='#FF8000'>" + localize "STR_KPCF_ACTIONOPEN" + "</t>", {[_this] call KPCF_fnc_openDialog;}, nil, 1, false, true, "", "true", KPCF_interactRadius];
+        KPCF_usedBase pushBack _x;
+    };
+} forEach _foundBase;
+
+[{call KPCF_fnc_manageActions;}, [], 30] call CBA_fnc_waitAndExecute;

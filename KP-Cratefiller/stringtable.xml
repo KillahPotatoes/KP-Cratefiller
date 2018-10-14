@@ -127,4 +127,9 @@
         <English>The selected storage is full!</English>
         <German>Der ausgewählte Laderaum ist voll!</German>
     </Key>
+    <Key ID="STR_KPCF_NOSPAWN">
+        <Original>No loading zone available!</Original>
+        <English>No loading zone available!</English>
+        <German>Keine Ladezone vorhanden!</German>
+    </Key>
 </Project>

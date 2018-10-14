@@ -33,13 +33,13 @@ KPCF_nearStorage = [];
     if (_number > 0) then {
         KPCF_nearStorage pushBack _x;
     };
-} forEach (KPCF_cratefillerSpawn nearObjects KPCF_spawnRadius);
+} forEach (KPCF_activeSpawn nearObjects KPCF_spawnRadius);
 
 // Fill the list
 {
     private _type = typeOf _x;
     private _config = [_type] call KPCF_fnc_getConfigPath;
-    _ctrlStorage lbAdd format ["%1m - %2", round (KPCF_cratefillerSpawn distance2D _x), getText (configFile >> _config >> _type >> "displayName")];
+    _ctrlStorage lbAdd format ["%1m - %2", round (KPCF_activeSpawn distance2D _x), getText (configFile >> _config >> _type >> "displayName")];
 } forEach KPCF_nearStorage;
 
 // Check if dialog is closed

@@ -9,10 +9,12 @@
 */
 
 // Defines the cratefiller base
-KPCF_cratefillerBase = KPCF_base;
+KPCF_cratefillerBase = [
+    "Land_Cargo10_military_green_F"
+];
 
 // Defines the cratefiller spawn
-KPCF_cratefillerSpawn = KPCF_spawn;
+KPCF_cratefillerSpawn = "Land_HelipadCivil_F";
 
 // Defines the radius of the spawn
 KPCF_spawnRadius = 10;

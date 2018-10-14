@@ -17,3 +17,11 @@ KPCF_activeStorage = objNull;
 KPCF_inventory = [];
 
 KPCF_nearStorage = [];
+
+KPCF_usedBase = [];
+
+KPCF_usedSpawn = [];
+
+KPCF_activeBase = "";
+
+KPCF_activeSpawn = "";
