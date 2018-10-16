@@ -142,7 +142,7 @@ class KPCF_dialog {
         };
 
         // Inventory
-
+/*
         class KP_ExportName: KPGUI_PRE_EditBox {
             idc = 75820;
             x = KP_GETCX(KP_X_VAL_S,KP_WIDTH_VAL_S,2,4);
@@ -173,7 +173,7 @@ class KPCF_dialog {
             x = KP_GETCX(KP_X_VAL_S,KP_WIDTH_VAL_S,3,4);
             onButtonClick = "";
         };
-
+*/
         class KP_InventoryList: KPGUI_PRE_ListBox {
             idc = 75822;
             x = KP_GETCX(KP_X_VAL_S,KP_WIDTH_VAL_S,9,16);
