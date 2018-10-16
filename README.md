@@ -25,7 +25,7 @@ You can spawn and delete defined crates, fill these crates and also other object
 
 ## Languages
 
-Currently the mod is localized for:
+Currently the module is localized for:
 * English
 * German
 
