@@ -48,7 +48,6 @@ private _itemMass = 0;
         };
     } else {
         _itemMass = getNumber (configFile >> _config >> _type >> "mass");
-        systemChat format ["%1", _itemMass];
     };
     _load = _load + (_itemMass * (_x select 1));
 } forEach KPCF_inventory;
