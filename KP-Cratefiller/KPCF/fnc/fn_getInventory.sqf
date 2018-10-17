@@ -25,8 +25,8 @@ if (isNull _dialog) exitWith {};
 
 // Check for an active storage
 if (isNull KPCF_activeStorage) exitWith {
-    hint localize "STR_KPCF_HINTSELECTION";
-    [{hintSilent "";}, [], 3] call CBA_fnc_waitAndExecute;
+    KPCF_inventory = [];
+    call KPCF_fnc_showInventory;
 };
 
 // Reset variables
