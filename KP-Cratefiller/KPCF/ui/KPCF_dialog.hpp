@@ -176,17 +176,9 @@ class KPCF_dialog {
 */
         class KP_InventoryList: KPGUI_PRE_ListBox {
             idc = 75822;
-            x = KP_GETCX(KP_X_VAL_S,KP_WIDTH_VAL_S,9,16);
+            x = KP_GETCX(KP_X_VAL_S,KP_WIDTH_VAL_S,8,16);
             y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,14,48);
-            w = KP_GETW(KP_WIDTH_VAL_S,(16/6));
-            h = KP_GETH(KP_HEIGHT_VAL_S,(48/32));
-        };
-
-        class KP_InventoryAmount: KP_InventoryList {
-            idc = 75823;
-            x = KP_GETCX(KP_X_VAL_S,KP_WIDTH_VAL_S,1,2);
-            y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,14,48);
-            w = KP_GETW(KP_WIDTH_VAL_S,16);
+            w = KP_GETW(KP_WIDTH_VAL_S,(16/7));
             h = KP_GETH(KP_HEIGHT_VAL_S,(48/32));
         };
 
@@ -218,7 +210,7 @@ class KPCF_dialog {
         };
 
         class KP_ProgressBar : KPGUI_PRE_ProgressBar {
-            idc = 75824;
+            idc = 75823;
             x = KP_GETCX(KP_X_VAL_S,KP_WIDTH_VAL_S,0,1);
             y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,46,48);
             w = KP_GETW(KP_WIDTH_VAL_S,1);
