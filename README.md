@@ -66,7 +66,10 @@ For Support join the Killah Potatoes discord and move in the `#kp-mods`channel.
 
 * Automatic generated item lists with blacklist
 * More equipment categorys
+* Alphabetical sorting of the lists
 * Export and import function for created inventories
+* ACE3 interaction support
+* Various code optimizations
 
 ## Licence
 Copyright (C) 2018 [Dubjunk](https://github.com/Dubjunk)
