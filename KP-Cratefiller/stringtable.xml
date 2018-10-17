@@ -132,4 +132,9 @@
         <English>No loading zone available!</English>
         <German>Keine Ladezone vorhanden!</German>
     </Key>
+    <Key ID="STR_KPCF_FILLLEVEL">
+        <Original>Shows the current cargo space!</Original>
+        <English>Shows the current cargo space!</English>
+        <German>Zeigt den aktuellen Laderaum stand!</German>
+    </Key>
 </Project>
