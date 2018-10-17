@@ -23,6 +23,10 @@ KPCF_spawnRadius = 10;
 // Defines the distance for the interaction (addAction / ACE)
 KPCF_interactRadius = 5;
 
+// Defines the distance in which the loop searches for placed interaction (base) objects
+// A lower value will be more performant
+KPCF_checkDistance = 200;
+
 // Defines the available crates
 KPCF_crates = [
     "B_supplyCrate_F",
