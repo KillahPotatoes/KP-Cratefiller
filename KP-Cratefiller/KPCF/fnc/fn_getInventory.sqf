@@ -17,9 +17,6 @@
 // Dialog controls
 private _dialog = findDisplay 758067;
 
-// Check if script runs on server
-if (!hasInterface) exitWith {};
-
 // Check if dialog is open
 if (isNull _dialog) exitWith {};
 

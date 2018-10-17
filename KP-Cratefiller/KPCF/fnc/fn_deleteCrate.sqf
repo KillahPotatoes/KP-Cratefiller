@@ -29,7 +29,9 @@ if (!((typeOf KPCF_activeStorage) in KPCF_crates)) exitWith {
 // Delete crate
 deleteVehicle KPCF_activeStorage;
 
-remoteExecCall ["KPCF_fnc_getInventory"];
+KPCF_activeStorage = objNull;
+
+remoteExecCall ["KPCF_fnc_getInventory", -2];
 
 private _config = [typeOf KPCF_activeStorage] call KPCF_fnc_getConfigPath;
 private _name = (getText (configFile >> _config >> typeOf KPCF_activeStorage >> "displayName"));
