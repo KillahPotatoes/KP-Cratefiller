@@ -2,6 +2,7 @@
     "sqf.enableCBA": true,
     "sqf.enableACE3": true,
     "sqflint.ignoredVariables": [
-
+        "ace_interact_menu_fnc_createAction",
+        "ace_interact_menu_fnc_addActionToObject"
     ]
 }

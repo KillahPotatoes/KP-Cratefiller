@@ -37,7 +37,7 @@ private _ctrlDelete = _dialog displayCtrl 75804;
 private _ctrlCat = _dialog displayCtrl 75810;
 private _ctrlWeapon = _dialog displayCtrl 75811;
 
-private "_config";
+private ["_config"];
 
 if (!KPCF_canSpawnAndDelete) then {
     _ctrlCrate ctrlShow false;

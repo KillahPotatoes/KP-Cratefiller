@@ -39,7 +39,7 @@ if (_catIndex == -1) exitWith {
     [{hintSilent "";}, [], 3] call CBA_fnc_waitAndExecute;
 };
 
-private "_config";
+private ["_config"];
 
 // Weapons
 if (_catIndex == 0) then {

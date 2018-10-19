@@ -8,7 +8,7 @@
     Removes the given amount of the selected item in the crate.
 
     Parameter(s):
-    0 : SCALAR - Amount of the removed item.
+    0 : NUMBER - Amount of the removed item.
 
     Returns:
     NONE

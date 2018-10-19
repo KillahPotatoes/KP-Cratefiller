@@ -16,18 +16,17 @@
 
 private _foundBase = [];
 
-if (KPCF_ace) exitWith {
-    [] call KPCF_fnc_manageAceActions;
-};
-
 {
     _foundBase append ((getPos player) nearObjects [_x, KPCF_checkDistance]);
 } forEach KPCF_cratefillerBase;
 
+private ["_action"];
+
 // Add the action
 {
     if (!(_x in KPCF_usedBase)) then {
-        _x addAction ["<t color='#FF8000'>" + localize "STR_KPCF_ACTIONOPEN" + "</t>", {[_this] call KPCF_fnc_openDialog;}, nil, 1, false, true, "", "true", KPCF_interactRadius];
+        _action = ["KPCF", localize "STR_KPCF_TITLE", "kplogo_ca.paa", {[_this] call KPCF_fnc_openDialog;}, {true}] call ace_interact_menu_fnc_createAction;
+        [_x, 0, ["ACE_MainActions"], _action] call ace_interact_menu_fnc_addActionToObject;
         KPCF_usedBase pushBack _x;
     };
 } forEach _foundBase;

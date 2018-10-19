@@ -41,6 +41,9 @@ class KPCF {
         // Manages the actions
         class manageActions {};
 
+        // Manages the ACE actions
+        class manageAceActions {};
+
         // Open the dialog
         class openDialog {};
 
