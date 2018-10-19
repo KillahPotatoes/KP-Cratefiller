@@ -51,8 +51,6 @@ class KPCF_dialog {
 
     class controls {
 
-        class KP_DialogCross: KPGUI_PRE_DialogCrossS {};
-
         // Crates
 
         class KP_ComboCrate: KPGUI_PRE_Combo {
@@ -217,6 +215,8 @@ class KPCF_dialog {
             h = KP_GETH(KP_HEIGHT_VAL_S,24);
             tooltip = "$STR_KPCF_FILLLEVEL"
         };
+
+            class KP_DialogCross: KPGUI_PRE_DialogCrossS {};
 
     };
 };
