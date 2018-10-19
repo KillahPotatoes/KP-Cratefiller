@@ -17,16 +17,13 @@
 // Dialog controls
 private _dialog = findDisplay 758067;
 
-// Check if script runs on server
-if (!hasInterface) exitWith {};
-
 // Check if dialog is open
 if (isNull _dialog) exitWith {};
 
 // Check for an active storage
 if (isNull KPCF_activeStorage) exitWith {
-    hint localize "STR_KPCF_HINTSELECTION";
-    [{hintSilent "";}, [], 3] call CBA_fnc_waitAndExecute;
+    KPCF_inventory = [];
+    call KPCF_fnc_showInventory;
 };
 
 // Reset variables

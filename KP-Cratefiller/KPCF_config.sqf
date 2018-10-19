@@ -8,19 +8,24 @@
     Configuration file for various variables of the KP cratefiller.
 */
 
-// Defines the cratefiller base
+// The Base object is for the player interaction, so at these object you can open the dialog
 KPCF_cratefillerBase = [
     "Land_Cargo10_military_green_F"
 ];
 
-// Defines the cratefiller spawn
+// The Spawn object is the point where crates will spawn and acts the center for the KPCF_spawnRadius
 KPCF_cratefillerSpawn = "Land_HelipadCivil_F";
 
-// Defines the radius of the spawn
+// These variable defines the range where inventories can be edited
+// Example: With an setting of 10 all objects in a radius of 10m from the center of the spawn object can be edited
 KPCF_spawnRadius = 10;
 
 // Defines the distance for the interaction (addAction / ACE)
 KPCF_interactRadius = 5;
+
+// Defines the distance in which the loop searches for placed interaction (base) objects
+// A lower value will be more performant
+KPCF_checkDistance = 200;
 
 // Defines the available crates
 KPCF_crates = [

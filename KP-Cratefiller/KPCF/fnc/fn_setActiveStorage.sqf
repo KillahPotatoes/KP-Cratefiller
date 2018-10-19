@@ -30,4 +30,4 @@ if (_storageIndex == -1) exitWith {
 // Define active Storage
 KPCF_activeStorage = KPCF_nearStorage select _storageIndex;
 
-remoteExecCall ["KPCF_fnc_getInventory"];
+remoteExecCall ["KPCF_fnc_getInventory", -2];

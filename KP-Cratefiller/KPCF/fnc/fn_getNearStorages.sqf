@@ -33,7 +33,7 @@ KPCF_nearStorage = [];
     if (_number > 0) then {
         KPCF_nearStorage pushBack _x;
     };
-} forEach (KPCF_activeSpawn nearObjects KPCF_spawnRadius);
+} forEach ((KPCF_activeSpawn nearObjects KPCF_spawnRadius) select {!(typeOf _x in KPCF_cratefillerBase)});
 
 // Fill the list
 {

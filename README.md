@@ -7,7 +7,7 @@
 # KP Cratefiller
 
 ## Description
-![cfpreview](https://i.imgur.com/ysawNQ2.jpg)
+![cfpreview](https://i.imgur.com/zx96NAN.jpg)
 
 With this script you get a dialog with the ability to manage several inventories. It's created to make logistics easier and pleasant.
 
@@ -25,7 +25,7 @@ You can spawn and delete defined crates, fill these crates and also other object
 
 ## Languages
 
-Currently the mod is localized for:
+Currently the module is localized for:
 * English
 * German
 
@@ -66,7 +66,10 @@ For Support join the Killah Potatoes discord and move in the `#kp-mods`channel.
 
 * Automatic generated item lists with blacklist
 * More equipment categorys
+* Alphabetical sorting of the lists
 * Export and import function for created inventories
+* ACE3 interaction support
+* Various code optimizations
 
 ## Licence
 Copyright (C) 2018 [Dubjunk](https://github.com/Dubjunk)

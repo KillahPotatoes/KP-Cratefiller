@@ -17,18 +17,15 @@
 // Dialog controls
 private _dialog = findDisplay 758067;
 private _ctrlInventory = _dialog displayCtrl 75822;
-private _ctrlInventoryAmount = _dialog displayCtrl 75823;
-private _ctlrProgress = _dialog displayCtrl 75824;
+private _ctlrProgress = _dialog displayCtrl 75823;
 
 // Reset variables
 lbClear _ctrlInventory;
-lbClear _ctrlInventoryAmount;
 
 // Fill the controls
 {
     private _config = [_x select 0] call KPCF_fnc_getConfigPath;
-    _ctrlInventory lbAdd (getText (configFile >> _config >> _x select 0 >> "displayName"));
-    _ctrlInventoryAmount lbAdd str (_x select 1);
+    _ctrlInventory lbAdd (format ["%1x %2", str (_x select 1), (getText (configFile >> _config >> _x select 0 >> "displayName"))]);
 } forEach KPCF_inventory;
 
 // Maths for the progress bar
@@ -48,7 +45,6 @@ private _itemMass = 0;
         };
     } else {
         _itemMass = getNumber (configFile >> _config >> _type >> "mass");
-        systemChat format ["%1", _itemMass];
     };
     _load = _load + (_itemMass * (_x select 1));
 } forEach KPCF_inventory;

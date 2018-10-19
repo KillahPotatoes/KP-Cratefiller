@@ -17,10 +17,8 @@
 private _foundBase = [];
 
 {
-    _foundBase append ((getPos player) nearObjects [_x, 500]);
+    _foundBase append ((getPos player) nearObjects [_x, KPCF_checkDistance]);
 } forEach KPCF_cratefillerBase;
-
-systemchat format ["%1", _foundBase];
 
 // Add the action
 {
