@@ -43,7 +43,7 @@ if (!(KPCF_activeStorage canAdd [_item, _amount])) exitWith {
 // Add the given item
 KPCF_activeStorage addItemCargoGlobal [_item, _amount];
 
-remoteExecCall ["KPCF_fnc_getInventory", -2];
+remoteExecCall ["KPCF_fnc_getInventory", (allPlayers - entities "HeadlessClient_F")];
 
 private _config = [_item] call KPCF_fnc_getConfigPath;
 private _name = (getText (configFile >> _config >> _item >> "displayName"));
