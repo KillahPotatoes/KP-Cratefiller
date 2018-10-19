@@ -20,9 +20,9 @@ KPCF_activeBase = _data select 0;
 
 KPCF_activeSpawn = nearestObject [getPos KPCF_activeBase, KPCF_cratefillerSpawn];
 
-if (isNull KPCF_activeSpawn) exitWith {
+if (isNull KPCF_activeSpawn) then {
     hint localize "STR_KPCF_NOSPAWN";
-    [{hintSilent "";}, [], 3] call CBA_fnc_waitAndExecute;
+    KPCF_activeSpawn = KPCF_activeBase;
 };
 
 // Create dialog
