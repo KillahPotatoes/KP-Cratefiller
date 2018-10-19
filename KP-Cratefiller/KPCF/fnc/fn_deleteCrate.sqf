@@ -31,7 +31,7 @@ deleteVehicle KPCF_activeStorage;
 
 KPCF_activeStorage = objNull;
 
-remoteExecCall ["KPCF_fnc_getInventory", -2];
+remoteExecCall ["KPCF_fnc_getInventory", (allPlayers - entities "HeadlessClient_F")];
 
 private _config = [typeOf KPCF_activeStorage] call KPCF_fnc_getConfigPath;
 private _name = (getText (configFile >> _config >> typeOf KPCF_activeStorage >> "displayName"));
