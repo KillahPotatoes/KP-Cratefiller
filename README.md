@@ -7,7 +7,7 @@
 # KP Cratefiller
 
 ## Description
-![cfpreview](https://i.imgur.com/ysawNQ2.jpg)
+![cfpreview](https://i.imgur.com/zx96NAN.jpg)
 
 With this script you get a dialog with the ability to manage several inventories. It's created to make logistics easier and pleasant.
 
