@@ -16,6 +16,9 @@ KPCF_cratefillerBase = [
 // The Spawn object is the point where crates will spawn and acts the center for the KPCF_spawnRadius
 KPCF_cratefillerSpawn = "Land_HelipadCivil_F";
 
+// This variable defines if the player will be able to spawn and delete crates
+KPCF_canSpawnAndDelete = true;
+
 // These variable defines the range where inventories can be edited
 // Example: With an setting of 10 all objects in a radius of 10m from the center of the spawn object can be edited
 KPCF_spawnRadius = 10;

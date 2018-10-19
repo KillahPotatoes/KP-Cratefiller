@@ -32,20 +32,30 @@ disableSerialization;
 // Dialog controls
 private _dialog = findDisplay 758067;
 private _ctrlCrate = _dialog displayCtrl 75801;
+private _ctrlSpawn = _dialog displayCtrl 75803;
+private _ctrlDelete = _dialog displayCtrl 75804;
 private _ctrlCat = _dialog displayCtrl 75810;
 private _ctrlWeapon = _dialog displayCtrl 75811;
+
+private "_config";
+
+if (!KPCF_canSpawnAndDelete) then {
+    _ctrlCrate ctrlShow false;
+    _ctrlSpawn ctrlShow false;
+    _ctrlDelete ctrlShow false;
+} else {
+    // Fill the controls
+    {
+        _config = [_x] call KPCF_fnc_getConfigPath;
+        _ctrlCrate lbAdd (getText (configFile >> _config >> _x >> "displayName"));
+    } forEach KPCF_crates;
+};
 
 // Hide controls
 _ctrlWeapon ctrlShow false;
 
 // Reset variables
 KPCF_activeStorage = objNull;
-
-// Fill the controls
-{
-    _config = [_x] call KPCF_fnc_getConfigPath;
-    _ctrlCrate lbAdd (getText (configFile >> _config >> _x >> "displayName"));
-} forEach KPCF_crates;
 
 _ctrlCat lbAdd localize "STR_KPCF_LISTWEAPONS";
 _ctrlCat lbAdd localize "STR_KPCF_LISTMAGAZINES";

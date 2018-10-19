@@ -70,6 +70,7 @@ class KPCF_dialog {
         };
 
         class KP_ButtonSpawnCrate: KPGUI_PRE_InlineButton {
+            idc = 75803;
             text = "$STR_KPCF_SPAWNCRATE";
             x = KP_GETCX(KP_X_VAL_S,KP_WIDTH_VAL_S,0,1);
             y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,5,48);
@@ -79,6 +80,7 @@ class KPCF_dialog {
         };
 
         class KP_ButtonDeleteCrate: KP_ButtonSpawnCrate {
+            idc = 75804;
             text = "$STR_KPCF_DELETECRATE";
             x = KP_GETCX(KP_X_VAL_S,KP_WIDTH_VAL_S,1,2);
             y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,5,48);
