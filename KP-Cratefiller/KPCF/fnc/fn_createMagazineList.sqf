@@ -44,6 +44,6 @@ KPCF_activeCategory = _tempMagazines;
 
 // Fill controls
 {
-    private _config = [_x] call KPCF_fnc_getConfigPath;
+    _config = [_x] call KPCF_fnc_getConfigPath;
     _ctrlEquipment lbAdd (getText (configFile >> _config >> _x >> "displayName"));
 } forEach _tempMagazines;

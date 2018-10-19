@@ -23,7 +23,7 @@ if (isNull _dialog) exitWith {};
 // Check for an active storage
 if (isNull KPCF_activeStorage) exitWith {
     KPCF_inventory = [];
-    call KPCF_fnc_showInventory;
+    [] call KPCF_fnc_showInventory;
 };
 
 // Reset variables
@@ -47,4 +47,4 @@ for "_i" from 0 to (_count-1) do {
     KPCF_inventory pushBack [(_cargo select 0) select _i, (_cargo select 1) select _i];
 };
 
-call KPCF_fnc_showInventory;
+[] call KPCF_fnc_showInventory;

@@ -20,7 +20,7 @@ if (count KPCF_inventory == 0) exitWith {
     clearMagazineCargoGlobal KPCF_activeStorage;
     clearItemCargoGlobal KPCF_activeStorage;
     clearBackpackCargoGlobal KPCF_activeStorage;
-    remoteExecCall ["KPCF_fnc_getInventory", (allPlayers - entities "HeadlessClient_F")];
+    [] remoteExecCall ["KPCF_fnc_getInventory", (allPlayers - entities "HeadlessClient_F")];
 };
 
 // Clear the storage
@@ -37,4 +37,4 @@ for "_i" from 0 to (_count-1) do {
     KPCF_activeStorage addItemCargoGlobal [(KPCF_inventory select _i) select 0, (KPCF_inventory select _i) select 1];
 };
 
-remoteExecCall ["KPCF_fnc_getInventory", (allPlayers - entities "HeadlessClient_F")];
+[] remoteExecCall ["KPCF_fnc_getInventory", (allPlayers - entities "HeadlessClient_F")];

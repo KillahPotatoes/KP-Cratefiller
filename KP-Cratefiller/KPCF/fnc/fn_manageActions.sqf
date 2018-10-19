@@ -28,4 +28,4 @@ private _foundBase = [];
     };
 } forEach _foundBase;
 
-[{call KPCF_fnc_manageActions;}, [], 30] call CBA_fnc_waitAndExecute;
+[{[] call KPCF_fnc_manageActions;}, [], 30] call CBA_fnc_waitAndExecute;

@@ -39,11 +39,13 @@ if (_catIndex == -1) exitWith {
     [{hintSilent "";}, [], 3] call CBA_fnc_waitAndExecute;
 };
 
+private "_config";
+
 // Weapons
 if (_catIndex == 0) then {
     KPCF_activeCategory = KPCF_weapons;
     {
-        private _config = [_x] call KPCF_fnc_getConfigPath;
+        _config = [_x] call KPCF_fnc_getConfigPath;
         _ctrlEquipment lbAdd (getText (configFile >> _config >> _x >> "displayName"));
     } forEach KPCF_weapons;
 };
@@ -52,7 +54,7 @@ if (_catIndex == 0) then {
 if (_catIndex == 1) then {
     _ctrlWeapon ctrlShow true;
     {
-        private _config = [_x] call KPCF_fnc_getConfigPath;
+        _config = [_x] call KPCF_fnc_getConfigPath;
         _ctrlWeapon lbAdd (getText (configFile >> _config >> _x >> "displayName"));
     } forEach KPCF_weapons;
 };
@@ -61,7 +63,7 @@ if (_catIndex == 1) then {
 if (_catIndex == 2) then {
     KPCF_activeCategory = KPCF_grenades;
     {
-        private _config = [_x] call KPCF_fnc_getConfigPath;
+        _config = [_x] call KPCF_fnc_getConfigPath;
         _ctrlEquipment lbAdd (getText (configFile >> _config >> _x >> "displayName"));
     } forEach KPCF_grenades;
 };
@@ -70,7 +72,7 @@ if (_catIndex == 2) then {
 if (_catIndex == 3) then {
     KPCF_activeCategory = KPCF_explosives;
     {
-        private _config = [_x] call KPCF_fnc_getConfigPath;
+        _config = [_x] call KPCF_fnc_getConfigPath;
         _ctrlEquipment lbAdd (getText (configFile >> _config >> _x >> "displayName"));
     } forEach KPCF_explosives;
 };
@@ -79,7 +81,7 @@ if (_catIndex == 3) then {
 if (_catIndex == 4) then {
     KPCF_activeCategory = KPCF_items;
     {
-        private _config = [_x] call KPCF_fnc_getConfigPath;
+        _config = [_x] call KPCF_fnc_getConfigPath;
         _ctrlEquipment lbAdd (getText (configFile >> _config >> _x >> "displayName"));
     } forEach KPCF_items;
 };

@@ -16,13 +16,13 @@
 if (hasInterface) then {
 
     // Read the config file
-    call compile preprocessFileLineNumbers "KPCF_config.sqf";
+    [] call compile preprocessFileLineNumbers "KPCF_config.sqf";
 
     // Read the variables
-    call compile preprocessFileLineNumbers "KPCF\variables.sqf";
+    [] call compile preprocessFileLineNumbers "KPCF\variables.sqf";
 
     // Check for ACE
     KPCF_ace = isClass (configfile >> "CfgPatches" >> "ace_common");
 
-    call KPCF_fnc_manageActions;
+    [] call KPCF_fnc_manageActions;
 };

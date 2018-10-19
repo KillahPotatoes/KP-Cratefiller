@@ -25,7 +25,7 @@ private _ctrlInventory = _dialog displayCtrl 75822;
 // Check for inventory clear
 if (_amount == 0) exitWith {
     KPCF_inventory = [];
-    call KPCF_fnc_setInventory;
+    [] call KPCF_fnc_setInventory;
     hint localize "STR_KPCF_HINTCLEARFULL";
     [{hintSilent "";}, [], 3] call CBA_fnc_waitAndExecute;
 };
@@ -53,7 +53,7 @@ if (_modify < 0) then {
 // Modify array
 (KPCF_inventory select _index) set [1, _modify];
 
-call KPCF_fnc_setInventory;
+[] call KPCF_fnc_setInventory;
 
 private _config = [_item] call KPCF_fnc_getConfigPath;
 private _name = (getText (configFile >> _config >> _item >> "displayName"));

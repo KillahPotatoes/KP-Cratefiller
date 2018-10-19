@@ -22,17 +22,13 @@ private _ctlrProgress = _dialog displayCtrl 75823;
 // Reset variables
 lbClear _ctrlInventory;
 
+private ["_config", "_load", "_type", "_itemMass"];
+
 // Fill the controls
 {
-    private _config = [_x select 0] call KPCF_fnc_getConfigPath;
+    _config = [_x select 0] call KPCF_fnc_getConfigPath;
     _ctrlInventory lbAdd (format ["%1x %2", str (_x select 1), (getText (configFile >> _config >> _x select 0 >> "displayName"))]);
 } forEach KPCF_inventory;
-
-// Maths for the progress bar
-private _load = 0;
-private _type = "";
-private _config = "";
-private _itemMass = 0;
 
 // Get the mass of each item
 {

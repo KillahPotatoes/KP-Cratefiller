@@ -53,4 +53,4 @@ _ctrlCat lbAdd localize "STR_KPCF_LISTGRENADES";
 _ctrlCat lbAdd localize "STR_KPCF_LISTEXPLOSIVES";
 _ctrlCat lbAdd localize "STR_KPCF_LISTVARIOUS";
 
-call KPCF_fnc_getNearStorages;
+[] call KPCF_fnc_getNearStorages;
