@@ -24,5 +24,8 @@ if (hasInterface) then {
     // Check for ACE
     KPCF_ace = isClass (configfile >> "CfgPatches" >> "ace_common");
 
-    [] call KPCF_fnc_manageActions;
+    // Add CBA event handler to the base objects
+    {
+        [_x, "init", {[_this] call KPCF_fnc_manageActions;}, nil, nil, true] call CBA_fnc_addClassEventHandler;
+    } forEach KPCF_cratefillerBase;
 };

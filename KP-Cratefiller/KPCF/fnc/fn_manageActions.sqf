@@ -8,28 +8,16 @@
     Adds actions to the cratefiller objects.
 
     Parameter(s):
-    NONE
+    0 : OBJECT - defines the object to apply the action
 
     Returns:
     NONE
 */
 
-private _foundBase = [];
+params ["_cfBase"];
 
-if (KPCF_ace) exitWith {
-    [] call KPCF_fnc_manageAceActions;
+if (KPCF_ace) then {
+    [_cfBase] call KPCF_fnc_manageAceActions;
+} else {
+    _cfBase addAction ["<t color='#FF8000'>" + localize "STR_KPCF_ACTIONOPEN" + "</t>", {[_this] call KPCF_fnc_openDialog;}, nil, 1, false, true, "", "true", KPCF_interactRadius];
 };
-
-{
-    _foundBase append ((getPos player) nearObjects [_x, KPCF_checkDistance]);
-} forEach KPCF_cratefillerBase;
-
-// Add the action
-{
-    if (!(_x in KPCF_usedBase)) then {
-        _x addAction ["<t color='#FF8000'>" + localize "STR_KPCF_ACTIONOPEN" + "</t>", {[_this] call KPCF_fnc_openDialog;}, nil, 1, false, true, "", "true", KPCF_interactRadius];
-        KPCF_usedBase pushBack _x;
-    };
-} forEach _foundBase;
-
-[{[] call KPCF_fnc_manageActions;}, [], 30] call CBA_fnc_waitAndExecute;
