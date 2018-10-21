@@ -28,4 +28,12 @@ if (hasInterface) then {
     {
         [_x, "init", {[_this select 0] call KPCF_fnc_manageActions;}, nil, nil, true] call CBA_fnc_addClassEventHandler;
     } forEach KPCF_cratefillerBase;
+
+    // Sort the item lists
+    KPCF_sortedCrates = [KPCF_crates] call KPCF_fnc_sortList;
+    KPCF_sortedWeapons = [KPCF_weapons] call KPCF_fnc_sortList;
+    KPCF_sortedgrenades = [KPCF_grenades] call KPCF_fnc_sortList;
+    KPCF_sortedExplosives = [KPCF_explosives] call KPCF_fnc_sortList;
+    KPCF_sortedItems = [KPCF_items] call KPCF_fnc_sortList;
+
 };

@@ -59,6 +59,9 @@ class KPCF {
         // Displays the items of the active crate
         class showInventory {};
 
+        // Sorts the displaynames of the given item array.
+        class sortList {};
+
         // Spawns the selected crate
         class spawnCrate {};
     };
