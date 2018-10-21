@@ -26,6 +26,6 @@ if (hasInterface) then {
 
     // Add CBA event handler to the base objects
     {
-        [_x, "init", {[_this] call KPCF_fnc_manageActions;}, nil, nil, true] call CBA_fnc_addClassEventHandler;
+        [_x, "init", {[_this select 0] call KPCF_fnc_manageActions;}, nil, nil, true] call CBA_fnc_addClassEventHandler;
     } forEach KPCF_cratefillerBase;
 };
