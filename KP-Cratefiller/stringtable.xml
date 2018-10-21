@@ -130,7 +130,7 @@
     <Key ID="STR_KPCF_NOSPAWN">
         <Original>No loading zone available, base object is used instead.</Original>
         <English>No loading zone available, base object is used instead.</English>
-        <German>Keine Ladezone vorhanden, dass Basis Objekt wird stattdessen benutzt.</German>
+        <German>Keine Ladezone vorhanden, das Basis Objekt wird stattdessen benutzt.</German>
     </Key>
     <Key ID="STR_KPCF_FILLLEVEL">
         <Original>Shows the current cargo space.</Original>

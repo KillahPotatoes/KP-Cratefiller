@@ -22,6 +22,7 @@ KPCF_activeSpawn = nearestObject [getPos KPCF_activeBase, KPCF_cratefillerSpawn]
 
 if (isNull KPCF_activeSpawn) then {
     hint localize "STR_KPCF_NOSPAWN";
+    [{hintSilent "";}, [], 3] call CBA_fnc_waitAndExecute;
     KPCF_activeSpawn = KPCF_activeBase;
 };
 
@@ -37,7 +38,7 @@ private _ctrlDelete = _dialog displayCtrl 75804;
 private _ctrlCat = _dialog displayCtrl 75810;
 private _ctrlWeapon = _dialog displayCtrl 75811;
 
-private ["_config"];
+private _config = "";
 
 if (!KPCF_canSpawnAndDelete) then {
     _ctrlCrate ctrlShow false;

@@ -30,12 +30,16 @@ if (_crateIndex == -1) exitWith {
 // Crate selection
 private _crateType = (KPCF_crates select _crateIndex);
 
+private _checkSpawn = false;
+
 // Check if spawnpoint is clear
-if (KPCF_activeSpawn != KPCF_activeSpawn) then {
-    if (!(((getPos KPCF_activeSpawn) nearEntities 5) isEqualTo [])) exitWith {
-        hint localize "STR_KPCF_HINTZONE";
-        [{hintSilent "";}, [], 3] call CBA_fnc_waitAndExecute;
-    };
+if (KPCF_activeSpawn != KPCF_activeBase) then {
+    _checkSpawn = true;
+};
+
+if ((!(((getPos KPCF_activeSpawn) nearEntities 5) isEqualTo [])) && _checkSpawn) exitWith {
+    hint localize "STR_KPCF_HINTZONE";
+    [{hintSilent "";}, [], 3] call CBA_fnc_waitAndExecute;
 };
 
 // Spawn crate
