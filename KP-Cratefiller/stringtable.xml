@@ -41,6 +41,11 @@
         <English>Magazines</English>
         <German>Magazine</German>
     </Key>
+    <Key ID="STR_KPCF_LISTATTACHMENTS">
+        <Original>Weapon attachments</Original>
+        <English>Weapon attachments</English>
+        <German>Waffenzubehör</German>
+    </Key>
     <Key ID="STR_KPCF_LISTGRENADES">
         <Original>Grenades</Original>
         <English>Grenades</English>
@@ -55,6 +60,11 @@
         <Original>Others</Original>
         <English>Others</English>
         <German>Sonstiges</German>
+    </Key>
+    <Key ID="STR_KPCF_LISTBACKPACKS">
+        <Original>Backpacks</Original>
+        <English>Backpacks</English>
+        <German>Rucksäcke</German>
     </Key>
     <Key ID="STR_KPCF_TITLEINVENTORY">
         <Original>Inventory</Original>

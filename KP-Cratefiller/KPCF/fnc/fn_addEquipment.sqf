@@ -41,7 +41,11 @@ if (!(KPCF_activeStorage canAdd [_item, _amount])) exitWith {
 };
 
 // Add the given item
-KPCF_activeStorage addItemCargoGlobal [_item, _amount];
+if (_item isKindOf "Bag_Base") then {
+    KPCF_activeStorage addBackpackCargoGlobal [_item, _amount];
+} else {
+    KPCF_activeStorage addItemCargoGlobal [_item, _amount];
+};
 
 [] remoteExecCall ["KPCF_fnc_getInventory", (allPlayers - entities "HeadlessClient_F")];
 

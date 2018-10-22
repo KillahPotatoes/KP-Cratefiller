@@ -60,8 +60,10 @@ KPCF_activeStorage = objNull;
 
 _ctrlCat lbAdd localize "STR_KPCF_LISTWEAPONS";
 _ctrlCat lbAdd localize "STR_KPCF_LISTMAGAZINES";
+_ctrlCat lbAdd localize "STR_KPCF_LISTATTACHMENTS";
 _ctrlCat lbAdd localize "STR_KPCF_LISTGRENADES";
 _ctrlCat lbAdd localize "STR_KPCF_LISTEXPLOSIVES";
 _ctrlCat lbAdd localize "STR_KPCF_LISTVARIOUS";
+_ctrlCat lbAdd localize "STR_KPCF_LISTBACKPACKS";
 
 [] call KPCF_fnc_getNearStorages;

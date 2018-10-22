@@ -33,11 +33,14 @@ KPCF_inventory = [];
 private _item = getItemCargo KPCF_activeStorage;
 private _weapon = getWeaponCargo KPCF_activeStorage;
 private _magazine = getMagazineCargo KPCF_activeStorage;
+private _backpack = getBackpackCargo KPCF_activeStorage;
 private _cargo = _item;
 (_cargo select 0) append (_weapon select 0);
 (_cargo select 1) append (_weapon select 1);
 (_cargo select 0) append (_magazine select 0);
 (_cargo select 1) append (_magazine select 1);
+(_cargo select 0) append (_backpack select 0);
+(_cargo select 1) append (_backpack select 1);
 
 // Count the variable index
 private _count = count (_cargo select 0);

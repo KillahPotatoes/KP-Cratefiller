@@ -42,6 +42,12 @@ KPCF_weapons = [
     "MMG_01_tan_F"
 ];
 
+// Defines the available weapon attachments
+KPCF_attachments = [
+    "optic_Holosight",
+    "optic_MRCO"
+];
+
 // Defines the available grenades
 KPCF_grenades = [
     "HandGrenade",
@@ -58,4 +64,10 @@ KPCF_explosives = [
 KPCF_items = [
     "FirstAidKit",
     "ToolKit"
+];
+
+// Defines the available backpacks
+KPCF_backpacks = [
+    "B_FieldPack_cbr",
+    "B_AssaultPack_cbr"
 ];

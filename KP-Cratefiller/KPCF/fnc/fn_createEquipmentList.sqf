@@ -60,8 +60,16 @@ switch (_catIndex) do {
         } forEach KPCF_sortedWeapons;
     };
 
-    // Grenades
+    // Attachments
     case 2 : {
+        {
+            _index = _ctrlEquipment lbAdd (_x select 0);
+            _ctrlEquipment lbSetData [_index , _x select 1];
+        } forEach KPCF_sortedAttachments;
+    };
+
+    // Grenades
+    case 3 : {
         {
             _index = _ctrlEquipment lbAdd (_x select 0);
             _ctrlEquipment lbSetData [_index , _x select 1];
@@ -69,7 +77,7 @@ switch (_catIndex) do {
     };
 
     // Explosives
-    case 3 : {
+    case 4 : {
         {
             _index = _ctrlEquipment lbAdd (_x select 0);
             _ctrlEquipment lbSetData [_index , _x select 1];
@@ -77,11 +85,19 @@ switch (_catIndex) do {
     };
 
     // Items
-    case 4 : {
+    case 5 : {
         {
             _index = _ctrlEquipment lbAdd (_x select 0);
             _ctrlEquipment lbSetData [_index , _x select 1];
         } forEach KPCF_sortedItems;
+    };
+
+    // Backpacks
+    case 6 : {
+        {
+            _index = _ctrlEquipment lbAdd (_x select 0);
+            _ctrlEquipment lbSetData [_index , _x select 1];
+        } forEach KPCF_sortedBackpacks;
     };
 
 };
