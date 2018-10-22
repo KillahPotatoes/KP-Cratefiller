@@ -42,9 +42,18 @@ private _cargo = _item;
 // Count the variable index
 private _count = count (_cargo select 0);
 
+private _config = "";
+
 // Adapt the cargo into KPCF variable
 for "_i" from 0 to (_count-1) do {
-    KPCF_inventory pushBack [(_cargo select 0) select _i, (_cargo select 1) select _i];
+    _config = [(_cargo select 0) select _i] call KPCF_fnc_getConfigPath;
+    KPCF_inventory pushBack [
+        (getText (configFile >> _config >> ((_cargo select 0) select _i) >> "displayName")),
+        (_cargo select 0) select _i,
+        (_cargo select 1) select _i
+    ];
 };
+
+KPCF_inventory sort true;
 
 [] call KPCF_fnc_showInventory;
