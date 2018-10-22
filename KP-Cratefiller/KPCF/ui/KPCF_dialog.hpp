@@ -65,8 +65,19 @@ class KPCF_dialog {
         class KP_ComboCargo: KP_ComboCrate {
             idc = 75802;
             x = KP_GETCX(KP_X_VAL_S,KP_WIDTH_VAL_S,1,2);
+            w = KP_GETW(KP_WIDTH_VAL_S,(24/11));
             tooltip = "$STR_KPCF_TOOLTIPINVENTORY";
-            onLBSelChanged = "call KPCF_fnc_setActiveStorage";
+            onLBSelChanged = "[] call KPCF_fnc_setActiveStorage";
+        };
+
+        class KP_RefreshCargo: KPGUI_PRE_CloseCross {
+            text = "KPCF\img\icon_refresh.paa";
+            x = KP_GETCX(KP_X_VAL_S,KP_WIDTH_VAL_S,23,24);
+            y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,3,48);
+            w = KP_GETW(KP_WIDTH_VAL_S,24);
+            h = KP_GETH(KP_HEIGHT_VAL_S,24);
+            tooltip = "$STR_KPCF_TOOLTIPREFRESH";
+            action = "[] call KPCF_fnc_getNearStorages";
         };
 
         class KP_ButtonSpawnCrate: KPGUI_PRE_InlineButton {
@@ -76,7 +87,7 @@ class KPCF_dialog {
             y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,5,48);
             w = KP_GETW(KP_WIDTH_VAL_S,2);
             h = KP_GETH(KP_HEIGHT_VAL_S,24);
-            onButtonClick = "call KPCF_fnc_spawnCrate";
+            onButtonClick = "[] call KPCF_fnc_spawnCrate";
         };
 
         class KP_ButtonDeleteCrate: KP_ButtonSpawnCrate {
@@ -84,7 +95,7 @@ class KPCF_dialog {
             text = "$STR_KPCF_DELETECRATE";
             x = KP_GETCX(KP_X_VAL_S,KP_WIDTH_VAL_S,1,2);
             y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,5,48);
-            onButtonClick = "call KPCF_fnc_deleteCrate";
+            onButtonClick = "[] call KPCF_fnc_deleteCrate";
         };
 
         // Equipment
@@ -96,14 +107,14 @@ class KPCF_dialog {
             w = KP_GETW(KP_WIDTH_VAL_S,2);
             h = KP_GETH(KP_HEIGHT_VAL_S,24);
             tooltip = "$STR_KPCF_TOOLTIPCATEGORY";
-            onLBSelChanged = "call KPCF_fnc_createEquipmentList";
+            onLBSelChanged = "[] call KPCF_fnc_createEquipmentList";
         };
 
         class KP_ComboWeapons: KP_ComboEquipment {
             idc = 75811;
             y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,12,48);
             tooltip = "$STR_KPCF_TOOLTIPMAGAZINES";
-            onLBSelChanged = "call KPCF_fnc_createMagazineList";
+            onLBSelChanged = "[] call KPCF_fnc_createMagazineList";
         };
 
         class KP_EquipmentList: KPGUI_PRE_ListBox {

@@ -55,3 +55,5 @@ private _config = [_crateType] call KPCF_fnc_getConfigPath;
 private _name = (getText (configFile >> _config >> _crateType >> "displayName"));
 hint format [localize "STR_KPCF_HINTSPAWN", _name];
 [{hintSilent "";}, [], 3] call CBA_fnc_waitAndExecute;
+
+[] call KPCF_fnc_getNearStorages

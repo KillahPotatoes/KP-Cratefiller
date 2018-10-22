@@ -43,8 +43,3 @@ private ["_type", "_config", "_number"];
     _config = [_type] call KPCF_fnc_getConfigPath;
     _ctrlStorage lbAdd format ["%1m - %2", round (KPCF_activeSpawn distance2D _x), getText (configFile >> _config >> _type >> "displayName")];
 } forEach KPCF_nearStorage;
-
-// Check if dialog is closed
-if (isNull _dialog) exitWith {};
-
-[{[] call KPCF_fnc_getNearStorages;}, [], 5] call CBA_fnc_waitAndExecute;

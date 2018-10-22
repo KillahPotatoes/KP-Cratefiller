@@ -72,6 +72,11 @@
         <English>Select an inventory that you want to edit.</English>
         <German>Wähle einen Laderaum aus, den du bearbeiten möchtest.</German>
     </Key>
+    <Key ID="STR_KPCF_TOOLTIPREFRESH">
+        <Original>Search for new inventories.</Original>
+        <English>Search for new inventories.</English>
+        <German>Nach neuem Laderaum suchen.</German>
+    </Key>
     <Key ID="STR_KPCF_TOOLTIPCATEGORY">
         <Original>Choose a category from which you want to stow items.</Original>
         <English>Choose a category from which you want to stow items.</English>
