@@ -32,7 +32,7 @@ if (_index == -1) exitWith {
 };
 
 // Item selection
-private _item = (KPCF_activeCategory select _index);
+private _item = _ctrlEquipment lbData _index;
 
 // Check for enough inventory capacity
 if (!(KPCF_activeStorage canAdd [_item, _amount])) exitWith {

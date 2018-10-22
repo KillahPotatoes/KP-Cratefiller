@@ -28,7 +28,7 @@ if (_crateIndex == -1) exitWith {
 };
 
 // Crate selection
-private _crateType = (KPCF_crates select _crateIndex);
+private _crateType = _ctrlCrate lbData _crateIndex;
 
 private _checkSpawn = false;
 
