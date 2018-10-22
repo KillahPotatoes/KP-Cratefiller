@@ -39,49 +39,49 @@ if (_catIndex == -1) exitWith {
     [{hintSilent "";}, [], 3] call CBA_fnc_waitAndExecute;
 };
 
-private _config = "";
+private _index = 0;
 
-// Weapons
-if (_catIndex == 0) then {
-    KPCF_activeCategory = KPCF_weapons;
-    {
-        _config = [_x] call KPCF_fnc_getConfigPath;
-        _ctrlEquipment lbAdd (getText (configFile >> _config >> _x >> "displayName"));
-    } forEach KPCF_weapons;
-};
+switch (_catIndex) do {
 
-// Magazines
-if (_catIndex == 1) then {
-    _ctrlWeapon ctrlShow true;
-    {
-        _config = [_x] call KPCF_fnc_getConfigPath;
-        _ctrlWeapon lbAdd (getText (configFile >> _config >> _x >> "displayName"));
-    } forEach KPCF_weapons;
-};
+    // Weapons
+    case 0 : {
+        {
+            _index = _ctrlEquipment lbAdd (_x select 0);
+            _ctrlEquipment lbSetData [_index , _x select 1];
+        } forEach KPCF_sortedWeapons;
+    };
 
-// Grenades
-if (_catIndex == 2) then {
-    KPCF_activeCategory = KPCF_grenades;
-    {
-        _config = [_x] call KPCF_fnc_getConfigPath;
-        _ctrlEquipment lbAdd (getText (configFile >> _config >> _x >> "displayName"));
-    } forEach KPCF_grenades;
-};
+    // Magazines
+    case 1 : {
+        _ctrlWeapon ctrlShow true;
+        {
+            _index = _ctrlWeapon lbAdd (_x select 0);
+            _ctrlWeapon lbSetData [_index , _x select 1];
+        } forEach KPCF_sortedWeapons;
+    };
 
-// Explosives
-if (_catIndex == 3) then {
-    KPCF_activeCategory = KPCF_explosives;
-    {
-        _config = [_x] call KPCF_fnc_getConfigPath;
-        _ctrlEquipment lbAdd (getText (configFile >> _config >> _x >> "displayName"));
-    } forEach KPCF_explosives;
-};
+    // Grenades
+    case 2 : {
+        {
+            _index = _ctrlEquipment lbAdd (_x select 0);
+            _ctrlEquipment lbSetData [_index , _x select 1];
+        } forEach KPCF_sortedGrenades;
+    };
 
-// Items
-if (_catIndex == 4) then {
-    KPCF_activeCategory = KPCF_items;
-    {
-        _config = [_x] call KPCF_fnc_getConfigPath;
-        _ctrlEquipment lbAdd (getText (configFile >> _config >> _x >> "displayName"));
-    } forEach KPCF_items;
+    // Explosives
+    case 3 : {
+        {
+            _index = _ctrlEquipment lbAdd (_x select 0);
+            _ctrlEquipment lbSetData [_index , _x select 1];
+        } forEach KPCF_sortedExplosives;
+    };
+
+    // Items
+    case 4 : {
+        {
+            _index = _ctrlEquipment lbAdd (_x select 0);
+            _ctrlEquipment lbSetData [_index , _x select 1];
+        } forEach KPCF_sortedItems;
+    };
+
 };

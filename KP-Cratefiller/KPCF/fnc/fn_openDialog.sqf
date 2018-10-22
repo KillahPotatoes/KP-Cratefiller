@@ -38,7 +38,7 @@ private _ctrlDelete = _dialog displayCtrl 75804;
 private _ctrlCat = _dialog displayCtrl 75810;
 private _ctrlWeapon = _dialog displayCtrl 75811;
 
-private _config = "";
+private _index = 0;
 
 if (!KPCF_canSpawnAndDelete) then {
     _ctrlCrate ctrlShow false;
@@ -47,9 +47,9 @@ if (!KPCF_canSpawnAndDelete) then {
 } else {
     // Fill the controls
     {
-        _config = [_x] call KPCF_fnc_getConfigPath;
-        _ctrlCrate lbAdd (getText (configFile >> _config >> _x >> "displayName"));
-    } forEach KPCF_crates;
+        _index = _ctrlCrate lbAdd (_x select 0);
+        _ctrlCrate lbSetData [_index , _x select 1];
+    } forEach KPCF_sortedCrates;
 };
 
 // Hide controls
