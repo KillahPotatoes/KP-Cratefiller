@@ -21,7 +21,7 @@ KPCF_activeBase = _data select 0;
 KPCF_activeSpawn = nearestObject [getPos KPCF_activeBase, KPCF_cratefillerSpawn];
 
 if (isNull KPCF_activeSpawn) then {
-    hint localize "STR_KPCF_NOSPAWN";
+    hint localize "STR_KPCF_HINTNOSPAWN";
     [{hintSilent "";}, [], 3] call CBA_fnc_waitAndExecute;
     KPCF_activeSpawn = KPCF_activeBase;
 };
@@ -66,4 +66,5 @@ _ctrlCat lbAdd localize "STR_KPCF_LISTEXPLOSIVES";
 _ctrlCat lbAdd localize "STR_KPCF_LISTVARIOUS";
 _ctrlCat lbAdd localize "STR_KPCF_LISTBACKPACKS";
 
+[] call KPCF_fnc_showPresets;
 [] call KPCF_fnc_getNearStorages;

@@ -29,6 +29,9 @@ class KPCF {
         // Deletes the nearest crate
         class deleteCrate {};
 
+        // Exports the active inventory
+        class export {};
+
         // Gets the config path for the given classname
         class getConfigPath {};
 
@@ -37,6 +40,9 @@ class KPCF {
 
         // Scans the spawn area for possible storages
         class getNearStorages {};
+
+        // Imports the selected preset
+        class import {};
 
         // Manages the actions
         class manageActions {};
@@ -58,6 +64,9 @@ class KPCF {
 
         // Displays the items of the active crate
         class showInventory {};
+
+        // Reads all saved presets and lists them.
+        class showPresets {};
 
         // Sorts the displaynames of the given item array.
         class sortList {};

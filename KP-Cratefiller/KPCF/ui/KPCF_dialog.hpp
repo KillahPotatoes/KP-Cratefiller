@@ -153,7 +153,7 @@ class KPCF_dialog {
         };
 
         // Inventory
-/*
+
         class KP_ExportName: KPGUI_PRE_EditBox {
             idc = 75820;
             x = KP_GETCX(KP_X_VAL_S,KP_WIDTH_VAL_S,2,4);
@@ -171,20 +171,20 @@ class KPCF_dialog {
         };
 
         class KP_ButtonExport: KPGUI_PRE_InlineButton {
-            text = "";
+            text = "$STR_KPCF_EXPORT";
             x = KP_GETCX(KP_X_VAL_S,KP_WIDTH_VAL_S,2,4);
             y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,12,48);
             w = KP_GETW(KP_WIDTH_VAL_S,4);
             h = KP_GETH(KP_HEIGHT_VAL_S,24);
-            onButtonClick = "";
+            onButtonClick = "[] call KPCF_fnc_export";
         };
 
         class KP_ButtonImport: KP_ButtonExport {
-            text = "";
+            text = "$STR_KPCF_IMPORT";
             x = KP_GETCX(KP_X_VAL_S,KP_WIDTH_VAL_S,3,4);
-            onButtonClick = "";
+            onButtonClick = "[] call KPCF_fnc_import";
         };
-*/
+
         class KP_InventoryList: KPGUI_PRE_ListBox {
             idc = 75822;
             x = KP_GETCX(KP_X_VAL_S,KP_WIDTH_VAL_S,8,16);
@@ -226,7 +226,7 @@ class KPCF_dialog {
             y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,46,48);
             w = KP_GETW(KP_WIDTH_VAL_S,1);
             h = KP_GETH(KP_HEIGHT_VAL_S,24);
-            tooltip = "$STR_KPCF_FILLLEVEL"
+            tooltip = "$STR_KPCF_TOOLTIPFILLLEVEL"
         };
 
             class KP_DialogCross: KPGUI_PRE_DialogCrossS {};

@@ -32,9 +32,21 @@ clearBackpackCargoGlobal KPCF_activeStorage;
 // Count the variable index
 private _count = count KPCF_inventory;
 
+private _abort = false;
+
 // Adapt the cargo into KPCF variable
 for "_i" from 0 to (_count-1) do {
+    if (!(KPCF_activeStorage canAdd [(KPCF_inventory select _i) select 1, (KPCF_inventory select _i) select 2])) exitWith {
+        _abort = true;
+    };
     KPCF_activeStorage addItemCargoGlobal [(KPCF_inventory select _i) select 1, (KPCF_inventory select _i) select 2];
+};
+
+// Check for enough inventory capacity
+if (_abort) exitWith {
+    [] remoteExecCall ["KPCF_fnc_getInventory", (allPlayers - entities "HeadlessClient_F")];
+    hint format [localize "STR_KPCF_HINTFULL"];
+    [{hintSilent "";}, [], 3] call CBA_fnc_waitAndExecute;
 };
 
 [] remoteExecCall ["KPCF_fnc_getInventory", (allPlayers - entities "HeadlessClient_F")];
