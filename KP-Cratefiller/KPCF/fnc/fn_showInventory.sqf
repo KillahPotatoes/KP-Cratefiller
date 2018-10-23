@@ -46,8 +46,8 @@ private _load = 0;
     _load = _load + (_itemMass * (_x select 2));
 } forEach KPCF_inventory;
 
-private _type = typeOf KPCF_activeStorage;
-private _config = [_type] call KPCF_fnc_getConfigPath;
+_type = typeOf KPCF_activeStorage;
+_config = [_type] call KPCF_fnc_getConfigPath;
 private _maxLoad = getNumber (configFile >> _config >> _type >> "maximumLoad");
 private _loadFactor = _load / _maxLoad;
 
