@@ -40,10 +40,10 @@ if (_index == -1) exitWith {
 };
 
 // Item selection
-private _item = ((KPCF_inventory select _index) select 0);
+private _item = ((KPCF_inventory select _index) select 1);
 
 // New item amount
-private _modify = (((KPCF_inventory select _index) select 1) - _amount);
+private _modify = (((KPCF_inventory select _index) select 2) - _amount);
 
 // Check if the amount is negative
 if (_modify < 0) then {
@@ -51,7 +51,7 @@ if (_modify < 0) then {
 };
 
 // Modify array
-(KPCF_inventory select _index) set [1, _modify];
+(KPCF_inventory select _index) set [2, _modify];
 
 [] call KPCF_fnc_setInventory;
 

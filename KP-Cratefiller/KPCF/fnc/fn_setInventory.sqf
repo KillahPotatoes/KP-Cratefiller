@@ -34,7 +34,7 @@ private _count = count KPCF_inventory;
 
 // Adapt the cargo into KPCF variable
 for "_i" from 0 to (_count-1) do {
-    KPCF_activeStorage addItemCargoGlobal [(KPCF_inventory select _i) select 0, (KPCF_inventory select _i) select 1];
+    KPCF_activeStorage addItemCargoGlobal [(KPCF_inventory select _i) select 1, (KPCF_inventory select _i) select 2];
 };
 
 [] remoteExecCall ["KPCF_fnc_getInventory", (allPlayers - entities "HeadlessClient_F")];
