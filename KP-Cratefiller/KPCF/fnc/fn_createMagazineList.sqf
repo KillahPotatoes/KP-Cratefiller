@@ -35,7 +35,7 @@ if (_weaponIndex == -1) exitWith {
 };
 
 // Weapon selection
-private _weaponType = (KPCF_weapons select _weaponIndex);
+private _weaponType = _ctrlWeapon lbData _weaponIndex;
 
 // Get compatible magazines
 private _config = [_weaponType] call KPCF_fnc_getConfigPath;
