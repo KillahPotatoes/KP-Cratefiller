@@ -24,15 +24,15 @@ if (isNull KPCF_activeStorage) exitWith {
     [{hintSilent "";}, [], 3] call CBA_fnc_waitAndExecute;
 };
 
-// Read the export name
+// Read the import name
 private _index = lbCurSel _ctrlImport;
 private _importName = _ctrlImport lbText _index;
 
-// Save the inventory into profileNamespace
+// Read the presets from profileNamespace
 private _import = profileNamespace getVariable "KPCF_preset";
 
-If (_importName == (_import select 0)) then {
-    KPCF_inventory append (_import select 1);
-};
+private _index = _import findIf {(_x select 0) isEqualTo _importName};
+
+KPCF_inventory append ((_import select _index) select 1);
 
 [] call KPCF_fnc_setInventory;

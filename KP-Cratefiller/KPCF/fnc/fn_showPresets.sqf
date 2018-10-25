@@ -18,8 +18,13 @@
 private _dialog = findDisplay 758067;
 private _ctrlImport = _dialog displayCtrl 75821;
 
+// Reset variables
 lbClear _ctrlImport;
 
+// Read the presets from profileNamespace
 private _import = profileNamespace getVariable "KPCF_preset";
 
-_ctrlImport lbAdd (_import select 0);
+// Fill controls
+{
+    _ctrlImport lbAdd (_x select 0);
+} forEach _import;

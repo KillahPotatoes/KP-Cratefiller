@@ -176,5 +176,10 @@
             <English>No storage selected.</English>
             <German>Kein Laderaum ausgewählt.</German>
         </Key>
+        <Key ID="STR_KPCF_HINTNAME">
+            <Original>Invalid name.</Original>
+            <English>Invalid name.</English>
+            <German>Ungültiger Name.</German>
+        </Key>
     </container>
 </Project>
