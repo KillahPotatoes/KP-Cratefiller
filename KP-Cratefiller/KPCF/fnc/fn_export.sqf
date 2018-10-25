@@ -31,19 +31,17 @@ if (_exportName == "") exitWith {
 
 // Check if the variable is empty
 if (_preset isEqualTo []) exitWith {
-    _preset = [[_exportName, KPCF_inventory]];
+    _preset = [[_exportName, +KPCF_inventory]];
     // Save the inventory into profileNamespace
     profileNamespace setVariable ["KPCF_preset", _preset];
     saveProfileNamespace;
 };
 
 // Check if the exportname already exists
-private _index = _preset findIf {(_x select 0) isEqualTo _exportName};
-
-_preset deleteAt _index;
+_preset deleteAt (_preset findIf {(_x select 0) isEqualTo _exportName});
 
 // Save the inventory into profileNamespace
-_preset pushBack [_exportName, KPCF_inventory];
+_preset pushBack [_exportName, +KPCF_inventory];
 
 profileNamespace setVariable ["KPCF_preset", _preset];
 saveProfileNamespace;

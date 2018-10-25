@@ -28,11 +28,15 @@ if (isNull KPCF_activeStorage) exitWith {
 private _index = lbCurSel _ctrlImport;
 private _importName = _ctrlImport lbText _index;
 
+// Check for empty selection
+if (_index == -1) exitWith {
+    hint localize "STR_KPCF_HINTSELECTION";
+    [{hintSilent "";}, [], 3] call CBA_fnc_waitAndExecute;
+};
+
 // Read the presets from profileNamespace
 private _import = profileNamespace getVariable "KPCF_preset";
-
 private _index = _import findIf {(_x select 0) isEqualTo _importName};
-
 KPCF_inventory append ((_import select _index) select 1);
 
 [] call KPCF_fnc_setInventory;

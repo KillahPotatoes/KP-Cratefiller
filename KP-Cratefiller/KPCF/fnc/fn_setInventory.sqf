@@ -31,15 +31,22 @@ clearBackpackCargoGlobal KPCF_activeStorage;
 
 // Count the variable index
 private _count = count KPCF_inventory;
-
 private _abort = false;
+private _item = "";
+private _amount = 0;
 
 // Adapt the cargo into KPCF variable
 for "_i" from 0 to (_count-1) do {
-    if (!(KPCF_activeStorage canAdd [(KPCF_inventory select _i) select 1, (KPCF_inventory select _i) select 2])) exitWith {
+    _item = (KPCF_inventory select _i) select 1;
+    _amount = (KPCF_inventory select _i) select 2;
+    if (!(KPCF_activeStorage canAdd [_item, _amount])) exitWith {
         _abort = true;
     };
-    KPCF_activeStorage addItemCargoGlobal [(KPCF_inventory select _i) select 1, (KPCF_inventory select _i) select 2];
+    if (((KPCF_inventory select _i) select 1) isKindOf "Bag_Base") then {
+        KPCF_activeStorage addBackpackCargoGlobal [_item, _amount];
+    } else {
+        KPCF_activeStorage addItemCargoGlobal [_item, _amount];
+    };
 };
 
 // Check for enough inventory capacity
