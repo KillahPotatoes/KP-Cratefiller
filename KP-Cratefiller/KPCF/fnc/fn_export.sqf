@@ -40,9 +40,7 @@ if (_preset isEqualTo []) exitWith {
 // Check if the exportname already exists
 private _index = _preset findIf {(_x select 0) isEqualTo _exportName};
 
-if (!(_index isEqualTo -1)) then {
-    _preset deleteAt _index;
-};
+_preset deleteAt _index;
 
 // Save the inventory into profileNamespace
 _preset pushBack [_exportName, KPCF_inventory];
