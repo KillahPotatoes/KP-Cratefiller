@@ -29,6 +29,9 @@ class KPCF {
         // Deletes the nearest crate
         class deleteCrate {};
 
+        // Deletes the selected preset
+        class deletePreset {};
+
         // Exports the active inventory
         class export {};
 

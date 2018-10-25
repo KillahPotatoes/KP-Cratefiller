@@ -182,7 +182,18 @@ class KPCF_dialog {
         class KP_ButtonImport: KP_ButtonExport {
             text = "$STR_KPCF_IMPORT";
             x = KP_GETCX(KP_X_VAL_S,KP_WIDTH_VAL_S,3,4);
+            w = KP_GETW(KP_WIDTH_VAL_S,(24/5));
             onButtonClick = "[] call KPCF_fnc_import";
+        };
+
+        class KP_DeletePreset: KPGUI_PRE_CloseCross {
+            text = "KPCF\img\icon_recyclebin.paa";
+            x = KP_GETCX(KP_X_VAL_S,KP_WIDTH_VAL_S,23,24);
+            y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,12,48);
+            w = KP_GETW(KP_WIDTH_VAL_S,24);
+            h = KP_GETH(KP_HEIGHT_VAL_S,24);
+            tooltip = "$STR_KPCF_TOOLTIPDELETE";
+            action = "[] call KPCF_fnc_deletePreset";
         };
 
         class KP_InventoryList: KPGUI_PRE_ListBox {

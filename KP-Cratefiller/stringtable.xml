@@ -118,6 +118,11 @@
             <English>Shows the current cargo space.</English>
             <German>Zeigt den aktuellen Laderaumstand.</German>
         </Key>
+        <Key ID="STR_KPCF_TOOLTIPDELETE">
+            <Original>Deletes the selected preset.</Original>
+            <English>Deletes the selected preset.</English>
+            <German>Löscht das ausgewählte Ausrüstungsset.</German>
+        </Key>
     </container>
 
     <Container name="Hints">
