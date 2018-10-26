@@ -51,6 +51,15 @@ class KPCF_dialog {
 
     class controls {
 
+        class KP_Help: KPGUI_PRE_CloseCross {
+            text = "KPCF\img\icon_help.paa";
+            x = KP_GETCX(KP_X_VAL_S,KP_WIDTH_VAL_S,23,24);
+            y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,0,48);
+            w = KP_GETW(KP_WIDTH_VAL_S,24);
+            h = KP_GETH(KP_HEIGHT_VAL_S,24);
+            tooltip = "$STR_KPCF_TOOLTIPHELP";
+        };
+
         // Crates
 
         class KP_ComboCrate: KPGUI_PRE_Combo {

@@ -8,9 +8,9 @@
             <German>-- KP Kistenfüller --</German>
         </Key>
         <Key ID="STR_KPCF_TITLE">
-            <Original>KP Cratefiller v1.1.0</Original>
-            <English>KP Cratefiller v1.1.0</English>
-            <German>KP Kistenfüller v1.1.0</German>
+            <Original>KP Cratefiller</Original>
+            <English>KP Cratefiller</English>
+            <German>KP Kistenfüller</German>
         </Key>
         <Key ID="STR_KPCF_TITLETRANSPORT">
             <Original>Transport medium</Original>
@@ -122,6 +122,11 @@
             <Original>Deletes the selected preset.</Original>
             <English>Deletes the selected preset.</English>
             <German>Löscht das ausgewählte Ausrüstungsset.</German>
+        </Key>
+        <Key ID="STR_KPCF_TOOLTIPHELP">
+            <Original>KP-Cratefiller v1.1.0\nBy Dubjunk</Original>
+            <English>KP-Cratefiller v1.1.0\nBy Dubjunk</English>
+            <German>KP-Kistenfüller v1.1.0\nBy Dubjunk</German>
         </Key>
     </container>
 
