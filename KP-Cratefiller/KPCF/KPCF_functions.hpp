@@ -41,6 +41,9 @@ class KPCF {
         // Gets all inventory items of the active crate
         class getInventory {};
 
+        // Creates the item lists if generateLists is enabled
+        class getItems {};
+
         // Scans the spawn area for possible storages
         class getNearStorages {};
 

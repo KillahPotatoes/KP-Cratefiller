@@ -25,6 +25,12 @@ private _ctrlEquipment = _dialog displayCtrl 75812;
 // Read controls
 private _index = lbCurSel _ctrlEquipment;
 
+// Check for empty variable
+if (isNull KPCF_activeStorage) exitWith {
+    hint localize "STR_KPCF_HINTSELECTION";
+    [{hintSilent "";}, [], 3] call CBA_fnc_waitAndExecute;
+};
+
 // Check for empty selection
 if (_index == -1) exitWith {
     hint localize "STR_KPCF_HINTSELECTION";

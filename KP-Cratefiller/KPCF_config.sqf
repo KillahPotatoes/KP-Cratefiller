@@ -19,6 +19,9 @@ KPCF_cratefillerSpawn = "Land_HelipadCivil_F";
 // This variable defines if the player will be able to spawn and delete crates
 KPCF_canSpawnAndDelete = true;
 
+// If set to "true" the item lists will be generated from the config
+KPCF_generateLists = true;
+
 // These variable defines the range where inventories can be edited
 // Example: With an setting of 10 all objects in a radius of 10m from the center of the spawn object can be edited
 KPCF_spawnRadius = 10;
@@ -35,6 +38,8 @@ KPCF_crates = [
     "B_supplyCrate_F",
     "CargoNet_01_box_F"
 ];
+
+// ----- These Variables will be replaced with activated generatedLists -----
 
 // Defines the available weapons
 KPCF_weapons = [
@@ -70,4 +75,16 @@ KPCF_items = [
 KPCF_backpacks = [
     "B_FieldPack_cbr",
     "B_AssaultPack_cbr"
+];
+
+// ----- These Variables will only be used with activated generatedLists -----
+
+// Defines the whitelisted items
+KPCF_whitelistedItems = [
+    ""
+];
+
+// Defines the blacklisted items
+KPCF_blacklistedItems = [
+    ""
 ];
