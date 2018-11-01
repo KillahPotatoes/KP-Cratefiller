@@ -41,8 +41,9 @@ switch (_catIndex) do {
     // Magazines
     case 1 : {
         // Get compatible magazines
-        private _config = [_weaponType] call KPCF_fnc_getConfigPath;
-        private _magazines = getArray (configFile >> _config >> _weaponType >> "magazines");
+        private _glType = (getArray (configfile >> "CfgWeapons" >> _weaponType >> "muzzles")) select 1;
+        private _magazines = [_weaponType] call CBA_fnc_compatibleMagazines;
+        _magazines append ([configfile >> "CfgWeapons" >> _weaponType >> _glType] call CBA_fnc_compatibleMagazines);
         private _sortedMagazines = [_magazines] call KPCF_fnc_sortList;
 
         private _index = 0;
