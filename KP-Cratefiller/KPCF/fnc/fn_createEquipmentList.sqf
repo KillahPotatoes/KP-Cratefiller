@@ -37,6 +37,7 @@ if (_catIndex == -1) exitWith {
 };
 
 private _index = 0;
+private _config = "";
 
 switch (_catIndex) do {
 
@@ -45,6 +46,8 @@ switch (_catIndex) do {
         {
             _index = _ctrlEquipment lbAdd (_x select 0);
             _ctrlEquipment lbSetData [_index , _x select 1];
+            _config = [_x select 1] call KPCF_fnc_getConfigPath;
+            _ctrlEquipment lbSetPicture [_index, getText (configFile >> _config >> (_x select 1) >> "picture")];
         } forEach KPCF_sortedWeapons;
     };
 
@@ -54,6 +57,8 @@ switch (_catIndex) do {
         {
             _index = _ctrlWeapon lbAdd (_x select 0);
             _ctrlWeapon lbSetData [_index , _x select 1];
+            _config = [_x select 1] call KPCF_fnc_getConfigPath;
+            _ctrlWeapon lbSetPicture [_index, getText (configFile >> _config >> (_x select 1) >> "picture")];
         } forEach KPCF_sortedWeapons;
     };
 
@@ -63,11 +68,9 @@ switch (_catIndex) do {
         {
             _index = _ctrlWeapon lbAdd (_x select 0);
             _ctrlWeapon lbSetData [_index , _x select 1];
+            _config = [_x select 1] call KPCF_fnc_getConfigPath;
+            _ctrlWeapon lbSetPicture [_index, getText (configFile >> _config >> (_x select 1) >> "picture")];
         } forEach KPCF_sortedWeapons;
-        /*{
-            _index = _ctrlEquipment lbAdd (_x select 0);
-            _ctrlEquipment lbSetData [_index , _x select 1];
-        } forEach KPCF_sortedAttachments;*/
     };
 
     // Grenades
@@ -75,6 +78,8 @@ switch (_catIndex) do {
         {
             _index = _ctrlEquipment lbAdd (_x select 0);
             _ctrlEquipment lbSetData [_index , _x select 1];
+            _config = [_x select 1] call KPCF_fnc_getConfigPath;
+            _ctrlEquipment lbSetPicture [_index, getText (configFile >> _config >> (_x select 1) >> "picture")];
         } forEach KPCF_sortedGrenades;
     };
 
@@ -83,6 +88,8 @@ switch (_catIndex) do {
         {
             _index = _ctrlEquipment lbAdd (_x select 0);
             _ctrlEquipment lbSetData [_index , _x select 1];
+            _config = [_x select 1] call KPCF_fnc_getConfigPath;
+            _ctrlEquipment lbSetPicture [_index, getText (configFile >> _config >> (_x select 1) >> "picture")];
         } forEach KPCF_sortedExplosives;
     };
 
@@ -91,6 +98,8 @@ switch (_catIndex) do {
         {
             _index = _ctrlEquipment lbAdd (_x select 0);
             _ctrlEquipment lbSetData [_index , _x select 1];
+            _config = [_x select 1] call KPCF_fnc_getConfigPath;
+            _ctrlEquipment lbSetPicture [_index, getText (configFile >> _config >> (_x select 1) >> "picture")];
         } forEach KPCF_sortedItems;
     };
 
@@ -99,6 +108,8 @@ switch (_catIndex) do {
         {
             _index = _ctrlEquipment lbAdd (_x select 0);
             _ctrlEquipment lbSetData [_index , _x select 1];
+            _config = [_x select 1] call KPCF_fnc_getConfigPath;
+            _ctrlEquipment lbSetPicture [_index, getText (configFile >> _config >> (_x select 1) >> "picture")];
         } forEach KPCF_sortedBackpacks;
     };
 

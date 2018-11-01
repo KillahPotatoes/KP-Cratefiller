@@ -23,11 +23,13 @@ private _sortedList = [];
 
 {
     _config = [_x] call KPCF_fnc_getConfigPath;
-    if ((getText (configFile >> _config >> _x >> "displayName")) isEqualTo "") exitWith {};
-    _sortedList pushBack [
-        (getText (configFile >> _config >> _x >> "displayName")),
-        _x
-    ];
+    if ((getText (configFile >> _config >> _x >> "displayName")) isEqualTo "") then {
+    } else {
+        _sortedList pushBack [
+            (getText (configFile >> _config >> _x >> "displayName")),
+            _x
+        ];
+    };
 } forEach _list;
 
 _sortedList sort true;

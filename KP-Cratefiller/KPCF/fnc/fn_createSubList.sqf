@@ -36,6 +36,8 @@ if (_weaponIndex == -1) exitWith {
 // Weapon selection
 private _weaponType = _ctrlWeapon lbData _weaponIndex;
 
+private _config = "";
+
 switch (_catIndex) do {
 
     // Magazines
@@ -52,6 +54,8 @@ switch (_catIndex) do {
         {
             _index = _ctrlEquipment lbAdd (_x select 0);
             _ctrlEquipment lbSetData [_index , _x select 1];
+            _config = [_x select 1] call KPCF_fnc_getConfigPath;
+            _ctrlEquipment lbSetPicture [_index, getText (configFile >> _config >> (_x select 1) >> "picture")];
         } forEach _sortedMagazines;
     };
 
@@ -67,6 +71,8 @@ switch (_catIndex) do {
         {
             _index = _ctrlEquipment lbAdd (_x select 0);
             _ctrlEquipment lbSetData [_index , _x select 1];
+            _config = [_x select 1] call KPCF_fnc_getConfigPath;
+            _ctrlEquipment lbSetPicture [_index, getText (configFile >> _config >> (_x select 1) >> "picture")];
         } forEach _sortedAttachments;
     };
 };

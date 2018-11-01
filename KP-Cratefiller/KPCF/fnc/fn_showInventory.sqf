@@ -22,11 +22,13 @@ private _ctlrProgress = _dialog displayCtrl 75823;
 // Reset variables
 lbClear _ctrlInventory;
 
-private ["_config", "_type", "_itemMass"];
+private ["_config", "_type", "_itemMass", "_index"];
 
 // Fill the controls
 {
-    _ctrlInventory lbAdd (format ["%1x %2", str (_x select 2), _x select 0]);
+    _index = _ctrlInventory lbAdd (format ["%1x %2", str (_x select 2), _x select 0]);
+    _config = [_x select 1] call KPCF_fnc_getConfigPath;
+    _ctrlInventory lbSetPicture [_index, getText (configFile >> _config >> (_x select 1) >> "picture")];
 } forEach KPCF_inventory;
 
 private _load = 0;
