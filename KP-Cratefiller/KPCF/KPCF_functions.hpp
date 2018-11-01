@@ -23,8 +23,8 @@ class KPCF {
         // Changes the shown equipment category
         class createEquipmentList {};
 
-        // Changes the shown magazines
-        class createMagazineList {};
+        // Creates a list with valueable magazines or attachments
+        class createSubList {};
 
         // Deletes the nearest crate
         class deleteCrate {};

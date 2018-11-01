@@ -10,8 +10,6 @@
 
 KPCF_ace = false;
 
-KPCF_activeCategory = [];
-
 KPCF_activeStorage = objNull;
 
 KPCF_inventory = [];

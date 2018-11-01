@@ -39,18 +39,28 @@ KPCF_crates = [
     "CargoNet_01_box_F"
 ];
 
+
+// Defines the blacklisted items
+// Blacklisted items are used on every category with activated generatedLists and everytime on the magazines and attachments
+// So this variable will ensure the block of unwanted items
+KPCF_blacklistedItems = [
+    ""
+];
+
+// ----- This Variable will only be used with activated generatedLists -----
+
+// Defines the whitelisted items
+// Whitelisted items will be added after the item detection to ensure the availability
+KPCF_whitelistedItems = [
+    ""
+];
+
 // ----- These Variables will be replaced with activated generatedLists -----
 
 // Defines the available weapons
 KPCF_weapons = [
     "arifle_SPAR_01_snd_F",
     "MMG_01_tan_F"
-];
-
-// Defines the available weapon attachments
-KPCF_attachments = [
-    "optic_Holosight",
-    "optic_MRCO"
 ];
 
 // Defines the available grenades
@@ -75,16 +85,4 @@ KPCF_items = [
 KPCF_backpacks = [
     "B_FieldPack_cbr",
     "B_AssaultPack_cbr"
-];
-
-// ----- These Variables will only be used with activated generatedLists -----
-
-// Defines the whitelisted items
-KPCF_whitelistedItems = [
-    ""
-];
-
-// Defines the blacklisted items
-KPCF_blacklistedItems = [
-    ""
 ];

@@ -122,8 +122,8 @@ class KPCF_dialog {
         class KP_ComboWeapons: KP_ComboEquipment {
             idc = 75811;
             y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,12,48);
-            tooltip = "$STR_KPCF_TOOLTIPMAGAZINES";
-            onLBSelChanged = "[] call KPCF_fnc_createMagazineList";
+            tooltip = "$STR_KPCF_TOOLTIPWEAPONSELECTION";
+            onLBSelChanged = "[] call KPCF_fnc_createSubList";
         };
 
         class KP_EquipmentList: KPGUI_PRE_ListBox {

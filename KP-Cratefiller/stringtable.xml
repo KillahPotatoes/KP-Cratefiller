@@ -108,10 +108,10 @@
             <English>Choose a category from which you want to stow items.</English>
             <German>Wähle eine Kategorie aus, von der du Gegenstände verladen willst.</German>
         </Key>
-        <Key ID="STR_KPCF_TOOLTIPMAGAZINES">
-            <Original>Choose a weapon to find the right magazines.</Original>
-            <English>Choose a weapon to find the right magazines.</English>
-            <German>Wähle eine Waffe um die passenden Magazine zu finden.</German>
+        <Key ID="STR_KPCF_TOOLTIPWEAPONSELECTION">
+            <Original>Choose a weapon to find the right magazines or attachments.</Original>
+            <English>Choose a weapon to find the right magazines or attachments.</English>
+            <German>Wähle eine Waffe um die passenden Magazine oder Zubehör zu finden.</German>
         </Key>
         <Key ID="STR_KPCF_TOOLTIPFILLLEVEL">
             <Original>Shows the current cargo space.</Original>

@@ -24,9 +24,6 @@ private _ctrlEquipment = _dialog displayCtrl 75812;
 lbClear _ctrlWeapon;
 lbClear _ctrlEquipment;
 
-// Reset variables
-KPCF_activeCategory = [];
-
 // Hide controls
 _ctrlWeapon ctrlShow false;
 
@@ -62,10 +59,15 @@ switch (_catIndex) do {
 
     // Attachments
     case 2 : {
+        _ctrlWeapon ctrlShow true;
         {
+            _index = _ctrlWeapon lbAdd (_x select 0);
+            _ctrlWeapon lbSetData [_index , _x select 1];
+        } forEach KPCF_sortedWeapons;
+        /*{
             _index = _ctrlEquipment lbAdd (_x select 0);
             _ctrlEquipment lbSetData [_index , _x select 1];
-        } forEach KPCF_sortedAttachments;
+        } forEach KPCF_sortedAttachments;*/
     };
 
     // Grenades
