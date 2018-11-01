@@ -7,6 +7,7 @@
         "_import",
         "_importName",
         "_export",
-        "_exportName"
+        "_exportName",
+        "CBA_fnc_compatibleMagazines"
     ]
 }
