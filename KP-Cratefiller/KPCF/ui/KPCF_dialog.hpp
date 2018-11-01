@@ -58,6 +58,7 @@ class KPCF_dialog {
             w = KP_GETW(KP_WIDTH_VAL_S,24);
             h = KP_GETH(KP_HEIGHT_VAL_S,24);
             tooltip = "$STR_KPCF_TOOLTIPHELP";
+            action = "";
         };
 
         // Crates
