@@ -16,8 +16,5 @@
 
 params ["_cfBase"];
 
-if (KPCF_ace) then {
-    [_cfBase] call KPCF_fnc_manageAceActions;
-} else {
-    _cfBase addAction ["<t color='#FF8000'>" + localize "STR_KPCF_ACTIONOPEN" + "</t>", {[_this] call KPCF_fnc_openDialog;}, nil, 1, false, true, "", "true", KPCF_interactRadius];
-};
+private _action = ["KPCF", localize "STR_KPCF_TITLE", "KPCF\img\kplogo_ca.paa", {[_this] call KPCF_fnc_openDialog;}, {true}] call ace_interact_menu_fnc_createAction;
+[_cfBase, 0, ["ACE_MainActions"], _action] call ace_interact_menu_fnc_addActionToObject;

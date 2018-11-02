@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.1.0] - 2018-10-31
+### Added
+- 
+
+### Changed
+- 
+
+### Fixed
+- 
+
+### Removed
+- 
+
 ## [1.0.2] - 2018-10-19
 
 ### Fixed
@@ -28,3 +41,4 @@
 
 [1.0.1]: https://github.com/KillahPotatoes/dubjunks-scripts/pull/11
 [1.0.2]: https://github.com/KillahPotatoes/dubjunks-scripts/pull/20
+[1.1.0]: https://github.com/KillahPotatoes/dubjunks-scripts/pull/

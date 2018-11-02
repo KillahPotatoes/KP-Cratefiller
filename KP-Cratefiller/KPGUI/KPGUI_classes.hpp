@@ -576,7 +576,7 @@ class KPGUI_PRE_ProgressBar
 {
     type = 8;
     style = 0;
-    colorFrame[] = {0,0,0,0};
+    colorFrame[] = {1,1,1,1};
     colorBar[] = KP_COLOR_PLAYERDEFINE;
     texture = "";
 };

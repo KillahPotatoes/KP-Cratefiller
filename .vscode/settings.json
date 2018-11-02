@@ -2,6 +2,12 @@
     "sqf.enableCBA": true,
     "sqf.enableACE3": true,
     "sqflint.ignoredVariables": [
-
+        "ace_interact_menu_fnc_createAction",
+        "ace_interact_menu_fnc_addActionToObject",
+        "_import",
+        "_importName",
+        "_export",
+        "_exportName",
+        "CBA_fnc_compatibleMagazines"
     ]
 }
