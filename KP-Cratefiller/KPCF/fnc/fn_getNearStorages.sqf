@@ -24,7 +24,7 @@ lbClear _ctrlStorage;
 // Reset variables
 KPCF_nearStorage = [];
 
-private ["_type", "_config", "_number", "_index"];
+private ["_type", "_config", "_number", "_index", "_picture"];
 
 // Get near objects and check for storage capacity
 {
@@ -42,5 +42,10 @@ private ["_type", "_config", "_number", "_index"];
     _type = typeOf _x;
     _config = [_type] call KPCF_fnc_getConfigPath;
     _index = _ctrlStorage lbAdd format ["%1m - %2", round (KPCF_activeSpawn distance2D _x), getText (configFile >> _config >> _type >> "displayName")];
-    _ctrlStorage lbSetPicture [_index, getText (configFile >> _config >> _type >> "picture")];
+    _picture = getText (configFile >> _config >> _type >> "picture");
+    if (_picture isEqualTo "pictureThing") then {
+        _ctrlStorage lbSetPicture [_index, "KPCF\img\icon_help.paa"];
+    } else {
+        _ctrlStorage lbSetPicture [_index, _picture];
+    };
 } forEach KPCF_nearStorage;
