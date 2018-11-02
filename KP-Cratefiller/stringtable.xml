@@ -128,6 +128,16 @@
             <English>KP-Cratefiller v1.1.0\nBy Dubjunk</English>
             <German>KP-Kistenfüller v1.1.0\nBy Dubjunk</German>
         </Key>
+        <Key ID="STR_KPCF_TOOLTIPEXPORT">
+            <Original>Enter the name of the preset to be exported.</Original>
+            <English>Enter the name of the preset to be exported.</English>
+            <German>Trage den Namen für das zu exportierende Ausrüstungsset ein.</German>
+        </Key>
+        <Key ID="STR_KPCF_TOOLTIPIMPORT">
+            <Original>Select the preset to be imported.</Original>
+            <English>Select the preset to be imported.</English>
+            <German>Wähle das zu importierende Ausrüstungsset.</German>
+        </Key>
     </container>
 
     <Container name="Hints">

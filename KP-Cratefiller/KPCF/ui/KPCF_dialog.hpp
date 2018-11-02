@@ -170,6 +170,7 @@ class KPCF_dialog {
             y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,10,48);
             w = KP_GETW(KP_WIDTH_VAL_S,4);
             h = KP_GETH(KP_HEIGHT_VAL_S,24);
+            tooltip = "$STR_KPCF_TOOLTIPEXPORT";
         };
 
         class KP_ImportName: KPGUI_PRE_Combo {
@@ -178,6 +179,7 @@ class KPCF_dialog {
             y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,10,48);
             w = KP_GETW(KP_WIDTH_VAL_S,4);
             h = KP_GETH(KP_HEIGHT_VAL_S,24);
+            tooltip = "$STR_KPCF_TOOLTIPIMPORT";
         };
 
         class KP_ButtonExport: KPGUI_PRE_InlineButton {
