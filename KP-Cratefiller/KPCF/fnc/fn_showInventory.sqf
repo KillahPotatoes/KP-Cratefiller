@@ -33,6 +33,11 @@ private ["_config", "_type", "_itemMass", "_index"];
 
 private _load = 0;
 
+// Check for an active storage
+if (isNull KPCF_activeStorage) exitWith {
+    _ctlrProgress progressSetPosition 0;
+};
+
 // Get the mass of each item
 {
     _type = (_x select 1);

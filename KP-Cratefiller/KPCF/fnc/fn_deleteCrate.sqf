@@ -29,11 +29,13 @@ if (!((typeOf KPCF_activeStorage) in KPCF_crates)) exitWith {
 // Delete crate
 deleteVehicle KPCF_activeStorage;
 
+private _config = [typeOf KPCF_activeStorage] call KPCF_fnc_getConfigPath;
+private _name = (getText (configFile >> _config >> typeOf KPCF_activeStorage >> "displayName"));
+
 KPCF_activeStorage = objNull;
 
 [] remoteExecCall ["KPCF_fnc_getInventory", (allPlayers - entities "HeadlessClient_F")];
+[{[] remoteExecCall ["KPCF_fnc_getNearStorages", (allPlayers - entities "HeadlessClient_F")];}, [], 1] call CBA_fnc_waitAndExecute;
 
-private _config = [typeOf KPCF_activeStorage] call KPCF_fnc_getConfigPath;
-private _name = (getText (configFile >> _config >> typeOf KPCF_activeStorage >> "displayName"));
 hint format [localize "STR_KPCF_HINTDELETE", _name];
 [{hintSilent "";}, [], 3] call CBA_fnc_waitAndExecute;
