@@ -1,5 +1,5 @@
 /*
-    Killah Potatoes Cratefiller
+    Killah Potatoes Cratefiller v1.1.0
 
     Author: Dubjunk - https://github.com/KillahPotatoes
     License: GNU General Public License v3.0 - https://www.gnu.org/licenses/gpl-3.0.html
@@ -24,9 +24,6 @@ private _ctrlEquipment = _dialog displayCtrl 75812;
 lbClear _ctrlWeapon;
 lbClear _ctrlEquipment;
 
-// Reset variables
-KPCF_activeCategory = [];
-
 // Hide controls
 _ctrlWeapon ctrlShow false;
 
@@ -39,47 +36,81 @@ if (_catIndex == -1) exitWith {
     [{hintSilent "";}, [], 3] call CBA_fnc_waitAndExecute;
 };
 
-// Weapons
-if (_catIndex == 0) then {
-    KPCF_activeCategory = KPCF_weapons;
-    {
-        private _config = [_x] call KPCF_fnc_getConfigPath;
-        _ctrlEquipment lbAdd (getText (configFile >> _config >> _x >> "displayName"));
-    } forEach KPCF_weapons;
-};
+private _index = 0;
+private _config = "";
 
-// Magazines
-if (_catIndex == 1) then {
-    _ctrlWeapon ctrlShow true;
-    {
-        private _config = [_x] call KPCF_fnc_getConfigPath;
-        _ctrlWeapon lbAdd (getText (configFile >> _config >> _x >> "displayName"));
-    } forEach KPCF_weapons;
-};
+switch (_catIndex) do {
 
-// Grenades
-if (_catIndex == 2) then {
-    KPCF_activeCategory = KPCF_grenades;
-    {
-        private _config = [_x] call KPCF_fnc_getConfigPath;
-        _ctrlEquipment lbAdd (getText (configFile >> _config >> _x >> "displayName"));
-    } forEach KPCF_grenades;
-};
+    // Weapons
+    case 0 : {
+        {
+            _index = _ctrlEquipment lbAdd (_x select 0);
+            _ctrlEquipment lbSetData [_index , _x select 1];
+            _config = [_x select 1] call KPCF_fnc_getConfigPath;
+            _ctrlEquipment lbSetPicture [_index, getText (configFile >> _config >> (_x select 1) >> "picture")];
+        } forEach KPCF_sortedWeapons;
+    };
 
-// Explosives
-if (_catIndex == 3) then {
-    KPCF_activeCategory = KPCF_explosives;
-    {
-        private _config = [_x] call KPCF_fnc_getConfigPath;
-        _ctrlEquipment lbAdd (getText (configFile >> _config >> _x >> "displayName"));
-    } forEach KPCF_explosives;
-};
+    // Magazines
+    case 1 : {
+        _ctrlWeapon ctrlShow true;
+        {
+            _index = _ctrlWeapon lbAdd (_x select 0);
+            _ctrlWeapon lbSetData [_index , _x select 1];
+            _config = [_x select 1] call KPCF_fnc_getConfigPath;
+            _ctrlWeapon lbSetPicture [_index, getText (configFile >> _config >> (_x select 1) >> "picture")];
+        } forEach KPCF_sortedWeapons;
+    };
 
-// Items
-if (_catIndex == 4) then {
-    KPCF_activeCategory = KPCF_items;
-    {
-        private _config = [_x] call KPCF_fnc_getConfigPath;
-        _ctrlEquipment lbAdd (getText (configFile >> _config >> _x >> "displayName"));
-    } forEach KPCF_items;
+    // Attachments
+    case 2 : {
+        _ctrlWeapon ctrlShow true;
+        {
+            _index = _ctrlWeapon lbAdd (_x select 0);
+            _ctrlWeapon lbSetData [_index , _x select 1];
+            _config = [_x select 1] call KPCF_fnc_getConfigPath;
+            _ctrlWeapon lbSetPicture [_index, getText (configFile >> _config >> (_x select 1) >> "picture")];
+        } forEach KPCF_sortedWeapons;
+    };
+
+    // Grenades
+    case 3 : {
+        {
+            _index = _ctrlEquipment lbAdd (_x select 0);
+            _ctrlEquipment lbSetData [_index , _x select 1];
+            _config = [_x select 1] call KPCF_fnc_getConfigPath;
+            _ctrlEquipment lbSetPicture [_index, getText (configFile >> _config >> (_x select 1) >> "picture")];
+        } forEach KPCF_sortedGrenades;
+    };
+
+    // Explosives
+    case 4 : {
+        {
+            _index = _ctrlEquipment lbAdd (_x select 0);
+            _ctrlEquipment lbSetData [_index , _x select 1];
+            _config = [_x select 1] call KPCF_fnc_getConfigPath;
+            _ctrlEquipment lbSetPicture [_index, getText (configFile >> _config >> (_x select 1) >> "picture")];
+        } forEach KPCF_sortedExplosives;
+    };
+
+    // Items
+    case 5 : {
+        {
+            _index = _ctrlEquipment lbAdd (_x select 0);
+            _ctrlEquipment lbSetData [_index , _x select 1];
+            _config = [_x select 1] call KPCF_fnc_getConfigPath;
+            _ctrlEquipment lbSetPicture [_index, getText (configFile >> _config >> (_x select 1) >> "picture")];
+        } forEach KPCF_sortedItems;
+    };
+
+    // Backpacks
+    case 6 : {
+        {
+            _index = _ctrlEquipment lbAdd (_x select 0);
+            _ctrlEquipment lbSetData [_index , _x select 1];
+            _config = [_x select 1] call KPCF_fnc_getConfigPath;
+            _ctrlEquipment lbSetPicture [_index, getText (configFile >> _config >> (_x select 1) >> "picture")];
+        } forEach KPCF_sortedBackpacks;
+    };
+
 };

@@ -1,5 +1,5 @@
 /*
-    Killah Potatoes Cratefiller
+    Killah Potatoes Cratefiller v1.1.0
 
     Author: Dubjunk - https://github.com/KillahPotatoes
     License: GNU General Public License v3.0 - https://www.gnu.org/licenses/gpl-3.0.html
@@ -30,4 +30,4 @@ if (_storageIndex == -1) exitWith {
 // Define active Storage
 KPCF_activeStorage = KPCF_nearStorage select _storageIndex;
 
-remoteExecCall ["KPCF_fnc_getInventory", (allPlayers - entities "HeadlessClient_F")];
+[] remoteExecCall ["KPCF_fnc_getInventory", (allPlayers - entities "HeadlessClient_F")];
