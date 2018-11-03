@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Project name="KPDS">
     <!-- English and German localization by Dubjunk: https://github.com/Dubjunk -->
-    <!-- Polish localization by Veteran29: https://github.com/Veteran29 -->
+    <!-- Polish localization by veteran29: https://github.com/veteran29 -->
     <Package name="KPCF">
         <Container name="Titles">
             <Key ID="STR_KPCF_ACTIONOPEN">
@@ -53,11 +53,13 @@
                 <Original>Export</Original>
                 <English>Export</English>
                 <German>Exportieren</German>
+                <Polish>Eksportuj</Polish>
             </Key>
             <Key ID="STR_KPCF_IMPORT">
                 <Original>Import</Original>
                 <English>Import</English>
                 <German>Importieren</German>
+                <Polish>Importuj</Polish>
             </Key>
             <Key ID="STR_KPCF_LISTWEAPONS">
                 <Original>Weapons</Original>
@@ -75,6 +77,7 @@
                 <Original>Weapon attachments</Original>
                 <English>Weapon attachments</English>
                 <German>Waffenzubehör</German>
+                <Polish>Akcesoria do broni</Polish>
             </Key>
             <Key ID="STR_KPCF_LISTGRENADES">
                 <Original>Grenades</Original>
@@ -98,6 +101,7 @@
                 <Original>Backpacks</Original>
                 <English>Backpacks</English>
                 <German>Rucksäcke</German>
+                <Polish>Plecaki</Polish>
             </Key>
         </Container>
 
@@ -118,6 +122,7 @@
                 <Original>Search for new inventories.</Original>
                 <English>Search for new inventories.</English>
                 <German>Nach neuem Laderaum suchen.</German>
+                <Polish>Szukaj nowych ekwipunków.</Polish>
             </Key>
             <Key ID="STR_KPCF_TOOLTIPCATEGORY">
                 <Original>Choose a category from which you want to stow items.</Original>
@@ -129,6 +134,7 @@
                 <Original>Choose a weapon to find the right magazines or attachments.</Original>
                 <English>Choose a weapon to find the right magazines or attachments.</English>
                 <German>Wähle eine Waffe um die passenden Magazine oder Zubehör zu finden.</German>
+                <Polish>Wybierz broń do której mają być wyszukane magazynki oraz dodatki.</Polish>
             </Key>
             <Key ID="STR_KPCF_TOOLTIPFILLLEVEL">
                 <Original>Shows the current cargo space.</Original>
@@ -140,21 +146,25 @@
                 <Original>Deletes the selected preset.</Original>
                 <English>Deletes the selected preset.</English>
                 <German>Löscht das ausgewählte Ausrüstungsset.</German>
+                <Polish>Usuwa wybrany szablon.</Polish>
             </Key>
             <Key ID="STR_KPCF_TOOLTIPHELP">
                 <Original>KP-Cratefiller v1.1.0\nBy Dubjunk</Original>
                 <English>KP-Cratefiller v1.1.0\nBy Dubjunk</English>
                 <German>KP-Kistenfüller v1.1.0\nBy Dubjunk</German>
+                <Polish>KP-Cratefiller v1.1.0\nBy Dubjunk</Polish>
             </Key>
             <Key ID="STR_KPCF_TOOLTIPEXPORT">
                 <Original>Enter the name of the preset to be exported.</Original>
                 <English>Enter the name of the preset to be exported.</English>
                 <German>Trage den Namen für das zu exportierende Ausrüstungsset ein.</German>
+                <Polish>Wpisz nazwę szablonu do wyeksportowania.</Polish>
             </Key>
             <Key ID="STR_KPCF_TOOLTIPIMPORT">
                 <Original>Select the preset to be imported.</Original>
                 <English>Select the preset to be imported.</English>
                 <German>Wähle das zu importierende Ausrüstungsset.</German>
+                <Polish>Wybierz szablon do zaimportowania.</Polish>
             </Key>
         </Container>
 
@@ -217,16 +227,19 @@
                 <Original>No loading zone available, base object is used instead.</Original>
                 <English>No loading zone available, base object is used instead.</English>
                 <German>Keine Ladezone vorhanden, das Basis Objekt wird stattdessen benutzt.</German>
+                <Polish>Strefa załadunku nie jest dostępna, obiekt bazy zostanie wykorzystany w zastępstwie.</Polish>
             </Key>
             <Key ID="STR_KPCF_HINTNOSTORAGE">
                 <Original>No storage selected.</Original>
                 <English>No storage selected.</English>
                 <German>Kein Laderaum ausgewählt.</German>
+                <Polish>Nie wybrano skrzyni.</Polish>
             </Key>
             <Key ID="STR_KPCF_HINTNAME">
                 <Original>Invalid name.</Original>
                 <English>Invalid name.</English>
                 <German>Ungültiger Name.</German>
+                <Polish>Nieprawidłowa nazwa.</Polish>
             </Key>
         </Container>
     </Package>
