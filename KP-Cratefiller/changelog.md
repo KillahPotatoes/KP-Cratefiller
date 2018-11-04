@@ -1,17 +1,22 @@
 # Changelog
 
-## [1.1.0] - 2018-10-31
+## [1.1.0] - 2018-11-XX
 ### Added
-- 
+- Alphabetical sorting for item lists
+- New categories "weapon attachments" and "backpacks"
+- Polish localization
+- Export and import function for inventories
+- Item pictures on the left of some dialog controls
+- Help symbol with version info as tooltip
+- Item blacklist
+- ACE 3 detection
 
 ### Changed
-- 
-
-### Fixed
-- 
-
-### Removed
-- 
+- File header now contains the version
+- Near storages can now be searched with the refresh button
+- Actions will now be added with an event handler instead of a loop
+- Spawn and delete functionalities can now be deactivated
+- The base object can now be used without a spawn object
 
 ## [1.0.2] - 2018-10-19
 
@@ -41,4 +46,4 @@
 
 [1.0.1]: https://github.com/KillahPotatoes/dubjunks-scripts/pull/11
 [1.0.2]: https://github.com/KillahPotatoes/dubjunks-scripts/pull/20
-[1.1.0]: https://github.com/KillahPotatoes/dubjunks-scripts/pull/
+[1.1.0]: https://github.com/KillahPotatoes/dubjunks-scripts/pull/23
