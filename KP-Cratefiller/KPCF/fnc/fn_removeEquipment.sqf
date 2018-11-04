@@ -22,6 +22,13 @@ params [
 private _dialog = findDisplay 758067;
 private _ctrlInventory = _dialog displayCtrl 75822;
 
+// Check if the storage is in range
+if ((KPCF_activeStorage distance2D KPCF_activeSpawn) > KPCF_spawnRadius) exitWith {
+    hint localize "STR_KPCF_HINTRANGE";
+    [{hintSilent "";}, [], 3] call CBA_fnc_waitAndExecute;
+    [] remoteExecCall ["KPCF_fnc_getNearStorages", (allPlayers - entities "HeadlessClient_F")];
+};
+
 // Check for inventory clear
 if (_amount == 0) exitWith {
     KPCF_inventory = [];

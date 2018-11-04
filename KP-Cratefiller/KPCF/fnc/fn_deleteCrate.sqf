@@ -20,6 +20,13 @@ if (isNull KPCF_activeStorage) exitWith {
     [{hintSilent "";}, [], 3] call CBA_fnc_waitAndExecute;
 };
 
+// Check if the storage is in range
+if ((KPCF_activeStorage distance2D KPCF_activeSpawn) > KPCF_spawnRadius) exitWith {
+    hint localize "STR_KPCF_HINTRANGE";
+    [{hintSilent "";}, [], 3] call CBA_fnc_waitAndExecute;
+    [] remoteExecCall ["KPCF_fnc_getNearStorages", (allPlayers - entities "HeadlessClient_F")];
+};
+
 // Check if the active storage is a pre defined crate
 if (!((typeOf KPCF_activeStorage) in KPCF_crates)) exitWith {
     hint localize "STR_KPCF_HINTNONDELETEABLE";
