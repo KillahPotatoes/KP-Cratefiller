@@ -23,6 +23,7 @@ private _preset = profileNamespace getVariable ["KPCF_preset", []];
 
 // Read the export name
 private _exportName = ctrlText _ctrlExport;
+_ctrlExport ctrlSetText "";
 
 if (_exportName == "") exitWith {
     hint localize "STR_KPCF_HINTNAME";
@@ -30,15 +31,10 @@ if (_exportName == "") exitWith {
 };
 
 // Check if the variable is empty
-if (_preset isEqualTo []) exitWith {
-    _preset = [[_exportName, +KPCF_inventory]];
-    // Save the inventory into profileNamespace
-    profileNamespace setVariable ["KPCF_preset", _preset];
-    saveProfileNamespace;
+if !(_preset isEqualTo []) then {
+    // Check if the exportname already exists
+    _preset deleteAt (_preset findIf {(_x select 0) isEqualTo _exportName});
 };
-
-// Check if the exportname already exists
-_preset deleteAt (_preset findIf {(_x select 0) isEqualTo _exportName});
 
 // Save the inventory into profileNamespace
 _preset pushBack [_exportName, +KPCF_inventory];
@@ -46,4 +42,4 @@ _preset pushBack [_exportName, +KPCF_inventory];
 profileNamespace setVariable ["KPCF_preset", _preset];
 saveProfileNamespace;
 
-call KPCF_fnc_showPresets;
+[] call KPCF_fnc_showPresets;
