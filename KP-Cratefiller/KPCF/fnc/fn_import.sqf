@@ -35,7 +35,7 @@ if (_index == -1) exitWith {
 };
 
 // Read the presets from profileNamespace
-private _import = profileNamespace getVariable "KPCF_preset";
+private _import = profileNamespace getVariable ["KPCF_preset", []];
 private _index = _import findIf {(_x select 0) isEqualTo _importName};
 KPCF_inventory append ((_import select _index) select 1);
 
