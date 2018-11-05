@@ -14,7 +14,9 @@
     NONE
 */
 
-params ["_cfBase"];
+params [
+    ["_cfBase", objNull, [objNull]]
+];
 
 private _action = ["KPCF", localize "STR_KPCF_TITLE", "KPCF\img\kplogo_ca.paa", {[_this] call KPCF_fnc_openDialog;}, {true}] call ace_interact_menu_fnc_createAction;
 [_cfBase, 0, ["ACE_MainActions"], _action] call ace_interact_menu_fnc_addActionToObject;
