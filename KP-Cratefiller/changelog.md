@@ -1,6 +1,6 @@
 # Changelog
 
-## [1.1.0] - 2018-11-XX
+## [1.1.0] - 2018-11-05
 ### Added
 - Alphabetical sorting for item lists
 - New categories "weapon attachments" and "backpacks"
