@@ -37,4 +37,4 @@ _import deleteAt (_import findIf {(_x select 0) isEqualTo _importName});
 profileNamespace setVariable ["KPCF_preset", _import];
 saveProfileNamespace;
 
-call KPCF_fnc_showPresets;
+[] call KPCF_fnc_showPresets;
