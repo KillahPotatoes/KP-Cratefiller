@@ -29,7 +29,7 @@ if (_index == -1) exitWith {
 };
 
 // Read the presets from profileNamespace
-private _import = profileNamespace getVariable "KPCF_preset";
+private _import = profileNamespace getVariable ["KPCF_preset", []];
 
 _import deleteAt (_import findIf {(_x select 0) isEqualTo _importName});
 
