@@ -1,5 +1,5 @@
 /*
-    Killah Potatoes Cratefiller
+    Killah Potatoes Cratefiller v1.1.0
 
     Author: Dubjunk - https://github.com/KillahPotatoes
     License: GNU General Public License v3.0 - https://www.gnu.org/licenses/gpl-3.0.html
@@ -24,12 +24,14 @@ lbClear _ctrlStorage;
 // Reset variables
 KPCF_nearStorage = [];
 
+private ["_type", "_config", "_number", "_index", "_picture"];
+
 // Get near objects and check for storage capacity
 {
-    private _type = typeOf _x;
+    _type = typeOf _x;
     if (_type == "GroundWeaponHolder") exitWith {};
-    private _config = [_type] call KPCF_fnc_getConfigPath;
-    private _number = getNumber (configfile >> _config >> _type >> "maximumLoad");
+    _config = [_type] call KPCF_fnc_getConfigPath;
+    _number = getNumber (configfile >> _config >> _type >> "maximumLoad");
     if (_number > 0) then {
         KPCF_nearStorage pushBack _x;
     };
@@ -37,12 +39,13 @@ KPCF_nearStorage = [];
 
 // Fill the list
 {
-    private _type = typeOf _x;
-    private _config = [_type] call KPCF_fnc_getConfigPath;
-    _ctrlStorage lbAdd format ["%1m - %2", round (KPCF_activeSpawn distance2D _x), getText (configFile >> _config >> _type >> "displayName")];
+    _type = typeOf _x;
+    _config = [_type] call KPCF_fnc_getConfigPath;
+    _index = _ctrlStorage lbAdd format ["%1m - %2", round (KPCF_activeSpawn distance2D _x), getText (configFile >> _config >> _type >> "displayName")];
+    _picture = getText (configFile >> _config >> _type >> "picture");
+    if (_picture isEqualTo "pictureThing") then {
+        _ctrlStorage lbSetPicture [_index, "KPCF\img\icon_help.paa"];
+    } else {
+        _ctrlStorage lbSetPicture [_index, _picture];
+    };
 } forEach KPCF_nearStorage;
-
-// Check if dialog is closed
-if (isNull _dialog) exitWith {};
-
-[{call KPCF_fnc_getNearStorages;}, [], 5] call CBA_fnc_waitAndExecute;

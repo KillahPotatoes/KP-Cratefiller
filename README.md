@@ -7,7 +7,7 @@
 # KP Cratefiller
 
 ## Description
-![cfpreview](https://i.imgur.com/zx96NAN.jpg)
+![cfpreview](https://i.imgur.com/f1SBQzP.jpg)
 
 With this script you get a dialog with the ability to manage several inventories. It's created to make logistics easier and pleasant.
 
@@ -19,22 +19,25 @@ You can spawn and delete defined crates, fill these crates and also other object
 * detection of cratefiller objects via classname
 * Own config file for several things (base and spawn object, working radius, crates and available items)
 * Spawn and delete defined crates
-* Generated selection of magazines for a pre selected weapon
-* Easy management of large amounts of supplys
+* Generated selection of magazines and attachments for a pre selected weapon
+* Generated item lists
+* Easy management of large amounts of supplies
 * Overview of the present object inventory
+* Export and import function for inventories
 
 ## Languages
 
 Currently the module is localized for:
 * English
 * German
+* Polish
 
 ## Mods
 
 Required:
 * [CBA_A3](https://steamcommunity.com/workshop/filedetails/?id=450814997)
 
-Optional:
+Supported:
 * [ACE3](https://steamcommunity.com/sharedfiles/filedetails/?id=463939057)
 
 ## How to use
@@ -64,12 +67,7 @@ For Support join the Killah Potatoes discord and move in the `#kp-mods`channel.
 
 ## Planned features
 
-* Automatic generated item lists with blacklist
-* More equipment categorys
-* Alphabetical sorting of the lists
-* Export and import function for created inventories
-* ACE3 interaction support
-* Various code optimizations
+* TBA
 
 ## Licence
 Copyright (C) 2018 [Dubjunk](https://github.com/Dubjunk)
