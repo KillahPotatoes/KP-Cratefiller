@@ -57,20 +57,20 @@ private _specialItems = [];
 {
     _type = _x call BIS_fnc_itemType;
     switch (_type select 0) do {
-        case "Weapon": {if ((_type select 1) isEqualTo "UnknownWeapon") then {KPCF_items pushBackUnique _x} else {if ((_x call BIS_fnc_baseWeapon) == _x) then {KPCF_weapons pushBackUnique _x;};};};
-        case "Mine": {KPCF_explosives pushBackUnique _x};
-        case "Magazine": {if ((((_type select 1) isEqualTo "Grenade") || ((_type select 1) isEqualTo "SmokeShell")) && !((getNumber (configFile >> "CfgMagazines" >> _x >> "type")) == 16)) then {KPCF_grenades pushBackUnique _x}};
-        case "Equipment": {if ((_type select 1) isEqualTo "Backpack") then {KPCF_backpacks pushBackUnique _x}};
+        case "Weapon": {if ((_type select 1) isEqualTo "UnknownWeapon") then {KPCF_items pushBack _x} else {if ((_x call BIS_fnc_baseWeapon) == _x) then {KPCF_weapons pushBack _x;};};};
+        case "Mine": {KPCF_explosives pushBack _x};
+        case "Magazine": {if ((((_type select 1) isEqualTo "Grenade") || ((_type select 1) isEqualTo "SmokeShell")) && !((getNumber (configFile >> "CfgMagazines" >> _x >> "type")) == 16)) then {KPCF_grenades pushBack _x}};
+        case "Equipment": {if ((_type select 1) isEqualTo "Backpack") then {KPCF_backpacks pushBack _x}};
         case "Item": {
             switch (_type select 1) do {
                 case "AccessoryMuzzle" : {};
                 case "AccessoryPointer" : {};
                 case "AccessorySights" : {};
                 case "AccessoryBipod" : {};
-                default {KPCF_items pushBackUnique _x};
+                default {KPCF_items pushBack _x};
             };
         };
     };
-} forEach _classNames;
+} forEach (_classnames arrayIntersect _classnames);
 
 KPCF_items append _specialItems;
