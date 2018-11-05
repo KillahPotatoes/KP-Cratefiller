@@ -14,7 +14,9 @@
     NONE
 */
 
-params ["_cfBase"];
+params [
+    ["_cfBase", objNull, [objNull]]
+];
 
 if (KPCF_ace) then {
     [_cfBase] call KPCF_fnc_manageAceActions;

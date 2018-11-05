@@ -15,7 +15,7 @@
 */
 
 params [
-    "_list"
+    ["_list", [], [[]]]
 ];
 
 private _config = "";
