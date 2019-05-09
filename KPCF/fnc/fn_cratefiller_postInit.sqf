@@ -1,5 +1,5 @@
 /*
-    KP_fnc_ratefiller_postInit
+    KP_fnc_cratefiller_postInit
 
     File: fn_cratefiller_postInit.sqf
     Author: Dubjunk - https://github.com/KillahPotatoes
