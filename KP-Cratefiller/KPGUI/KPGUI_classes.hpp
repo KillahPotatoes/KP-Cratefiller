@@ -4,12 +4,11 @@
     File: KPGUI_classes.hpp
     Author: Wyqer - https://github.com/KillahPotatoes
     Date: 2018-09-13
-    Last Update: 2018-09-13
+    Last Update: 2019-05-04
     License: GNU General Public License v3.0 - https://www.gnu.org/licenses/gpl-3.0.html
 
     Description:
-    Base UI classes for KPGUI.
-
+        Base UI classes for KPGUI.
 */
 
 /*
@@ -36,8 +35,7 @@
 */
 
 // Scrollbar
-class KPGUI_PRE_ScrollBar
-{
+class KPGUI_PRE_ScrollBar {
     color[] = {1, 1, 1, 0.6};
     colorActive[] = {1, 1, 1, 1};
     colorDisabled[] = {1, 1, 1, 0.3};
@@ -87,7 +85,7 @@ class KPGUI_PRE_CloseCross {
     fade = 0;
     access = 0;
     type = 11;
-    style = 48;
+    style = 48 + 2048;
     color[] = {1, 1, 1, 0.75};
     colorBackground[] = {0, 0, 0, 0};
     colorText[] = {1, 1, 1, 0.75};
@@ -113,6 +111,13 @@ class KPGUI_PRE_CloseCross {
     sizeEx = KP_TEXT_M;
     url = "";
     action = "closeDialog 0";
+};
+
+// Help or version info icon
+class KPGUI_PRE_VersionIcon: KPGUI_PRE_CloseCross {
+    text = "\A3\Ui_f\data\Map\Markers\Military\unknown_CA.paa";
+    tooltip = "";
+    action = "";
 };
 
 // General background for the dialog area
@@ -215,6 +220,11 @@ class KPGUI_PRE_ActivePicture: KPGUI_PRE_ActiveText {
     style = 48;
 };
 
+// Active Picture which keeps aspect ratio
+class KPGUI_PRE_ActivePictureRatio: KPGUI_PRE_ActivePicture {
+    style = 48 + 2048;
+};
+
 // Picture which keeps aspect ratio
 class KPGUI_PRE_PictureRatio: KPGUI_PRE_Picture {
     style = 48 + 2048;
@@ -259,7 +269,6 @@ class KPGUI_PRE_Button {
 // Inline Button
 class KPGUI_PRE_InlineButton: KPGUI_PRE_Button {
     colorBackground[] = {0.25, 0.25, 0.25, 1};
-    colorBackgroundDisabled[] = {0, 1, 0, 1};
     colorBackgroundActive[] = {0.3, 0.3, 0.3, 1};
     colorFocused[] = {0.25, 0.25, 0.25, 1};
     offsetPressedX = safeZoneW * 0.0005;
@@ -438,6 +447,7 @@ class KPGUI_PRE_ListBox {
     maxHistoryDelay = 1;
 };
 
+// ListNBox
 class KPGUI_PRE_ListNBox {
     deletable = 0;
     fade = 0;
@@ -908,6 +918,7 @@ class KPGUI_PRE_MapControl {
         coefMin = 0.85;
         coefMax = 1;
     };
+    widthRailWay = 1;
     moveOnEdges = 1;
     x = "SafeZoneXAbs";
     y = SafeZoneY + 1.5 * GUI_GRID_H;
@@ -966,6 +977,12 @@ class KPGUI_PRE_DialogCross: KPGUI_PRE_CloseCross {
     y = KP_GETY_CROSS(KP_Y_VAL);
 };
 
+// Version info
+class KPGUI_PRE_DialogVersionIcon: KPGUI_PRE_VersionIcon {
+    x = safeZoneX + safeZoneW * (KP_X_VAL + KP_WIDTH_VAL - 0.04);
+    y = KP_GETY_CROSS(KP_Y_VAL);
+};
+
 // Background
 class KPGUI_PRE_DialogBackground: KPGUI_PRE_Background {
     x = KP_GETX(KP_X_VAL,KP_WIDTH_VAL,0,1);
@@ -995,6 +1012,12 @@ class KPGUI_PRE_DialogTitleL: KPGUI_PRE_Title {
 // Cross symbol
 class KPGUI_PRE_DialogCrossL: KPGUI_PRE_CloseCross {
     x = KP_GETX_CROSS(KP_X_VAL_L);
+    y = KP_GETY_CROSS(KP_Y_VAL_L);
+};
+
+// Version info
+class KPGUI_PRE_DialogVersionIconL: KPGUI_PRE_VersionIcon {
+    x = safeZoneX + safeZoneW * (KP_X_VAL_L + KP_WIDTH_VAL_L - 0.04);
     y = KP_GETY_CROSS(KP_Y_VAL_L);
 };
 
@@ -1030,6 +1053,12 @@ class KPGUI_PRE_DialogCrossC: KPGUI_PRE_CloseCross {
     y = KP_GETY_CROSS(KP_Y_VAL_C);
 };
 
+// Version info
+class KPGUI_PRE_DialogVersionIconC: KPGUI_PRE_VersionIcon {
+    x = safeZoneX + safeZoneW * (KP_X_VAL_C + KP_WIDTH_VAL_C - 0.04);
+    y = KP_GETY_CROSS(KP_Y_VAL_C);
+};
+
 // Background
 class KPGUI_PRE_DialogBackgroundC: KPGUI_PRE_Background {
     x = KP_GETX(KP_X_VAL_C,KP_WIDTH_VAL_C,0,1);
@@ -1046,6 +1075,82 @@ class KPGUI_PRE_DialogButtonC: KPGUI_PRE_Button {
 };
 
 /*
+    --- Left panel sized classes ---
+*/
+
+// Title bar
+class KPGUI_PRE_DialogTitle_LeftPanel: KPGUI_PRE_Title {
+    x = KP_GETX(KP_X_VAL_LP,KP_WIDTH_VAL_LP,0,1);
+    y = safeZoneY + safeZoneH * KP_Y_VAL_LP;
+    w = KP_GETWPLAIN(KP_WIDTH_VAL_LP,1);
+};
+
+// Cross symbol
+class KPGUI_PRE_DialogCross_LeftPanel: KPGUI_PRE_CloseCross {
+    x = safeZoneX + safeZoneW * (KP_X_VAL_LP + KP_WIDTH_VAL_LP - 0.02);
+    y = KP_GETY_CROSS(KP_Y_VAL_LP);
+};
+
+// Version info
+class KPGUI_PRE_DialogVersionIcon_LeftPanel: KPGUI_PRE_VersionIcon {
+    x = safeZoneX + safeZoneW * (KP_X_VAL_LP + KP_WIDTH_VAL_LP - 0.04);
+    y = KP_GETY_CROSS(KP_Y_VAL_LP);
+};
+
+// Background
+class KPGUI_PRE_DialogBackground_LeftPanel: KPGUI_PRE_Background {
+    x = KP_GETX(KP_X_VAL_LP,KP_WIDTH_VAL_LP,0,1);
+    y = KP_GETY_AREA(KP_Y_VAL_LP);
+    w = KP_GETWPLAIN(KP_WIDTH_VAL_LP,1);
+    h = safeZoneH * KP_HEIGHT_VAL_LP;
+};
+
+// Button
+class KPGUI_PRE_DialogButton_LeftPanel: KPGUI_PRE_Button {
+    x = KP_GETX(KP_X_VAL_LP,KP_WIDTH_VAL_LP,0,1);
+    y = KP_GETY_BELOW(KP_Y_VAL_LP,KP_HEIGHT_VAL_LP);
+    w = KP_GETWPLAIN(KP_WIDTH_VAL_LP,1);
+};
+
+/*
+    --- Right panel sized classes ---
+*/
+
+// Title bar
+class KPGUI_PRE_DialogTitle_RightPanel: KPGUI_PRE_Title {
+    x = KP_GETX(KP_X_VAL_RP,KP_WIDTH_VAL_RP,0,1);
+    y = safeZoneY + safeZoneH * KP_Y_VAL_RP;
+    w = KP_GETWPLAIN(KP_WIDTH_VAL_RP,1);
+};
+
+// Cross symbol
+class KPGUI_PRE_DialogCross_RightPanel: KPGUI_PRE_CloseCross {
+    x = safeZoneX + safeZoneW * (KP_X_VAL_RP + KP_WIDTH_VAL_RP - 0.02);
+    y = KP_GETY_CROSS(KP_Y_VAL_RP);
+};
+
+// Version info
+class KPGUI_PRE_DialogVersionIcon_RightPanel: KPGUI_PRE_VersionIcon {
+    x = safeZoneX + safeZoneW * (KP_X_VAL_RP + KP_WIDTH_VAL_RP - 0.04);
+    y = KP_GETY_CROSS(KP_Y_VAL_RP);
+};
+
+// Background
+class KPGUI_PRE_DialogBackground_RightPanel: KPGUI_PRE_Background {
+    x = KP_GETX(KP_X_VAL_RP,KP_WIDTH_VAL_RP,0,1);
+    y = KP_GETY_AREA(KP_Y_VAL_RP);
+    w = KP_GETWPLAIN(KP_WIDTH_VAL_RP,1);
+    h = safeZoneH * KP_HEIGHT_VAL_RP;
+};
+
+// Button
+class KPGUI_PRE_DialogButton_RightPanel: KPGUI_PRE_Button {
+    x = KP_GETX(KP_X_VAL_RP,KP_WIDTH_VAL_RP,0,1);
+    y = KP_GETY_BELOW(KP_Y_VAL_RP,KP_HEIGHT_VAL_RP);
+    w = KP_GETWPLAIN(KP_WIDTH_VAL_RP,1);
+};
+
+/*
     --- Small sized classes ---
 */
 
@@ -1058,7 +1163,7 @@ class KPGUI_PRE_DialogTitleS: KPGUI_PRE_Title {
 
 // Cross symbol
 class KPGUI_PRE_DialogCrossS: KPGUI_PRE_CloseCross {
-    x = safeZoneX + safeZoneW * (KP_X_VAL_S + KP_WIDTH_VAL_S - 0.02)
+    x = safeZoneX + safeZoneW * (KP_X_VAL_S + KP_WIDTH_VAL_S - 0.02);
     y = KP_GETY_CROSS(KP_Y_VAL_S);
 };
 
@@ -1075,4 +1180,48 @@ class KPGUI_PRE_DialogButtonS: KPGUI_PRE_Button {
     x = KP_GETX(KP_X_VAL_S,KP_WIDTH_VAL_S,0,1);
     y = KP_GETY_BELOW(KP_Y_VAL_S,KP_HEIGHT_VAL_S);
     w = KP_GETWPLAIN(KP_WIDTH_VAL_S,1);
+};
+
+/*
+    --- Small right sized classes ---
+*/
+
+// Title bar
+class KPGUI_PRE_DialogTitleSR: KPGUI_PRE_Title {
+    x = KP_GETX(KP_X_VAL_SR,KP_WIDTH_VAL_SR,0,1);
+    y = safeZoneY + safeZoneH * KP_Y_VAL_SR;
+    w = KP_GETWPLAIN(KP_WIDTH_VAL_SR,1);
+};
+
+// Cross symbol
+class KPGUI_PRE_DialogCrossSR: KPGUI_PRE_CloseCross {
+    x = safeZoneX + safeZoneW * (KP_X_VAL_SR + KP_WIDTH_VAL_SR - 0.02)
+    y = KP_GETY_CROSS(KP_Y_VAL_SR);
+};
+
+// Background
+class KPGUI_PRE_DialogBackgroundSR: KPGUI_PRE_Background {
+    x = KP_GETX(KP_X_VAL_SR,KP_WIDTH_VAL_SR,0,1);
+    y = KP_GETY_AREA(KP_Y_VAL_SR);
+    w = KP_GETWPLAIN(KP_WIDTH_VAL_SR,1);
+    h = safeZoneH * KP_HEIGHT_VAL_SR;
+};
+
+// Button
+class KPGUI_PRE_DialogButtonSR: KPGUI_PRE_Button {
+    x = KP_GETX(KP_X_VAL_SR,KP_WIDTH_VAL_SR,0,1);
+    y = KP_GETY_BELOW(KP_Y_VAL_SR,KP_HEIGHT_VAL_SR);
+    w = KP_GETWPLAIN(KP_WIDTH_VAL_SR,1);
+};
+
+/*
+    --- Other classes ---
+*/
+
+class KPGUI_PRE_LogoRightCorner: KPGUI_PRE_PictureRatio {
+    text = "KPGUI\res\kp512_CA.paa";
+    x = "safezoneX + safezoneW - 5.3 * (((safezoneW / safezoneH) min 1.2) / 40)";
+    y = "safezoneY + safezoneH - 4.5 * ((((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
+    w = "3.5 * (((safezoneW / safezoneH) min 1.2) / 40)";
+    h = "3.5 * ((((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
 };
