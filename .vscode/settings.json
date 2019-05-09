@@ -7,7 +7,8 @@
     "sqflint.ignoredVariables": [
         "ace_interact_menu_fnc_createAction",
         "ace_interact_menu_fnc_addActionToObject",
-        "CBA_fnc_compatibleMagazines"
+        "CBA_fnc_compatibleMagazines",
+        "CBA_Settings_fnc_init"
     ],
     "psi-header.lang-config": [
         {

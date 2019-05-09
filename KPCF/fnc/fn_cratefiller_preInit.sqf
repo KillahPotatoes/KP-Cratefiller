@@ -29,8 +29,12 @@ if (isServer) then {diag_log format ["[KPDS] [%1] [PRE] [EXAMPLE] Module initial
     ----- Module Initialization -----
 */
 
+// Check for ACE
+KP_ace_enabled = isClass (configFile >> "CfgPatches" >> "ace_main");
+
+
 // Process CBA Settings
-//[] call KP_fnc_cratefiller_settings;
+[] call KP_fnc_cratefiller_settings;
 
 // Server section (dedicated and player hosted)
 if (isServer) then {
