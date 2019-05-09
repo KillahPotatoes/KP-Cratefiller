@@ -14,6 +14,17 @@
 class cratefiller {
     file = "KPCF\fnc";
 
+    // Module post initialization
+    class cratefiller_postInit {
+        postInit = 1;
+    };
+
+    // Module pre initialization
+    class cratefiller_preInit {
+        preInit = 1;
+    };
+
+    /*
     // Initialize the KP cratefiller
     class init {
         postInit = 1;
@@ -81,4 +92,5 @@ class cratefiller {
 
     // Spawns the selected crate
     class spawnCrate {};
+    */
 };
