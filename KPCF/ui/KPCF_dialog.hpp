@@ -1,5 +1,5 @@
 /*
-    Killah Potatoes Cratefiller v1.1.0
+    Killah Potatoes Cratefiller v1.2.0
 
     Author: Dubjunk - https://github.com/KillahPotatoes
     License: GNU General Public License v3.0 - https://www.gnu.org/licenses/gpl-3.0.html
@@ -9,20 +9,106 @@
 */
 
 class KPCF_dialog {
-    idd = 758067;
+    idd = KPCF_IDC_DIALOG;
     movingEnable = 0;
 
     class controlsBackground {
 
-        class KP_DialogTitle: KPGUI_PRE_DialogTitleS {
+        class KPCF_DialogTitle: KPGUI_PRE_DialogTitleS {
             text = "$STR_KPCF_TITLE";
         };
 
-        class KP_DialogArea: KPGUI_PRE_DialogBackgroundS {};
+        class KPCF_DialogArea: KPGUI_PRE_DialogBackgroundS {};
+
+        // Tools controlsGroup
+
+        class KPCF_GroupTools: KPGUI_PRE_ControlsGroupNoScrollbars {
+            idc = KPCF_IDC_GROUPOVERVIEW;
+            x = safezoneX;
+            y = safezoneY;
+            w = safezoneW;
+            h = safezoneH;
+
+            class controls {
+
+                class KPCF_DialogTitleTools: KPGUI_PRE_DialogTitleSR {
+                    text = "$STR_KPCF_TITLEOVERVIEW";
+                    x = KP_GETX(KP_X_VAL_SR,KP_WIDTH_VAL_SR,0,1) - safezoneX;
+                    y = safeZoneY + safeZoneH * KP_Y_VAL_SR - safezoneY;
+                };
+
+                class KPCF_DialogAreaTools: KPGUI_PRE_DialogBackgroundSR {
+                    x = KP_GETX(KP_X_VAL_SR,KP_WIDTH_VAL_SR,0,1) - safezoneX;
+                    y = KP_GETY_AREA(KP_Y_VAL_SR) - safezoneY;
+                };
+
+                class KPCF_ComboGroups: KPGUI_PRE_Combo {
+                    idc = KPCF_IDC_COMBOGROUPS;
+                    x = KP_GETCX(KP_X_VAL_SR,KP_WIDTH_VAL_SR,0,1) - safezoneX;
+                    y = KP_GETCY(KP_Y_VAL_SR,KP_HEIGHT_VAL_SR,0,48) - safezoneY;
+                    w = KP_GETW(KP_WIDTH_VAL_SR,1);
+                    h = KP_GETH(KP_HEIGHT_VAL_SR,24);
+                    tooltip = "$STR_KPCF_GROUPS_TT";
+                    //onLBSelChanged = "[] call KPLIB_fnc_cratefiller_getPlayers";
+                };
+
+                class KPCF_ComboPlayers: KPCF_ComboGroups {
+                    idc = KPCF_IDC_COMBOPLAYERS;
+                    y = KP_GETCY(KP_Y_VAL_SR,KP_HEIGHT_VAL_SR,2,48) - safezoneY;
+                    tooltip = "$STR_KPCF_PLAYERS_TT";
+                    //onLBSelChanged = "[] call KPLIB_fnc_cratefiller_getPlayerInventory";
+                };
+
+                class KPCF_MainWeapon: KPGUI_PRE_PictureRatio {
+                    idc = KPCF_IDC_MAINWEAPON;
+                    text = "\A3\Ui_f\data\GUI\Rsc\RscDisplayArsenal\PrimaryWeapon_ca.paa";
+                    x = KP_GETCX(KP_X_VAL_SR,KP_WIDTH_VAL_SR,0,1) - safezoneX;
+                    y = KP_GETCY(KP_Y_VAL_SR,KP_HEIGHT_VAL_SR,6,48) - safezoneY;
+                    w = KP_GETW(KP_WIDTH_VAL_SR,1);
+                    h = KP_GETH(KP_HEIGHT_VAL_SR,4);
+                };
+
+                class KPCF_Handgun: KPCF_MainWeapon {
+                    idc = KPCF_IDC_HANDGUN;
+                    text = "\A3\Ui_f\data\GUI\Rsc\RscDisplayArsenal\Handgun_ca.paa";
+                    y = KP_GETCY(KP_Y_VAL_SR,KP_HEIGHT_VAL_SR,21,48) - safezoneY;
+                };
+
+                class KPCF_SecondaryWeapon: KPCF_MainWeapon {
+                    idc = KPCF_IDC_SECONDARYWEAPON;
+                    text = "\A3\Ui_f\data\GUI\Rsc\RscDisplayArsenal\SecondaryWeapon_ca.paa";
+                    y = KP_GETCY(KP_Y_VAL_SR,KP_HEIGHT_VAL_SR,36,48) - safezoneY;
+                };
+
+            };
+
+        };
+
+        // Tools controlsGroup end
+
+    };
+
+    class controls {
+
+        class KPCF_Help: KPGUI_PRE_DialogCrossS {
+            text = "KPCF\img\icon_help.paa";
+            x = safeZoneX + safeZoneW * (KP_X_VAL_S + KP_WIDTH_VAL_S - 0.04)
+            y = KP_GETY_CROSS(KP_Y_VAL_S);
+            tooltip = "$STR_KPCF_HELP_TT";
+            action = "";
+        };
+
+        class KPCF_ButtonTools: KPGUI_PRE_DialogCrossS {
+            idc = KPCF_IDC_BUTTONOVERVIEW;
+            text = "KPGUI\res\icon_tools.paa";
+            x = safeZoneX + safeZoneW * (KP_X_VAL_S + KP_WIDTH_VAL_S - 0.08);
+            tooltip = "$STR_KPCF_OVERVIEW_TT";
+            //action = "[] call KPLIB_fnc_cratefiller_showOverview";
+        };
 
         // Crates
 
-        class KP_TransportTitle: KPGUI_PRE_InlineTitle {
+        class KPCF_TransportTitle: KPGUI_PRE_InlineTitle {
             text = "$STR_KPCF_TITLETRANSPORT";
             x = KP_GETCX(KP_X_VAL_S,KP_WIDTH_VAL_S,0,1);
             y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,0,48);
@@ -30,227 +116,200 @@ class KPCF_dialog {
             h = KP_GETH(KP_HEIGHT_VAL_S,16);
         };
 
+        class KPCF_ComboCrate: KPGUI_PRE_Combo {
+            idc = KPCF_IDC_COMBOCRATE;
+            x = KP_GETCX(KP_X_VAL_S,KP_WIDTH_VAL_S,0,1);
+            y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,3,48);
+            w = KP_GETW(KP_WIDTH_VAL_S,2);
+            h = KP_GETH(KP_HEIGHT_VAL_S,24);
+            tooltip = "$STR_KPCF_CRATE_TT";
+        };
+
+        class KPCF_ComboCargo: KPCF_ComboCrate {
+            idc = KPCF_IDC_COMBOCARGO;
+            x = KP_GETCX(KP_X_VAL_S,KP_WIDTH_VAL_S,1,2);
+            w = KP_GETW(KP_WIDTH_VAL_S,(24/11));
+            tooltip = "$STR_KPCF_INVENTORY_TT";
+            //onLBSelChanged = "[] call KPCF_fnc_setActiveStorage";
+        };
+
+        class KPCF_RefreshCargo: KPGUI_PRE_CloseCross {
+            text = "KPCF\img\icon_refresh.paa";
+            x = KP_GETCX(KP_X_VAL_S,KP_WIDTH_VAL_S,23,24);
+            y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,3,48);
+            w = KP_GETW(KP_WIDTH_VAL_S,24);
+            h = KP_GETH(KP_HEIGHT_VAL_S,24);
+            tooltip = "$STR_KPCF_REFRESH_TT";
+            //action = "[] call KPCF_fnc_getNearStorages";
+        };
+
+        class KPCF_ButtonSpawnCrate: KPGUI_PRE_InlineButton {
+            idc = KPCF_IDC_BUTTONSPAWNCRATE;
+            text = "$STR_KPCF_SPAWNCRATE";
+            x = KP_GETCX(KP_X_VAL_S,KP_WIDTH_VAL_S,0,1);
+            y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,5,48);
+            w = KP_GETW(KP_WIDTH_VAL_S,2);
+            h = KP_GETH(KP_HEIGHT_VAL_S,24);
+            //onButtonClick = "[] call KPCF_fnc_spawnCrate";
+        };
+
+        class KPCF_ButtonDeleteCrate: KPCF_ButtonSpawnCrate {
+            idc = KPCF_IDC_BUTTONDELETECRATE;
+            text = "$STR_KPCF_DELETECRATE";
+            x = KP_GETCX(KP_X_VAL_S,KP_WIDTH_VAL_S,1,2);
+            y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,5,48);
+            //onButtonClick = "[] call KPCF_fnc_deleteCrate";
+        };
+
         // Equipment
 
-        class KP_EquipmentTitle: KP_TransportTitle {
+        class KPCF_EquipmentTitle: KPCF_TransportTitle {
             text = "$STR_KPCF_TITLEEQUIPMENT";
             y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,7,48);
             w = KP_GETW(KP_WIDTH_VAL_S,2);
         };
 
+        class KPCF_ComboEquipment: KPGUI_PRE_Combo {
+            idc = KPCF_IDC_COMBOEQUIPMENT;
+            x = KP_GETCX(KP_X_VAL_S,KP_WIDTH_VAL_S,0,1);
+            y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,10,48);
+            w = KP_GETW(KP_WIDTH_VAL_S,2);
+            h = KP_GETH(KP_HEIGHT_VAL_S,24);
+            tooltip = "$STR_KPCF_TOOLTIPCATEGORY";
+            //onLBSelChanged = "[] call KPCF_fnc_createEquipmentList";
+        };
+
+        class KPCF_ComboWeapons: KPCF_ComboEquipment {
+            idc = KPCF_IDC_COMBOWEAPONS;
+            y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,12,48);
+            w = KP_GETW(KP_WIDTH_VAL_S,3);
+            tooltip = "$STR_KPCF_TOOLTIPWEAPONSELECTION";
+            //onLBSelChanged = "[] call KPCF_fnc_createSubList";
+        };
+
+        class KPCF_SearchBar: KPGUI_PRE_EditBox {
+            idc = KPCF_IDC_SEARCHBAR;
+            x = KP_GETCX(KP_X_VAL_S,KP_WIDTH_VAL_S,1,3);
+            y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,12,48);
+            w = KP_GETW(KP_WIDTH_VAL_S,6);
+            h = KP_GETH(KP_HEIGHT_VAL_S,24);
+            tooltip = "$STR_KPCF_SEARCH_TT";
+            //onKeyUp = "[] call KPLIB_fnc_cratefiller_search";
+        };
+
+        class KPCF_LeftEquipmentListButton: KPGUI_PRE_BUTTON {
+            idc = KPCF_IDC_BUTTONLEFTEQUIPMENT;
+            text = "-";
+            //onButtonClick = "[687416] call KPLIB_fnc_cratefiller_removeEquipment";
+        };
+
+        class KPCF_RightEquipmentListButton: KPGUI_PRE_BUTTON {
+            idc = KPCF_IDC_BUTTONRIGHTEQUIPMENT;
+            text = "+";
+            //onButtonClick = "[687416] call KPLIB_fnc_cratefiller_addEquipment";
+        };
+
+        class KPCF_EquipmentList: KPGUI_PRE_ListNBox {
+            idc = KPCF_IDC_EQUIPMENTLIST;
+            x = KP_GETCX(KP_X_VAL_S,KP_WIDTH_VAL_S,0,1);
+            y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,14,48);
+            w = KP_GETW(KP_WIDTH_VAL_S,(2));
+            h = KP_GETH(KP_HEIGHT_VAL_S,(48/32));
+
+            columns[] = {0.05, 0.2};
+
+            idcLeft = KPCF_IDC_BUTTONLEFTEQUIPMENT;
+            idcRight = KPCF_IDC_BUTTONRIGHTEQUIPMENT;
+        };
+
         // Inventory
 
-        class KP_InventoryTitle: KP_TransportTitle {
+        class KPCF_InventoryTitle: KPCF_TransportTitle {
             text = "$STR_KPCF_TITLEINVENTORY";
             x = KP_GETCX(KP_X_VAL_S,KP_WIDTH_VAL_S,1,2);
             y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,7,48);
             w = KP_GETW(KP_WIDTH_VAL_S,2);
         };
 
-    };
-
-    class controls {
-
-        class KP_Help: KPGUI_PRE_DialogCrossS {
-            text = "KPCF\img\icon_help.paa";
-            x = safeZoneX + safeZoneW * (KP_X_VAL_S + KP_WIDTH_VAL_S - 0.04)
-            y = KP_GETY_CROSS(KP_Y_VAL_S);
-            tooltip = "$STR_KPCF_TOOLTIPHELP";
-            action = "";
-        };
-
-        // Crates
-
-        class KP_ComboCrate: KPGUI_PRE_Combo {
-            idc = 75801;
-            x = KP_GETCX(KP_X_VAL_S,KP_WIDTH_VAL_S,0,1);
-            y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,3,48);
-            w = KP_GETW(KP_WIDTH_VAL_S,2);
-            h = KP_GETH(KP_HEIGHT_VAL_S,24);
-            tooltip = "$STR_KPCF_TOOLTIPCRATE";
-        };
-
-        class KP_ComboCargo: KP_ComboCrate {
-            idc = 75802;
-            x = KP_GETCX(KP_X_VAL_S,KP_WIDTH_VAL_S,1,2);
-            w = KP_GETW(KP_WIDTH_VAL_S,(24/11));
-            tooltip = "$STR_KPCF_TOOLTIPINVENTORY";
-            onLBSelChanged = "[] call KPCF_fnc_setActiveStorage";
-        };
-
-        class KP_RefreshCargo: KPGUI_PRE_CloseCross {
-            text = "KPCF\img\icon_refresh.paa";
-            x = KP_GETCX(KP_X_VAL_S,KP_WIDTH_VAL_S,23,24);
-            y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,3,48);
-            w = KP_GETW(KP_WIDTH_VAL_S,24);
-            h = KP_GETH(KP_HEIGHT_VAL_S,24);
-            tooltip = "$STR_KPCF_TOOLTIPREFRESH";
-            action = "[] call KPCF_fnc_getNearStorages";
-        };
-
-        class KP_ButtonSpawnCrate: KPGUI_PRE_InlineButton {
-            idc = 75803;
-            text = "$STR_KPCF_SPAWNCRATE";
-            x = KP_GETCX(KP_X_VAL_S,KP_WIDTH_VAL_S,0,1);
-            y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,5,48);
-            w = KP_GETW(KP_WIDTH_VAL_S,2);
-            h = KP_GETH(KP_HEIGHT_VAL_S,24);
-            onButtonClick = "[] call KPCF_fnc_spawnCrate";
-        };
-
-        class KP_ButtonDeleteCrate: KP_ButtonSpawnCrate {
-            idc = 75804;
-            text = "$STR_KPCF_DELETECRATE";
-            x = KP_GETCX(KP_X_VAL_S,KP_WIDTH_VAL_S,1,2);
-            y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,5,48);
-            onButtonClick = "[] call KPCF_fnc_deleteCrate";
-        };
-
-        // Equipment
-
-        class KP_ComboEquipment: KPGUI_PRE_Combo {
-            idc = 75810;
-            x = KP_GETCX(KP_X_VAL_S,KP_WIDTH_VAL_S,0,1);
-            y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,10,48);
-            w = KP_GETW(KP_WIDTH_VAL_S,2);
-            h = KP_GETH(KP_HEIGHT_VAL_S,24);
-            tooltip = "$STR_KPCF_TOOLTIPCATEGORY";
-            onLBSelChanged = "[] call KPCF_fnc_createEquipmentList";
-        };
-
-        class KP_ComboWeapons: KP_ComboEquipment {
-            idc = 75811;
-            y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,12,48);
-            tooltip = "$STR_KPCF_TOOLTIPWEAPONSELECTION";
-            onLBSelChanged = "[] call KPCF_fnc_createSubList";
-        };
-
-        class KP_EquipmentList: KPGUI_PRE_ListBox {
-            idc = 75812;
-            x = KP_GETCX(KP_X_VAL_S,KP_WIDTH_VAL_S,0,1);
-            y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,14,48);
-            w = KP_GETW(KP_WIDTH_VAL_S,(16/7));
-            h = KP_GETH(KP_HEIGHT_VAL_S,(48/32));
-        };
-
-        class KP_ButtonAddEquipment: KPGUI_PRE_InlineButton {
-            text = "+ 1";
-            x = KP_GETCX(KP_X_VAL_S,KP_WIDTH_VAL_S,7,16);
-            y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,14,48);
-            w = KP_GETW(KP_WIDTH_VAL_S,16);
-            h = KP_GETH(KP_HEIGHT_VAL_S,(48/8));
-            onButtonClick = "[1] call KPCF_fnc_addEquipment";
-        };
-
-        class KP_ButtonAddEquipment5: KP_ButtonAddEquipment {
-            text = "+ 5";
-            y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,22,48);
-            onButtonClick = "[5] call KPCF_fnc_addEquipment";
-        };
-
-        class KP_ButtonAddEquipment10: KP_ButtonAddEquipment {
-            text = "+ 10";
-            y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,30,48);
-            onButtonClick = "[10] call KPCF_fnc_addEquipment";
-        };
-
-        class KP_ButtonAddEquipment20: KP_ButtonAddEquipment {
-            text = "+ 20";
-            y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,38,48);
-            onButtonClick = "[20] call KPCF_fnc_addEquipment";
-        };
-
-        // Inventory
-
-        class KP_ExportName: KPGUI_PRE_EditBox {
-            idc = 75820;
+        class KPCF_ExportName: KPGUI_PRE_EditBox {
+            idc = KPCF_IDC_EXPORTNAME;
             x = KP_GETCX(KP_X_VAL_S,KP_WIDTH_VAL_S,2,4);
             y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,10,48);
             w = KP_GETW(KP_WIDTH_VAL_S,4);
             h = KP_GETH(KP_HEIGHT_VAL_S,24);
-            tooltip = "$STR_KPCF_TOOLTIPEXPORT";
+            tooltip = "$STR_KPCF_EXPORT_T";
         };
 
-        class KP_ImportName: KPGUI_PRE_Combo {
-            idc = 75821;
+        class KPCF_ImportName: KPGUI_PRE_Combo {
+            idc = KPCF_IDC_IMPORTNAME;
             x = KP_GETCX(KP_X_VAL_S,KP_WIDTH_VAL_S,3,4);
             y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,10,48);
             w = KP_GETW(KP_WIDTH_VAL_S,4);
             h = KP_GETH(KP_HEIGHT_VAL_S,24);
-            tooltip = "$STR_KPCF_TOOLTIPIMPORT";
+            tooltip = "$STR_KPCF_IMPORT_TT";
         };
 
-        class KP_ButtonExport: KPGUI_PRE_InlineButton {
+        class KPCF_ButtonExport: KPGUI_PRE_InlineButton {
             text = "$STR_KPCF_EXPORT";
             x = KP_GETCX(KP_X_VAL_S,KP_WIDTH_VAL_S,2,4);
             y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,12,48);
             w = KP_GETW(KP_WIDTH_VAL_S,4);
             h = KP_GETH(KP_HEIGHT_VAL_S,24);
-            onButtonClick = "[] call KPCF_fnc_export";
+            //onButtonClick = "[] call KPCF_fnc_export";
         };
 
-        class KP_ButtonImport: KP_ButtonExport {
+        class KPCF_ButtonImport: KPCF_ButtonExport {
             text = "$STR_KPCF_IMPORT";
             x = KP_GETCX(KP_X_VAL_S,KP_WIDTH_VAL_S,3,4);
             w = KP_GETW(KP_WIDTH_VAL_S,(24/5));
-            onButtonClick = "[] call KPCF_fnc_import";
+            //onButtonClick = "[] call KPCF_fnc_import";
         };
 
-        class KP_DeletePreset: KPGUI_PRE_CloseCross {
+        class KPCF_DeletePreset: KPGUI_PRE_CloseCross {
             text = "KPCF\img\icon_recyclebin.paa";
             x = KP_GETCX(KP_X_VAL_S,KP_WIDTH_VAL_S,23,24);
             y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,12,48);
             w = KP_GETW(KP_WIDTH_VAL_S,24);
             h = KP_GETH(KP_HEIGHT_VAL_S,24);
-            tooltip = "$STR_KPCF_TOOLTIPDELETE";
-            action = "[] call KPCF_fnc_deletePreset";
+            tooltip = "$STR_KPCF_DELETE_TT";
+            //action = "[] call KPCF_fnc_deletePreset";
         };
 
-        class KP_InventoryList: KPGUI_PRE_ListBox {
-            idc = 75822;
+        class KPCF_LeftInventoryListButton: KPGUI_PRE_BUTTON {
+            idc = KPCF_IDC_BUTTONLEFTINVENTORY;
+            text = "-";
+            //onButtonClick = "[687421] call KPLIB_fnc_cratefiller_removeEquipment";
+        };
+
+        class KPCF_RightInventoryListButton: KPGUI_PRE_BUTTON {
+            idc = KPCF_IDC_BUTTONRIGHTINVENTORY;
+            text = "+";
+            //onButtonClick = "[687421] call KPLIB_fnc_cratefiller_addEquipment";
+        };
+
+        class KPCF_InventoryList: KPGUI_PRE_ListBox {
+            idc = KPCF_IDC_INVENTORYLIST;
             x = KP_GETCX(KP_X_VAL_S,KP_WIDTH_VAL_S,8,16);
             y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,14,48);
             w = KP_GETW(KP_WIDTH_VAL_S,(16/7));
             h = KP_GETH(KP_HEIGHT_VAL_S,(48/32));
+
+            columns[] = {0.05, 0.2, 0.3};
+
+            idcLeft = KPCF_IDC_BUTTONLEFTINVENTORY;
+            idcRight = KPCF_IDC_BUTTONRIGHTINVENTORY;
         };
 
-        class KP_ButtonRemoveEquipment: KPGUI_PRE_InlineButton {
-            text = "- 1";
-            x = KP_GETCX(KP_X_VAL_S,KP_WIDTH_VAL_S,15,16);
-            y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,14,48);
-            w = KP_GETW(KP_WIDTH_VAL_S,16);
-            h = KP_GETH(KP_HEIGHT_VAL_S,(48/8));
-            onButtonClick = "[1] call KPCF_fnc_removeEquipment";
-        };
-
-        class KP_ButtonRemoveEquipment5: KP_ButtonRemoveEquipment {
-            text = "- 5";
-            y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,22,48);
-            onButtonClick = "[5] call KPCF_fnc_removeEquipment";
-        };
-
-        class KP_ButtonRemoveEquipment10: KP_ButtonRemoveEquipment {
-            text = "- 10";
-            y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,30,48);
-            onButtonClick = "[10] call KPCF_fnc_removeEquipment";
-        };
-
-        class KP_ButtonRemoveEquipmentClear: KP_ButtonRemoveEquipment {
-            text = "Clear";
-            y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,38,48);
-            onButtonClick = "[0] call KPCF_fnc_removeEquipment";
-        };
-
-        class KP_ProgressBar : KPGUI_PRE_ProgressBar {
-            idc = 75823;
+        class KPCF_ProgressBar : KPGUI_PRE_ProgressBar {
+            idc = KPCF_IDC_PROGRESSBAR;
             x = KP_GETCX(KP_X_VAL_S,KP_WIDTH_VAL_S,0,1);
             y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,46,48);
             w = KP_GETW(KP_WIDTH_VAL_S,1);
             h = KP_GETH(KP_HEIGHT_VAL_S,24);
-            tooltip = "$STR_KPCF_TOOLTIPFILLLEVEL"
+            tooltip = "$STR_KPCF_FILLLEVEL_TT";
         };
 
-            class KP_DialogCross: KPGUI_PRE_DialogCrossS {};
+            class KPCF_DialogCross: KPGUI_PRE_DialogCrossS {};
 
     };
 };
