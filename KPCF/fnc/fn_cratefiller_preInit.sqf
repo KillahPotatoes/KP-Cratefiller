@@ -42,13 +42,13 @@ if (isServer) then {
 
 };
 
-// HC section
-if (!hasInterface && !isDedicated) then {
-
-};
-
 // Player section
 if (hasInterface) then {
+
+    // Add CBA event handler to the base objects
+    {
+        [_x, "init", {[_this select 0] call KP_cratefiller_addActions;}, nil, nil, true] call CBA_fnc_addClassEventHandler;
+    } forEach KP_cratefiller_Buildings;
 
 };
 

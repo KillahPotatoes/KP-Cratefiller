@@ -20,23 +20,12 @@
         PostInit finished [BOOL]
 */
 
-if (isServer) then {diag_log format ["[KPDS] [%1] [POST] [CRATEFILLER] Module initializing...", diag_tickTime];};
-
-// Server section (dedicated and player hosted)
 if (isServer) then {
+
+    diag_log format ["[KPDS] [%1] [POST] [CRATEFILLER] Module initializing...", diag_tickTime];
 
     // Create cratefiller presets on startup
     [] call KP_fnc_cratefiller_presets;
-
-};
-
-// Player section
-if (hasInterface) then {
-
-    // Add CBA event handler to the base objects
-    {
-        [_x, "init", {[_this select 0] call KP_cratefiller_addActions;}, nil, nil, true] call CBA_fnc_addClassEventHandler;
-    } forEach KP_cratefiller_Buildings;
 
 };
 
