@@ -1,10 +1,12 @@
 /*
+    Killah Potatoes Cratefiller v1.2.0
+
     KP_fnc_cratefiller_preInit
 
     File: fn_cratefiller_preInit.sqf
     Author: Dubjunk - https://github.com/KillahPotatoes
     Date: 2019-05-09
-    Last Update: 2019-05-09
+    Last Update: 2019-08-07
     License: GNU General Public License v3.0 - https://www.gnu.org/licenses/gpl-3.0.html
 
     Description:
@@ -14,16 +16,10 @@
         NONE
 
     Returns:
-        Module preInit finished [BOOL]
+        PreInit finished [BOOL]
 */
 
-if (isServer) then {diag_log format ["[KPDS] [%1] [PRE] [EXAMPLE] Module initializing...", diag_tickTime];};
-
-/*
-    ----- Module Globals -----
-*/
-
-
+if (isServer) then {diag_log format ["[KPDS] [%1] [PRE] [CRATEFILLER] Module initializing...", diag_tickTime];};
 
 /*
     ----- Module Initialization -----
@@ -31,7 +27,6 @@ if (isServer) then {diag_log format ["[KPDS] [%1] [PRE] [EXAMPLE] Module initial
 
 // Check for ACE
 KP_ace_enabled = isClass (configFile >> "CfgPatches" >> "ace_main");
-
 
 // Process CBA Settings
 [] call KP_fnc_cratefiller_settings;
@@ -57,6 +52,6 @@ if (hasInterface) then {
 
 };
 
-if (isServer) then {diag_log format ["[KPDS] [%1] [PRE] [EXAMPLE] Module initialized", diag_tickTime];};
+if (isServer) then {diag_log format ["[KPDS] [%1] [PRE] [CRATEFILLER] Module initialized", diag_tickTime];};
 
 true

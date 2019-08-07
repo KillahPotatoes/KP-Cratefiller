@@ -1,10 +1,12 @@
 /*
+    Killah Potatoes Cratefiller v1.2.0
+
     KP_fnc_cratefiller_postInit
 
     File: fn_cratefiller_postInit.sqf
     Author: Dubjunk - https://github.com/KillahPotatoes
     Date: 2019-05-09
-    Last Update: 2019-05-09
+    Last Update: 2019-08-07
     License: GNU General Public License v3.0 - https://www.gnu.org/licenses/gpl-3.0.html
 
     Description:
@@ -15,7 +17,7 @@
         NONE
 
     Returns:
-        Module postInit finished [BOOL]
+        PostInit finished [BOOL]
 */
 
 if (isServer) then {diag_log format ["[KPDS] [%1] [POST] [CRATEFILLER] Module initializing...", diag_tickTime];};
@@ -23,18 +25,18 @@ if (isServer) then {diag_log format ["[KPDS] [%1] [POST] [CRATEFILLER] Module in
 // Server section (dedicated and player hosted)
 if (isServer) then {
 
-    // create cratefiller presets on startup
-    //[] call KPLIB_fnc_cratefiller_presets;
-
-};
-
-// HC section
-if (!hasInterface && !isDedicated) then {
+    // Create cratefiller presets on startup
+    [] call KP_fnc_cratefiller_presets;
 
 };
 
 // Player section
 if (hasInterface) then {
+
+    // Add CBA event handler to the base objects
+    {
+        [_x, "init", {[_this select 0] call KP_cratefiller_addActions;}, nil, nil, true] call CBA_fnc_addClassEventHandler;
+    } forEach KP_cratefiller_Buildings;
 
 };
 

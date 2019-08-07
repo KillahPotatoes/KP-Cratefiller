@@ -161,6 +161,10 @@
                 <English>Enables/Disables the Liberation cratefiller equipment overview.</English>
                 <German>Aktiviert/Deaktiviert die Liberation Kistenfüller Ausrüstungsübersicht.</German>
             </Key>
+            <Key ID="STR_KP_CRATEFILLER_USEACEACTIONS_TT">
+                <English>Enables/Disables the usage of the ACE interaction instead of the BI scrollmenu.</English>
+                <German>Aktiviert/Deaktiviert die benutzung des ACE Interaktionsmenüs anstatt der BI Variante.</German>
+            </Key>
         </Container>
 
         <Container name="Hints">
@@ -233,8 +237,8 @@
 
         <Container name="Settings">
             <Key ID="STR_KP_CRATEFILLER_SETTINGS">
-                <English>KPLIB - Cratefiller</English>
-                <German>KPLIB - Kistenfüller</German>
+                <English>KP - Cratefiller</English>
+                <German>KP - Kistenfüller</German>
             </Key>
             <Key ID="STR_KP_CRATEFILLER_SPAWNDELETE">
                 <English>Enable the spawning/deleting of crates</English>
@@ -255,6 +259,10 @@
             <Key ID="STR_KP_CRATEFILLER_ACTIVATEOVERVIEW">
                 <English>Enable cratefiller equipment overview</English>
                 <German>Kistenfüller Ausrüstungsübersicht aktivieren</German>
+            </Key>
+            <Key ID="STR_KP_CRATEFILLER_USEACEACTIONS">
+                <English>Enable ACE interaction usage</English>
+                <German>Aktiviert die verwendung des ACE Interaktionsmenüs</German>
             </Key>
         </Container>
     </Package>

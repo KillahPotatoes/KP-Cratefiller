@@ -12,7 +12,7 @@
 */
 
 // This object is for the player interaction, so at these objects you can open the dialog
-KP_cratefiller_Building = [
+KP_cratefiller_Buildings = [
     "Land_Cargo10_military_green_F"
 ];
 

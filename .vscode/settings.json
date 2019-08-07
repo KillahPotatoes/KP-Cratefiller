@@ -35,6 +35,8 @@
         {
             "language": "sqf",
             "template": [
+                "Killah Potatoes Cratefiller v1.x.x",
+                "",
                 "KP_fnc_",
                 "",
                 "File: <<filename>>",
