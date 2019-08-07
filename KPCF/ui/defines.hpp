@@ -1,10 +1,10 @@
 /*
-    Killah Potatoes Cratefiller v1.2.0
+    Killah Potatoes Cratefiller v1.2.0 dialog defines
 
     File: defines.hpp
     Author: Dubjunk - https://github.com/KillahPotatoes
     Date: 2019-08-06
-    Last Update: 2019-08-06
+    Last Update: 2019-08-07
     License: GNU General Public License v3.0 - https://www.gnu.org/licenses/gpl-3.0.html
 
     Description:
