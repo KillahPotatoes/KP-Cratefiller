@@ -146,8 +146,28 @@
                 <German>Aktiviert/Deaktiviert das spawnen und löschen von definierten Kisten.</German>
             </Key>
             <Key ID="STR_KP_CRATEFILLER_GENERATEPRESET_TT">
-                <English>Enables/Disables the preset generation, all available items get crawled out of the config.</English>
-                <German>Aktiviert/Deaktiviert das generieren der Presets, alle verfügbaren Gegenstände werden asu der Konfig ausgelesen.</German>
+                <English>Enables/Disables the preset generation, all available items get crawled out of the config (on deactivated the whitelist is used instead).</English>
+                <German>Aktiviert/Deaktiviert das generieren der Presets, alle verfügbaren Gegenstände werden asu der Konfig ausgelesen (Bei deaktivierung wird die Whitelist stattdessen genutzt).</German>
+            </Key>
+            <Key ID="STR_KP_CRATEFILLER_BUILDINGS_TT">
+                <English>Defines which objects will get the cratefiller action.</English>
+                <German>Definiert welche Objekte die Kistenfüller Interaktion erhalten.</German>
+            </Key>
+            <Key ID="STR_KP_CRATEFILLER_CRATES_TT">
+                <English>Defines which crates can be spawned and deleted with the dialog.</English>
+                <German>Definiert welche Kisten über den Kistenfüller dialog gespawnt oder gelöscht werden können.</German>
+            </Key>
+            <Key ID="STR_KP_CRATEFILLER_BLACKLIST_TT">
+                <English>Defines the cratefiller item blacklist.</English>
+                <German>Definiert die Kistenfüller item Blacklist.</German>
+            </Key>
+            <Key ID="STR_KP_CRATEFILLER_ADDITIONAL_TT">
+                <English>Defines the cratefiller additional items (should be used when some items are missing or will get unwanted blacklisted).</English>
+                <German>Definiert die zusätzlichen Kistenfüller items (Dient der verfügbarkeit von items, die nicht erkannt oder falsch auf der blacklist landen).</German>
+            </Key>
+            <Key ID="STR_KP_CRATEFILLER_WHITELIST_TT">
+                <English>Defines the cratefiller item whitelist.</English>
+                <German>Definiert die Kistenfüller item Whitelist.</German>
             </Key>
             <Key ID="STR_KP_CRATEFILLER_USAGERADIUS_TT">
                 <English>Defines the range, in which the inventories can be filled and where new crates will spawn.</English>
@@ -247,6 +267,26 @@
             <Key ID="STR_KP_CRATEFILLER_GENERATEPRESET">
                 <English>Enable cratefiller preset generation</English>
                 <German>Kistenfüller Preset generierung aktivieren</German>
+            </Key>
+            <Key ID="STR_KP_CRATEFILLER_BUILDINGS">
+                <English>Defines the cratefiller objects</English>
+                <German>Definiert das Kistenfüller Objekt</German>
+            </Key>
+            <Key ID="STR_KP_CRATEFILLER_CRATES">
+                <English>Defines the spawnable crates</English>
+                <German>Definiert die spawnbaren Kisten</German>
+            </Key>
+            <Key ID="STR_KP_CRATEFILLER_BLACKLIST">
+                <English>Cratefiller blacklist</English>
+                <German>Kistenfüller Blacklist</German>
+            </Key>
+            <Key ID="STR_KP_CRATEFILLER_ADDITIONAL">
+                <English>Cratefiller additional items</English>
+                <German>Kistenfüller zusätzliche Items</German>
+            </Key>
+            <Key ID="STR_KP_CRATEFILLER_WHITELIST">
+                <English>Cratefiller whitelist</English>
+                <German>Kistenfüller Whitelist</German>
             </Key>
             <Key ID="STR_KP_CRATEFILLER_USAGERADIUS">
                 <English>Defines the working range</English>

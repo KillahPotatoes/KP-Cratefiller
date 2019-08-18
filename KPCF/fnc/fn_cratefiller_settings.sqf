@@ -4,7 +4,7 @@
     File: fn_cratefiller_settings.sqf
     Author: Dubjunk - https://github.com/KillahPotatoes
     Date: 2019-05-09
-    Last Update: 2019-08-07
+    Last Update: 2019-08-18
     License: GNU General Public License v3.0 - https://www.gnu.org/licenses/gpl-3.0.html
 
     Description:
@@ -39,6 +39,76 @@
     [localize "STR_KP_CRATEFILLER_GENERATEPRESET", localize "STR_KP_CRATEFILLER_GENERATEPRESET_TT"],
     localize "STR_KP_CRATEFILLER_SETTINGS",
     true,
+    1,
+    {}
+] call CBA_Settings_fnc_init;
+
+// KP_param_cratefiller_buildings
+// Classnames of the buildings which will get the cratefiller action.
+// Note: The classnames must be added without the "" !
+// Default: "Land_RepairDepot_01_tan_F, Land_RepairDepot_01_green_F, Land_RepairDepot_01_civ_F"
+[
+    "KP_param_cratefiller_buildings",
+    "EDITBOX",
+    [localize "STR_KP_CRATEFILLER_BUILDINGS", localize "STR_KP_CRATEFILLER_BUILDINGS_TT"],
+    localize "STR_KP_CRATEFILLER_SETTINGS",
+    "Land_RepairDepot_01_tan_F, Land_RepairDepot_01_green_F, Land_RepairDepot_01_civ_F",
+    1,
+    {}
+] call CBA_Settings_fnc_init;
+
+// KP_param_cratefiller_crates
+// Classnames of the crates which will be available for spawn and delete.
+// Note: The classnames must be added without the "" !
+// Default: "B_supplyCrate_F, CargoNet_01_box_F"
+[
+    "KP_param_cratefiller_crates",
+    "EDITBOX",
+    [localize "STR_KP_CRATEFILLER_CRATES", localize "STR_KP_CRATEFILLER_CRATES_TT"],
+    localize "STR_KP_CRATEFILLER_SETTINGS",
+    "B_supplyCrate_F, CargoNet_01_box_F",
+    1,
+    {}
+] call CBA_Settings_fnc_init;
+
+// KP_param_cratefiller_blacklist
+// Classnames of the items which should be blacklisted from the cratefiller.
+// Note: The classnames must be added without the "" !
+// Default: ""
+[
+    "KP_param_cratefiller_blacklist",
+    "EDITBOX",
+    [localize "STR_KP_CRATEFILLER_BLACKLIST", localize "STR_KP_CRATEFILLER_BLACKLIST_TT"],
+    localize "STR_KP_CRATEFILLER_SETTINGS",
+    "",
+    1,
+    {}
+] call CBA_Settings_fnc_init;
+
+// KP_param_cratefiller_additional
+// Classnames of the items which should be added after the generated to presets to prevent missing items due to bad config entries.
+// Note: The classnames must be added without the "" !
+// Default: ""
+[
+    "KP_param_cratefiller_additional",
+    "EDITBOX",
+    [localize "STR_KP_CRATEFILLER_ADDITIONAL", localize "STR_KP_CRATEFILLER_ADDITIONAL_TT"],
+    localize "STR_KP_CRATEFILLER_SETTINGS",
+    "",
+    1,
+    {}
+] call CBA_Settings_fnc_init;
+
+// KP_param_cratefiller_whitelist
+// Classnames of the items which should be for available at the cratefiller on deactivated preset generating.
+// Note: The classnames must be added without the "" !
+// Default: "arifle_SPAR_01_snd_F, MMG_01_tan_F, HandGrenade, MiniGrenade, DemoCharge_Remote_Mag, ATMine_Range_Mag, FirstAidKit, ToolKit, B_FieldPack_cbr, B_AssaultPack_cbr"
+[
+    "KP_param_cratefiller_whitelist",
+    "EDITBOX",
+    [localize "STR_KP_CRATEFILLER_WHITELIST", localize "STR_KP_CRATEFILLER_WHITELIST_TT"],
+    localize "STR_KP_CRATEFILLER_SETTINGS",
+    "arifle_SPAR_01_snd_F, MMG_01_tan_F, HandGrenade, MiniGrenade, DemoCharge_Remote_Mag, ATMine_Range_Mag, FirstAidKit, ToolKit, B_FieldPack_cbr, B_AssaultPack_cbr",
     1,
     {}
 ] call CBA_Settings_fnc_init;
