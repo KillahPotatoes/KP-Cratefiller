@@ -6,7 +6,7 @@
     File: fn_cratefiller_preInit.sqf
     Author: Dubjunk - https://github.com/KillahPotatoes
     Date: 2019-05-09
-    Last Update: 2019-08-07
+    Last Update: 2019-09-16
     License: GNU General Public License v3.0 - https://www.gnu.org/licenses/gpl-3.0.html
 
     Description:
@@ -28,9 +28,6 @@ if (isServer) then {diag_log format ["[KPDS] [%1] [PRE] [CRATEFILLER] Module ini
 // Check for ACE
 KP_ace_enabled = isClass (configFile >> "CfgPatches" >> "ace_main");
 
-// Process CBA Settings
-[] call KP_fnc_cratefiller_settings;
-
 // Server section (dedicated and player hosted)
 if (isServer) then {
 
@@ -41,6 +38,9 @@ if (isServer) then {
     publicVariable "KP_cratefiller_cache";
 
 };
+
+// Process CBA Settings
+[] call KP_fnc_cratefiller_settings;
 
 // Player section
 if (hasInterface) then {
