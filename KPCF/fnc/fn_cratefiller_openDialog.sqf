@@ -33,6 +33,9 @@ disableSerialization;
 
 // Dialog controls
 private _dialog = findDisplay KPCF_IDC_DIALOG;
+private _ctrlCrate = _dialog displayCtrl KPCF_IDC_COMBOCRATE;
+private _ctrlSpawn = _dialog displayCtrl KPCF_IDC_BUTTONSPAWNCRATE;
+private _ctrlDelete = _dialog displayCtrl KPCF_IDC_BUTTONDELETECRATE;
 private _ctrlCategory = _dialog displayCtrl KPCF_IDC_COMBOEQUIPMENT;
 private _ctrlWeapon = _dialog displayCtrl KPCF_IDC_COMBOWEAPONS;
 private _ctrlSearch = _dialog displayCtrl KPCF_IDC_SEARCHBAR;
@@ -44,12 +47,25 @@ _ctrlWeapon ctrlShow false;
 _ctrlSearch ctrlShow false;
 _ctrlOverviewGroup ctrlShow false;
 
+// Disable spawn and delete functionalities on disabled param
+if (!KP_param_cratefiller_spawnAndDelete) then {
+    _ctrlCrate ctrlShow false;
+    _ctrlSpawn ctrlShow false;
+    _ctrlDelete ctrlShow false;
+} else {
+    // Fill the controls
+    {
+        _index = _ctrlCrate lbAdd (_x select 0);
+        _ctrlCrate lbSetData [_index , _x select 1];
+    } forEach CGVAR("crates", []);
+};
+
 // Disable the tools button on deactivation
 if !(KP_param_cratefiller_cratefillerOverview) then {
     _ctrlToggleOverview ctrlShow false;
 };
 
-// Reset variables
+// Add category strings
 _ctrlCategory lbAdd localize "STR_KP_CRATEFILLER_LISTWEAPONS";
 _ctrlCategory lbAdd localize "STR_KP_CRATEFILLER_LISTMAGAZINES";
 _ctrlCategory lbAdd localize "STR_KP_CRATEFILLER_LISTATTACHMENTS";
