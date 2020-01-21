@@ -45,11 +45,17 @@ class cratefiller {
     // Gets the config path for the given classname
     class cratefiller_getConfigPath {};
 
+    // Gets all player groups and adds them to the listbox
+    class cratefiller_getGroups {};
+
     // Gets all inventory items of the active crate
     //class getInventory {};
 
     // Scans the spawn area for possible storages
     class cratefiller_getNearStorages {};
+
+    // Gets all players from the selected group and adds them to the listbox
+    class cratefiller_getPlayers {};
 
     // Imports the selected preset
     //class import {};
@@ -80,6 +86,9 @@ class cratefiller {
 
     // Displays the items of the active crate
     //class showInventory {};
+
+    // Shows or hides the cratefiller overview display
+    class cratefiller_showOverview {};
 
     // Reads all saved presets and lists them.
     //class showPresets {};

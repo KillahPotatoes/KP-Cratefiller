@@ -49,14 +49,14 @@ class KP_cratefiller {
                     w = KP_GETW(KP_WIDTH_VAL_SR,1);
                     h = KP_GETH(KP_HEIGHT_VAL_SR,24);
                     tooltip = "$STR_KPCF_GROUPS_TT";
-                    //onLBSelChanged = "[] call KPLIB_fnc_cratefiller_getPlayers";
+                    onLBSelChanged = "[] call KPLIB_fnc_cratefiller_getPlayers";
                 };
 
                 class KPCF_ComboPlayers: KPCF_ComboGroups {
                     idc = KPCF_IDC_COMBOPLAYERS;
                     y = KP_GETCY(KP_Y_VAL_SR,KP_HEIGHT_VAL_SR,2,48) - safezoneY;
                     tooltip = "$STR_KPCF_PLAYERS_TT";
-                    //onLBSelChanged = "[] call KPLIB_fnc_cratefiller_getPlayerInventory";
+                    onLBSelChanged = "[] call KPLIB_fnc_cratefiller_getPlayerInventory";
                 };
 
                 class KPCF_MainWeapon: KPGUI_PRE_PictureRatio {
@@ -103,7 +103,7 @@ class KP_cratefiller {
             text = "KPGUI\res\icon_tools.paa";
             x = safeZoneX + safeZoneW * (KP_X_VAL_S + KP_WIDTH_VAL_S - 0.08);
             tooltip = "$STR_KPCF_OVERVIEW_TT";
-            //action = "[] call KPLIB_fnc_cratefiller_showOverview";
+            action = "[] call KPLIB_fnc_cratefiller_showOverview";
         };
 
         // Crates
