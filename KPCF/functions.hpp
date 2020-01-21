@@ -4,7 +4,7 @@
     File: functions.hpp
     Author: Dubjunk - https://github.com/KillahPotatoes
     Date: 2019-05-09
-    Last Update: 2019-09-16
+    Last Update: 2020-01-21
     License: GNU General Public License v3.0 - https://www.gnu.org/licenses/gpl-3.0.html
 
     Description:
@@ -82,7 +82,7 @@ class cratefiller {
     //class showPresets {};
 
     // Sorts the displaynames of the given item array.
-    //class sortList {};
+    class cratefiller_sortList {};
 
     // Spawns the selected crate
     //class spawnCrate {};
