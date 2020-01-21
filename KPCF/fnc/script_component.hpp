@@ -4,7 +4,7 @@
     File: script_component.hpp
     Author: Dubjunk - https://github.com/KillahPotatoes
     Date: 2019-08-07
-    Last Update: 2019-08-07
+    Last Update: 2020-01-21
     License: GNU General Public License v3.0 - https://www.gnu.org/licenses/gpl-3.0.html
 
     Description:
@@ -12,11 +12,11 @@
 */
 
 // Cratefiller get var
-#define CGVAR(var, defVal)      (KPLIB_cratefiller_data getVariable [var, defVal])
+#define CGVAR(var, defVal)      (KP_cratefiller_data getVariable [var, defVal])
 // Cratefiller set var
-#define CSVAR(var, val)         (KPLIB_cratefiller_data setVariable [var, val, true])
+#define CSVAR(var, val)         (KP_cratefiller_data setVariable [var, val, true])
 
 // Cratefiller cache get var
-#define CCGVAR(var, defVal)     (KPLIB_cratefiller_cache getVariable [var, defVal])
+#define CCGVAR(var, defVal)     (KP_cratefiller_cache getVariable [var, defVal])
 // Cratefiller cache set var
-#define CCSVAR(var, val, pub)   (KPLIB_cratefiller_cache setVariable [var, val, pub])
+#define CCSVAR(var, val, pub)   (KP_cratefiller_cache setVariable [var, val, pub])
