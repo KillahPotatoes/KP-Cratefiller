@@ -8,7 +8,7 @@
     Provides the cratefiller dialog.
 */
 
-class KPCF_dialog {
+class KP_cratefiller {
     idd = KPCF_IDC_DIALOG;
     movingEnable = 0;
 
@@ -140,7 +140,7 @@ class KPCF_dialog {
             w = KP_GETW(KP_WIDTH_VAL_S,24);
             h = KP_GETH(KP_HEIGHT_VAL_S,24);
             tooltip = "$STR_KPCF_REFRESH_TT";
-            //action = "[] call KPCF_fnc_getNearStorages";
+            action = "[] call KPCF_fnc_getNearStorages";
         };
 
         class KPCF_ButtonSpawnCrate: KPGUI_PRE_InlineButton {

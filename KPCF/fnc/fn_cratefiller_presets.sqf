@@ -37,6 +37,9 @@ _classNames = KP_param_cratefiller_items splitString ",";
 _additional = KP_param_cratefiller_additional splitString ",";
 _blacklist = KP_param_cratefiller_blacklist splitString ",";
 
+CSVAR("buildings", KP_param_cratefiller_buildings splitString ",");
+CSVAR("crates", KP_param_cratefiller_crates splitString ",");
+
 if (KP_param_cratefiller_generatePreset) then {
     _classNames = [];
     // Fetch all needed config classes

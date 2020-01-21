@@ -49,7 +49,7 @@ class cratefiller {
     //class getInventory {};
 
     // Scans the spawn area for possible storages
-    //class getNearStorages {};
+    class cratefiller_getNearStorages {};
 
     // Imports the selected preset
     //class import {};
@@ -61,7 +61,7 @@ class cratefiller {
     class cratefiller_manageAceActions {};
 
     // Open the dialog
-    //class openDialog {};
+    class cratefiller_openDialog {};
 
     // Creates the item presets
     class cratefiller_presets {};
@@ -74,6 +74,9 @@ class cratefiller {
 
     // Adds the items to the active crate
     //class setInventory {};
+
+    // CBA settings
+    class cratefiller_settings {};
 
     // Displays the items of the active crate
     //class showInventory {};
