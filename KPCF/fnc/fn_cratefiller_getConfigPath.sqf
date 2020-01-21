@@ -1,3 +1,4 @@
+#include "script_component.hpp"
 /*
     Killah Potatoes Cratefiller v1.2.0
 

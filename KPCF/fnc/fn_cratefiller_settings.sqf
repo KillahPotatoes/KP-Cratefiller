@@ -4,7 +4,7 @@
     File: fn_cratefiller_settings.sqf
     Author: Dubjunk - https://github.com/KillahPotatoes
     Date: 2019-05-09
-    Last Update: 2019-08-18
+    Last Update: 2020-01-21
     License: GNU General Public License v3.0 - https://www.gnu.org/licenses/gpl-3.0.html
 
     Description:
@@ -71,6 +71,20 @@
     {}
 ] call CBA_Settings_fnc_init;
 
+// KP_param_cratefiller_items
+// Classnames of the items which should be available at the cratefiller on deactivated preset generation.
+// Note: The classnames must be added without the "" !
+// Default: "arifle_SPAR_01_snd_F, MMG_01_tan_F, HandGrenade, MiniGrenade, DemoCharge_Remote_Mag, ATMine_Range_Mag, FirstAidKit, ToolKit, B_FieldPack_cbr, B_AssaultPack_cbr"
+[
+    "KP_param_cratefiller_items",
+    "EDITBOX",
+    [localize "STR_KP_CRATEFILLER_ITEMS", localize "STR_KP_CRATEFILLER_ITEMS_TT"],
+    localize "STR_KP_CRATEFILLER_SETTINGS",
+    "arifle_SPAR_01_snd_F, MMG_01_tan_F, HandGrenade, MiniGrenade, DemoCharge_Remote_Mag, ATMine_Range_Mag, FirstAidKit, ToolKit, B_FieldPack_cbr, B_AssaultPack_cbr",
+    1,
+    {}
+] call CBA_Settings_fnc_init;
+
 // KP_param_cratefiller_blacklist
 // Classnames of the items which should be blacklisted from the cratefiller.
 // Note: The classnames must be added without the "" !
@@ -95,20 +109,6 @@
     [localize "STR_KP_CRATEFILLER_ADDITIONAL", localize "STR_KP_CRATEFILLER_ADDITIONAL_TT"],
     localize "STR_KP_CRATEFILLER_SETTINGS",
     "",
-    1,
-    {}
-] call CBA_Settings_fnc_init;
-
-// KP_param_cratefiller_whitelist
-// Classnames of the items which should be for available at the cratefiller on deactivated preset generating.
-// Note: The classnames must be added without the "" !
-// Default: "arifle_SPAR_01_snd_F, MMG_01_tan_F, HandGrenade, MiniGrenade, DemoCharge_Remote_Mag, ATMine_Range_Mag, FirstAidKit, ToolKit, B_FieldPack_cbr, B_AssaultPack_cbr"
-[
-    "KP_param_cratefiller_whitelist",
-    "EDITBOX",
-    [localize "STR_KP_CRATEFILLER_WHITELIST", localize "STR_KP_CRATEFILLER_WHITELIST_TT"],
-    localize "STR_KP_CRATEFILLER_SETTINGS",
-    "arifle_SPAR_01_snd_F, MMG_01_tan_F, HandGrenade, MiniGrenade, DemoCharge_Remote_Mag, ATMine_Range_Mag, FirstAidKit, ToolKit, B_FieldPack_cbr, B_AssaultPack_cbr",
     1,
     {}
 ] call CBA_Settings_fnc_init;

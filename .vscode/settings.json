@@ -5,10 +5,18 @@
         "*.hpp": "sqf"
     },
     "sqflint.ignoredVariables": [
-        "ace_interact_menu_fnc_createAction",
-        "ace_interact_menu_fnc_addActionToObject",
-        "CBA_fnc_compatibleMagazines",
-        "CBA_Settings_fnc_init"
+        "CBA_Settings_fnc_init",
+        "KP_param_cratefiller_spawnAndDelete",
+        "KP_param_cratefiller_generatePreset",
+        "KP_param_cratefiller_buildings",
+        "KP_param_cratefiller_crates",
+        "KP_param_cratefiller_items",
+        "KP_param_cratefiller_blacklist",
+        "KP_param_cratefiller_additional",
+        "KP_param_cratefiller_usageRadius",
+        "KP_param_cratefiller_interactRadius",
+        "KP_param_cratefiller_cratefillerOverview",
+        "KP_param_cratefiller_useAceActions"
     ],
     "psi-header.lang-config": [
         {

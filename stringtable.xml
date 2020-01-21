@@ -165,9 +165,9 @@
                 <English>Defines the cratefiller additional items (should be used when some items are missing or will get unwanted blacklisted).</English>
                 <German>Definiert die zusätzlichen Kistenfüller items (Dient der verfügbarkeit von items, die nicht erkannt oder falsch auf der blacklist landen).</German>
             </Key>
-            <Key ID="STR_KP_CRATEFILLER_WHITELIST_TT">
-                <English>Defines the cratefiller item whitelist.</English>
-                <German>Definiert die Kistenfüller item Whitelist.</German>
+            <Key ID="STR_KP_CRATEFILLER_ITEMS_TT">
+                <English>Defines the cratefiller items.</English>
+                <German>Definiert die Kistenfüller Gegenstände.</German>
             </Key>
             <Key ID="STR_KP_CRATEFILLER_USAGERADIUS_TT">
                 <English>Defines the range, in which the inventories can be filled and where new crates will spawn.</English>
@@ -284,9 +284,9 @@
                 <English>Cratefiller additional items</English>
                 <German>Kistenfüller zusätzliche Items</German>
             </Key>
-            <Key ID="STR_KP_CRATEFILLER_WHITELIST">
-                <English>Cratefiller whitelist</English>
-                <German>Kistenfüller Whitelist</German>
+            <Key ID="STR_KP_CRATEFILLER_ITEMS">
+                <English>Cratefiller items</English>
+                <German>Kistenfüller Gegenstände</German>
             </Key>
             <Key ID="STR_KP_CRATEFILLER_USAGERADIUS">
                 <English>Defines the working range</English>

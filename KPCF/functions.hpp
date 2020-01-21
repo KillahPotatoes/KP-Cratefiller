@@ -48,9 +48,6 @@ class cratefiller {
     // Gets all inventory items of the active crate
     //class getInventory {};
 
-    // Creates the item lists if generateLists is enabled
-    //class getItems {};
-
     // Scans the spawn area for possible storages
     //class getNearStorages {};
 
@@ -65,6 +62,9 @@ class cratefiller {
 
     // Open the dialog
     //class openDialog {};
+
+    // Creates the item presets
+    class cratefiller_presets {};
 
     // Removes the given amount of the selected item in the crate.
     //class removeEquipment {};
