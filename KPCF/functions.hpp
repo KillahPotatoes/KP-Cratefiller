@@ -43,7 +43,7 @@ class cratefiller {
     //class export {};
 
     // Gets the config path for the given classname
-    //class getConfigPath {};
+    class cratefiller_getConfigPath {};
 
     // Gets all inventory items of the active crate
     //class getInventory {};
