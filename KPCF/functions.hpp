@@ -24,8 +24,8 @@ class cratefiller {
         preInit = 1;
     };
 
-    // Adds the given amount of the selected item to the crate.
-    //class addEquipment {};
+    // Adds one of the selected item to the inventory
+    class cratefiller_addEquipment {};
 
     // Changes the shown equipment category
     class cratefiller_createEquipmentList {};
@@ -76,10 +76,7 @@ class cratefiller {
     class cratefiller_presets {};
 
     // Removes the given amount of the selected item in the crate.
-    //class removeEquipment {};
-
-    //Reads and defines the active inventory from the LB.
-    //class setActiveStorage {};
+    class cratefiller_removeEquipment {};
 
     // Adds the items to the active crate
     //class setInventory {};
@@ -88,7 +85,7 @@ class cratefiller {
     class cratefiller_settings {};
 
     // Displays the items of the active crate
-    //class showInventory {};
+    class cratefiller_showInventory {};
 
     // Shows or hides the cratefiller overview display
     class cratefiller_showOverview {};

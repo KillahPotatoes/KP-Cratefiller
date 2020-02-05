@@ -200,13 +200,13 @@ class KP_cratefiller {
         class KPCF_LeftEquipmentListButton: KPGUI_PRE_BUTTON {
             idc = KPCF_IDC_BUTTONLEFTEQUIPMENT;
             text = "-";
-            //onButtonClick = "[687416] call KP_fnc_cratefiller_removeEquipment";
+            onButtonClick = "[687416] call KP_fnc_cratefiller_removeEquipment";
         };
 
         class KPCF_RightEquipmentListButton: KPGUI_PRE_BUTTON {
             idc = KPCF_IDC_BUTTONRIGHTEQUIPMENT;
             text = "+";
-            //onButtonClick = "[687416] call KP_fnc_cratefiller_addEquipment";
+            onButtonClick = "[687416] call KP_fnc_cratefiller_addEquipment";
         };
 
         class KPCF_EquipmentList: KPGUI_PRE_ListNBox {
