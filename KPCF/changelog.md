@@ -1,6 +1,20 @@
 # Changelog
 
+## [1.2.0] - TBA
+### Added
+- Squad and Player overview
+- CBA settings integration
+- Search function for the weapon selection
 
+### Changed
+- General code overhaul
+
+### Fixed
+- Missing blacklisting for magazines and attachments
+- Unuseable storage selection if garbage is around the cf object
+
+### Removed
+- KPCF config file
 
 ## [1.1.0] - 2018-11-05
 ### Added
@@ -49,3 +63,4 @@
 [1.0.1]: https://github.com/KillahPotatoes/dubjunks-scripts/pull/11
 [1.0.2]: https://github.com/KillahPotatoes/dubjunks-scripts/pull/20
 [1.1.0]: https://github.com/KillahPotatoes/dubjunks-scripts/pull/23
+[1.2.0]: https://github.com/KillahPotatoes/dubjunks-scripts/pull/ 
