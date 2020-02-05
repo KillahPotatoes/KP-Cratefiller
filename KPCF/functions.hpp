@@ -79,7 +79,7 @@ class cratefiller {
     class cratefiller_removeEquipment {};
 
     // Adds the items to the active crate
-    //class setInventory {};
+    class cratefiller_setInventory {};
 
     // CBA settings
     class cratefiller_settings {};
