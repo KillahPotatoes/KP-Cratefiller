@@ -194,7 +194,7 @@ class KP_cratefiller {
             w = KP_GETW(KP_WIDTH_VAL_S,6);
             h = KP_GETH(KP_HEIGHT_VAL_S,24);
             tooltip = "$STR_KPCF_SEARCH_TT";
-            //onKeyUp = "[] call KP_fnc_cratefiller_search";
+            onKeyUp = "[] call KP_fnc_cratefiller_search";
         };
 
         class KPCF_LeftEquipmentListButton: KPGUI_PRE_BUTTON {
