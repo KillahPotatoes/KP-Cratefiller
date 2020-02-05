@@ -4,7 +4,7 @@
     File: functions.hpp
     Author: Dubjunk - https://github.com/KillahPotatoes
     Date: 2019-05-09
-    Last Update: 2020-01-21
+    Last Update: 2020-02-05
     License: GNU General Public License v3.0 - https://www.gnu.org/licenses/gpl-3.0.html
 
     Description:
@@ -49,13 +49,16 @@ class cratefiller {
     class cratefiller_getGroups {};
 
     // Gets all inventory items of the active crate
-    //class getInventory {};
+    class cratefiller_getInventory {};
 
     // Scans the spawn area for possible storages
     class cratefiller_getNearStorages {};
 
     // Gets all players from the selected group and adds them to the listbox
     class cratefiller_getPlayers {};
+
+    // Returns the active storage
+    class cratefiller_getStorage {};
 
     // Imports the selected preset
     //class import {};

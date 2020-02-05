@@ -9,7 +9,7 @@
     File: fn_cratefiller_getNearStorages.sqf
     Author: Dubjunk - https://github.com/KillahPotatoes
     Date: 2020-01-21
-    Last Update: 2020-01-21
+    Last Update: 2020-02-05
     License: GNU General Public License v3.0 - https://www.gnu.org/licenses/gpl-3.0.html
 
     Description:
@@ -24,7 +24,7 @@
 
 // Dialog controls
 private _dialog = findDisplay KPCF_IDC_DIALOG;
-private _ctrlStorage = _dialog displayCtrl KPCF_IDC_COMBOCARGO;
+private _ctrlStorage = _dialog displayCtrl KPCF_IDC_COMBOSTORAGE;
 
 // Clear the lists
 lbClear _ctrlStorage;

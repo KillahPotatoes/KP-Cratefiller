@@ -4,7 +4,7 @@
     File: defines.hpp
     Author: Dubjunk - https://github.com/KillahPotatoes
     Date: 2019-08-06
-    Last Update: 2019-08-07
+    Last Update: 2020-02-05
     License: GNU General Public License v3.0 - https://www.gnu.org/licenses/gpl-3.0.html
 
     Description:
@@ -23,7 +23,7 @@
 #define KPCF_IDC_BUTTONOVERVIEW         687406
 
 #define KPCF_IDC_COMBOCRATE             687407
-#define KPCF_IDC_COMBOCARGO             687408
+#define KPCF_IDC_COMBOSTORAGE             687408
 #define KPCF_IDC_BUTTONSPAWNCRATE       687409
 #define KPCF_IDC_BUTTONDELETECRATE      687410
 

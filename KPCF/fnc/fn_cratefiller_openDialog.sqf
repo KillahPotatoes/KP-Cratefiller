@@ -8,7 +8,7 @@
     File: fn_cratefiller_openDialog.sqf
     Author: Dubjunk - https://github.com/KillahPotatoes
     Date: 2020-01-21
-    Last Update: 2020-01-21
+    Last Update: 2020-02-05
     License: GNU General Public License v3.0 - https://www.gnu.org/licenses/gpl-3.0.html
 
     Description:
@@ -20,6 +20,7 @@
     Returns:
         Function reached the end [BOOL]
 */
+
 params [
     ["_data", [], [[]]]
 ];
@@ -46,6 +47,11 @@ private _ctrlToggleOverview = _dialog displayCtrl KPCF_IDC_BUTTONOVERVIEW;
 _ctrlWeapon ctrlShow false;
 _ctrlSearch ctrlShow false;
 _ctrlOverviewGroup ctrlShow false;
+
+// Disable the tools button on deactivation
+if !(KP_param_cratefiller_cratefillerOverview) then {
+    _ctrlToggleOverview ctrlShow false;
+};
 
 // Disable spawn and delete functionalities on disabled param
 if (!KP_param_cratefiller_spawnAndDelete) then {

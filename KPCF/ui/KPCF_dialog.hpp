@@ -125,12 +125,12 @@ class KP_cratefiller {
             tooltip = "$STR_KPCF_CRATE_TT";
         };
 
-        class KPCF_ComboCargo: KPCF_ComboCrate {
-            idc = KPCF_IDC_COMBOCARGO;
+        class KPCF_ComboStorage: KPCF_ComboCrate {
+            idc = KPCF_IDC_COMBOSTORAGE;
             x = KP_GETCX(KP_X_VAL_S,KP_WIDTH_VAL_S,1,2);
             w = KP_GETW(KP_WIDTH_VAL_S,(24/11));
             tooltip = "$STR_KPCF_INVENTORY_TT";
-            //onLBSelChanged = "[] call KPCF_fnc_setActiveStorage";
+            onLBSelChanged = "[] call KP_fnc_cratefiller_showInventory";
         };
 
         class KPCF_RefreshCargo: KPGUI_PRE_CloseCross {
