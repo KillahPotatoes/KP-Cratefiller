@@ -37,10 +37,10 @@ class cratefiller {
     class cratefiller_deleteCrate {};
 
     // Deletes the selected preset
-    //class deletePreset {};
+    class cratefiller_deletePreset {};
 
     // Exports the active inventory
-    //class export {};
+    class cratefiller_export {};
 
     // Gets the config path for the given classname
     class cratefiller_getConfigPath {};
@@ -61,7 +61,7 @@ class cratefiller {
     class cratefiller_getStorage {};
 
     // Imports the selected preset
-    //class import {};
+    class cratefiller_import {};
 
     // Manages the actions
     class cratefiller_manageActions {};
@@ -91,7 +91,7 @@ class cratefiller {
     class cratefiller_showOverview {};
 
     // Reads all saved presets and lists them.
-    //class showPresets {};
+    class cratefiller_showPresets {};
 
     // Sorts the displaynames of the given item array.
     class cratefiller_sortList {};
