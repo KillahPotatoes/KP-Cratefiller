@@ -176,7 +176,7 @@ class KP_cratefiller {
             w = KP_GETW(KP_WIDTH_VAL_S,2);
             h = KP_GETH(KP_HEIGHT_VAL_S,24);
             tooltip = "$STR_KPCF_TOOLTIPCATEGORY";
-            //onLBSelChanged = "[] call KP_fnc_cratefiller_createEquipmentList";
+            onLBSelChanged = "[] call KP_fnc_cratefiller_createEquipmentList";
         };
 
         class KPCF_ComboWeapons: KPCF_ComboEquipment {
@@ -184,7 +184,7 @@ class KP_cratefiller {
             y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,12,48);
             w = KP_GETW(KP_WIDTH_VAL_S,3);
             tooltip = "$STR_KPCF_TOOLTIPWEAPONSELECTION";
-            //onLBSelChanged = "[] call KP_fnc_cratefiller_createSubList";
+            onLBSelChanged = "[] call KP_fnc_cratefiller_createSubList";
         };
 
         class KPCF_SearchBar: KPGUI_PRE_EditBox {

@@ -28,10 +28,10 @@ class cratefiller {
     //class addEquipment {};
 
     // Changes the shown equipment category
-    //class createEquipmentList {};
+    class cratefiller_createEquipmentList {};
 
     // Creates a list with valueable magazines or attachments
-    //class createSubList {};
+    class cratefiller_createSubList {};
 
     // Deletes the nearest crate
     class cratefiller_deleteCrate {};
