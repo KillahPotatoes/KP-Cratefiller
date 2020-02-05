@@ -34,7 +34,7 @@ class cratefiller {
     //class createSubList {};
 
     // Deletes the nearest crate
-    //class deleteCrate {};
+    class cratefiller_deleteCrate {};
 
     // Deletes the selected preset
     //class deletePreset {};
@@ -100,5 +100,5 @@ class cratefiller {
     class cratefiller_sortList {};
 
     // Spawns the selected crate
-    //class spawnCrate {};
+    class cratefiller_spawnCrate {};
 };

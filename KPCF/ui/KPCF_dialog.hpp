@@ -49,14 +49,14 @@ class KP_cratefiller {
                     w = KP_GETW(KP_WIDTH_VAL_SR,1);
                     h = KP_GETH(KP_HEIGHT_VAL_SR,24);
                     tooltip = "$STR_KPCF_GROUPS_TT";
-                    onLBSelChanged = "[] call KPLIB_fnc_cratefiller_getPlayers";
+                    onLBSelChanged = "[] call KP_fnc_cratefiller_getPlayers";
                 };
 
                 class KPCF_ComboPlayers: KPCF_ComboGroups {
                     idc = KPCF_IDC_COMBOPLAYERS;
                     y = KP_GETCY(KP_Y_VAL_SR,KP_HEIGHT_VAL_SR,2,48) - safezoneY;
                     tooltip = "$STR_KPCF_PLAYERS_TT";
-                    onLBSelChanged = "[] call KPLIB_fnc_cratefiller_getPlayerInventory";
+                    onLBSelChanged = "[] call KP_fnc_cratefiller_getPlayerInventory";
                 };
 
                 class KPCF_MainWeapon: KPGUI_PRE_PictureRatio {
@@ -103,7 +103,7 @@ class KP_cratefiller {
             text = "KPGUI\res\icon_tools.paa";
             x = safeZoneX + safeZoneW * (KP_X_VAL_S + KP_WIDTH_VAL_S - 0.08);
             tooltip = "$STR_KPCF_OVERVIEW_TT";
-            action = "[] call KPLIB_fnc_cratefiller_showOverview";
+            action = "[] call KP_fnc_cratefiller_showOverview";
         };
 
         // Crates
@@ -140,7 +140,7 @@ class KP_cratefiller {
             w = KP_GETW(KP_WIDTH_VAL_S,24);
             h = KP_GETH(KP_HEIGHT_VAL_S,24);
             tooltip = "$STR_KPCF_REFRESH_TT";
-            action = "[] call KPCF_fnc_getNearStorages";
+            action = "[] call KP_fnc_cratefiller_getNearStorages";
         };
 
         class KPCF_ButtonSpawnCrate: KPGUI_PRE_InlineButton {
@@ -150,7 +150,7 @@ class KP_cratefiller {
             y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,5,48);
             w = KP_GETW(KP_WIDTH_VAL_S,2);
             h = KP_GETH(KP_HEIGHT_VAL_S,24);
-            //onButtonClick = "[] call KPCF_fnc_spawnCrate";
+            onButtonClick = "[] call KP_fnc_cratefiller_spawnCrate";
         };
 
         class KPCF_ButtonDeleteCrate: KPCF_ButtonSpawnCrate {
@@ -158,7 +158,7 @@ class KP_cratefiller {
             text = "$STR_KPCF_DELETECRATE";
             x = KP_GETCX(KP_X_VAL_S,KP_WIDTH_VAL_S,1,2);
             y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,5,48);
-            //onButtonClick = "[] call KPCF_fnc_deleteCrate";
+            onButtonClick = "[] call KP_fnc_cratefiller_deleteCrate";
         };
 
         // Equipment
@@ -176,7 +176,7 @@ class KP_cratefiller {
             w = KP_GETW(KP_WIDTH_VAL_S,2);
             h = KP_GETH(KP_HEIGHT_VAL_S,24);
             tooltip = "$STR_KPCF_TOOLTIPCATEGORY";
-            //onLBSelChanged = "[] call KPCF_fnc_createEquipmentList";
+            //onLBSelChanged = "[] call KP_fnc_cratefiller_createEquipmentList";
         };
 
         class KPCF_ComboWeapons: KPCF_ComboEquipment {
@@ -184,7 +184,7 @@ class KP_cratefiller {
             y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,12,48);
             w = KP_GETW(KP_WIDTH_VAL_S,3);
             tooltip = "$STR_KPCF_TOOLTIPWEAPONSELECTION";
-            //onLBSelChanged = "[] call KPCF_fnc_createSubList";
+            //onLBSelChanged = "[] call KP_fnc_cratefiller_createSubList";
         };
 
         class KPCF_SearchBar: KPGUI_PRE_EditBox {
@@ -194,19 +194,19 @@ class KP_cratefiller {
             w = KP_GETW(KP_WIDTH_VAL_S,6);
             h = KP_GETH(KP_HEIGHT_VAL_S,24);
             tooltip = "$STR_KPCF_SEARCH_TT";
-            //onKeyUp = "[] call KPLIB_fnc_cratefiller_search";
+            //onKeyUp = "[] call KP_fnc_cratefiller_search";
         };
 
         class KPCF_LeftEquipmentListButton: KPGUI_PRE_BUTTON {
             idc = KPCF_IDC_BUTTONLEFTEQUIPMENT;
             text = "-";
-            //onButtonClick = "[687416] call KPLIB_fnc_cratefiller_removeEquipment";
+            //onButtonClick = "[687416] call KP_fnc_cratefiller_removeEquipment";
         };
 
         class KPCF_RightEquipmentListButton: KPGUI_PRE_BUTTON {
             idc = KPCF_IDC_BUTTONRIGHTEQUIPMENT;
             text = "+";
-            //onButtonClick = "[687416] call KPLIB_fnc_cratefiller_addEquipment";
+            //onButtonClick = "[687416] call KP_fnc_cratefiller_addEquipment";
         };
 
         class KPCF_EquipmentList: KPGUI_PRE_ListNBox {
@@ -255,14 +255,14 @@ class KP_cratefiller {
             y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,12,48);
             w = KP_GETW(KP_WIDTH_VAL_S,4);
             h = KP_GETH(KP_HEIGHT_VAL_S,24);
-            //onButtonClick = "[] call KPCF_fnc_export";
+            //onButtonClick = "[] call KP_fnc_cratefiller_export";
         };
 
         class KPCF_ButtonImport: KPCF_ButtonExport {
             text = "$STR_KPCF_IMPORT";
             x = KP_GETCX(KP_X_VAL_S,KP_WIDTH_VAL_S,3,4);
             w = KP_GETW(KP_WIDTH_VAL_S,(24/5));
-            //onButtonClick = "[] call KPCF_fnc_import";
+            //onButtonClick = "[] call KP_fnc_cratefiller_import";
         };
 
         class KPCF_DeletePreset: KPGUI_PRE_CloseCross {
@@ -272,19 +272,19 @@ class KP_cratefiller {
             w = KP_GETW(KP_WIDTH_VAL_S,24);
             h = KP_GETH(KP_HEIGHT_VAL_S,24);
             tooltip = "$STR_KPCF_DELETE_TT";
-            //action = "[] call KPCF_fnc_deletePreset";
+            //action = "[] call KP_fnc_cratefiller_deletePreset";
         };
 
         class KPCF_LeftInventoryListButton: KPGUI_PRE_BUTTON {
             idc = KPCF_IDC_BUTTONLEFTINVENTORY;
             text = "-";
-            //onButtonClick = "[687421] call KPLIB_fnc_cratefiller_removeEquipment";
+            //onButtonClick = "[687421] call KP_fnc_cratefiller_removeEquipment";
         };
 
         class KPCF_RightInventoryListButton: KPGUI_PRE_BUTTON {
             idc = KPCF_IDC_BUTTONRIGHTINVENTORY;
             text = "+";
-            //onButtonClick = "[687421] call KPLIB_fnc_cratefiller_addEquipment";
+            //onButtonClick = "[687421] call KP_fnc_cratefiller_addEquipment";
         };
 
         class KPCF_InventoryList: KPGUI_PRE_ListBox {

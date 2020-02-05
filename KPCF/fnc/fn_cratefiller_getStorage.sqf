@@ -1,4 +1,5 @@
 #include "..\ui\defines.hpp"
+#include "script_component.hpp"
 /*
     Killah Potatoes Cratefiller v1.2.0
 
@@ -34,5 +35,14 @@ if (_storageIndex isEqualTo -1) exitWith {
 
 // Get the storage object
 private _storage = objectFromNetId (_ctrlStorage lbData _storageIndex);
+
+// Check if the storage is in range
+private _object = CCGVAR("object", objNull);
+if ((_object distance2D _object) > KP_param_cratefiller_usageRadius) exitWith {
+    hint localize "STR_KPCF_HINTRANGE";
+    [{hintSilent "";}, [], 3] call CBA_fnc_waitAndExecute;
+    [] remoteExecCall ["KP_fnc_cratefiller_getNearStorages", (allPlayers - entities "HeadlessClient_F")];
+    objNull
+};
 
 _storage
