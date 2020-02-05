@@ -51,6 +51,7 @@ switch (_catIndex) do {
         private _glType = (getArray (configfile >> "CfgWeapons" >> _weaponType >> "muzzles")) select 1;
         private _magazines = [_weaponType] call CBA_fnc_compatibleMagazines;
         _magazines append ([configfile >> "CfgWeapons" >> _weaponType >> _glType] call CBA_fnc_compatibleMagazines);
+        _magazines = _magazines - CGVAR("blacklist", []);
         private _sortedMagazines = [_magazines] call KP_fnc_cratefiller_sortList;
         CSVAR("magazines", _sortedMagazines);
 
@@ -66,6 +67,7 @@ switch (_catIndex) do {
     case 2 : {
         // Get compatible attachments
         private _attachments = [_weaponType] call BIS_fnc_compatibleItems;
+        _attachments = _attachments - CGVAR("blacklist", []);
         private _sortedAttachments = [_attachments] call KP_fnc_cratefiller_sortList;
         CSVAR("attachments", _sortedAttachments);
 
