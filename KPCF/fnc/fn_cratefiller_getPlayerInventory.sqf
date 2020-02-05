@@ -8,7 +8,7 @@
     File: fn_cratefiller_getPlayerInventory.sqf
     Author: Dubjunk - https://github.com/KillahPotatoes
     Date: 2020-01-21
-    Last Update: 2020-01-21
+    Last Update: 2020-02-05
     License: GNU General Public License v3.0 - https://www.gnu.org/licenses/gpl-3.0.html
 
     Description:
@@ -22,11 +22,11 @@
 */
 
 // Dialog controls
-private _dialog = findDisplay KPCF_IDC_DIALOG;
-private _ctrlPlayers = _dialog displayCtrl KPCF_IDC_COMBOPLAYERS;
-private _ctrlMainWeapon = _dialog displayCtrl KPCF_IDC_MAINWEAPON;
-private _ctrlHandgun = _dialog displayCtrl KPCF_IDC_HANDGUN;
-private _ctrlSecondaryWeapon = _dialog displayCtrl KPCF_IDC_SECONDARYWEAPON;
+private _dialog = findDisplay KP_CRATEFILLER_IDC_DIALOG;
+private _ctrlPlayers = _dialog displayCtrl KP_CRATEFILLER_IDC_COMBOPLAYERS;
+private _ctrlMainWeapon = _dialog displayCtrl KP_CRATEFILLER_IDC_MAINWEAPON;
+private _ctrlHandgun = _dialog displayCtrl KP_CRATEFILLER_IDC_HANDGUN;
+private _ctrlSecondaryWeapon = _dialog displayCtrl KP_CRATEFILLER_IDC_SECONDARYWEAPON;
 
 // Read controls
 private _index = lbCurSel _ctrlPlayers;

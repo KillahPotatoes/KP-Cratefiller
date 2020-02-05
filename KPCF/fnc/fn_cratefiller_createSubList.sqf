@@ -22,10 +22,10 @@
 */
 
 // Dialog controls
-private _dialog = findDisplay KPCF_IDC_DIALOG;
-private _ctrlCat = _dialog displayCtrl KPCF_IDC_COMBOEQUIPMENT;
-private _ctrlWeapon = _dialog displayCtrl KPCF_IDC_COMBOWEAPONS;
-private _ctrlEquipment = _dialog displayCtrl KPCF_IDC_EQUIPMENTLIST;
+private _dialog = findDisplay KP_CRATEFILLER_IDC_DIALOG;
+private _ctrlCat = _dialog displayCtrl KP_CRATEFILLER_IDC_COMBOEQUIPMENT;
+private _ctrlWeapon = _dialog displayCtrl KP_CRATEFILLER_IDC_COMBOWEAPONS;
+private _ctrlEquipment = _dialog displayCtrl KP_CRATEFILLER_IDC_EQUIPMENTLIST;
 
 // Clear the lists
 lbClear _ctrlEquipment;

@@ -21,8 +21,8 @@
 */
 
 // Dialog controls
-private _dialog = findDisplay KPCF_IDC_DIALOG;
-private _ctrlImport = _dialog displayCtrl KPCF_IDC_IMPORTNAME;
+private _dialog = findDisplay KP_CRATEFILLER_IDC_DIALOG;
+private _ctrlImport = _dialog displayCtrl KP_CRATEFILLER_IDC_IMPORTNAME;
 
 // Get the storage object
 private _storage = [] call KP_fnc_cratefiller_getStorage;

@@ -21,9 +21,9 @@
 */
 
 // Dialog controls
-private _dialog = findDisplay KPCF_IDC_DIALOG;
-private _ctrlInventory = _dialog displayCtrl KPCF_IDC_INVENTORYLIST;
-private _ctlrProgress = _dialog displayCtrl KPCF_IDC_PROGRESSBAR;
+private _dialog = findDisplay KP_CRATEFILLER_IDC_DIALOG;
+private _ctrlInventory = _dialog displayCtrl KP_CRATEFILLER_IDC_INVENTORYLIST;
+private _ctlrProgress = _dialog displayCtrl KP_CRATEFILLER_IDC_PROGRESSBAR;
 
 // Check if dialog is open
 if (isNull _dialog) exitWith {};

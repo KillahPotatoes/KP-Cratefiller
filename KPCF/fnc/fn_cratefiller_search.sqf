@@ -22,9 +22,9 @@
 */
 
 // Dialog controls
-private _dialog = findDisplay KPCF_IDC_DIALOG;
-private _ctrlWeapon = _dialog displayCtrl KPCF_IDC_COMBOWEAPONS;
-private _ctrlSearch = _dialog displayCtrl KPCF_IDC_SEARCHBAR;
+private _dialog = findDisplay KP_CRATEFILLER_IDC_DIALOG;
+private _ctrlWeapon = _dialog displayCtrl KP_CRATEFILLER_IDC_COMBOWEAPONS;
+private _ctrlSearch = _dialog displayCtrl KP_CRATEFILLER_IDC_SEARCHBAR;
 
 // Clear the listBox
 lbClear _ctrlWeapon;

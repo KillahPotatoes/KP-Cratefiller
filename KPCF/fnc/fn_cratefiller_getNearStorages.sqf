@@ -23,8 +23,8 @@
 */
 
 // Dialog controls
-private _dialog = findDisplay KPCF_IDC_DIALOG;
-private _ctrlStorage = _dialog displayCtrl KPCF_IDC_COMBOSTORAGE;
+private _dialog = findDisplay KP_CRATEFILLER_IDC_DIALOG;
+private _ctrlStorage = _dialog displayCtrl KP_CRATEFILLER_IDC_COMBOSTORAGE;
 
 // Clear the lists
 lbClear _ctrlStorage;

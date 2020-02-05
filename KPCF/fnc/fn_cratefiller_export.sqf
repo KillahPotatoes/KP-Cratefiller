@@ -21,8 +21,8 @@
 */
 
 // Dialog controls
-private _dialog = findDisplay KPCF_IDC_DIALOG;
-private _ctrlExport = _dialog displayCtrl KPCF_IDC_EXPORTNAME;
+private _dialog = findDisplay KP_CRATEFILLER_IDC_DIALOG;
+private _ctrlExport = _dialog displayCtrl KP_CRATEFILLER_IDC_EXPORTNAME;
 
 // Read the presets from profileNamespace
 private _preset = profileNamespace getVariable ["KP_cratefiller_preset", []];

@@ -33,15 +33,15 @@ createDialog "KP_cratefiller";
 disableSerialization;
 
 // Dialog controls
-private _dialog = findDisplay KPCF_IDC_DIALOG;
-private _ctrlCrate = _dialog displayCtrl KPCF_IDC_COMBOCRATE;
-private _ctrlSpawn = _dialog displayCtrl KPCF_IDC_BUTTONSPAWNCRATE;
-private _ctrlDelete = _dialog displayCtrl KPCF_IDC_BUTTONDELETECRATE;
-private _ctrlCategory = _dialog displayCtrl KPCF_IDC_COMBOEQUIPMENT;
-private _ctrlWeapon = _dialog displayCtrl KPCF_IDC_COMBOWEAPONS;
-private _ctrlSearch = _dialog displayCtrl KPCF_IDC_SEARCHBAR;
-private _ctrlOverviewGroup = _dialog displayCtrl KPCF_IDC_GROUPOVERVIEW;
-private _ctrlToggleOverview = _dialog displayCtrl KPCF_IDC_BUTTONOVERVIEW;
+private _dialog = findDisplay KP_CRATEFILLER_IDC_DIALOG;
+private _ctrlCrate = _dialog displayCtrl KP_CRATEFILLER_IDC_COMBOCRATE;
+private _ctrlSpawn = _dialog displayCtrl KP_CRATEFILLER_IDC_BUTTONSPAWNCRATE;
+private _ctrlDelete = _dialog displayCtrl KP_CRATEFILLER_IDC_BUTTONDELETECRATE;
+private _ctrlCategory = _dialog displayCtrl KP_CRATEFILLER_IDC_COMBOEQUIPMENT;
+private _ctrlWeapon = _dialog displayCtrl KP_CRATEFILLER_IDC_COMBOWEAPONS;
+private _ctrlSearch = _dialog displayCtrl KP_CRATEFILLER_IDC_SEARCHBAR;
+private _ctrlOverviewGroup = _dialog displayCtrl KP_CRATEFILLER_IDC_GROUPOVERVIEW;
+private _ctrlToggleOverview = _dialog displayCtrl KP_CRATEFILLER_IDC_BUTTONOVERVIEW;
 
 // Hide controls
 _ctrlWeapon ctrlShow false;

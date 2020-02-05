@@ -27,7 +27,7 @@ params [
 ];
 
 // Dialog controls
-private _dialog = findDisplay KPCF_IDC_DIALOG;
+private _dialog = findDisplay KP_CRATEFILLER_IDC_DIALOG;
 private _ctrlActive = _dialog displayCtrl _controlId;
 
 // Read controls
@@ -45,7 +45,7 @@ private _inventory = [] call KP_fnc_cratefiller_getInventory;
 // Variables
 private _item = "";
 
-if (_controlId isEqualTo KPCF_IDC_INVENTORYLIST) then {
+if (_controlId isEqualTo KP_CRATEFILLER_IDC_INVENTORYLIST) then {
     // Item selection
     _item = (_inventory select _indexActive) select 1;
 } else {

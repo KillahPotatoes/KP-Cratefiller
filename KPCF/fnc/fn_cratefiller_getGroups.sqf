@@ -8,7 +8,7 @@
     File: fn_cratefiller_getGroups.sqf
     Author: Dubjunk - https://github.com/KillahPotatoes
     Date: 2020-01-21
-    Last Update: 2020-01-21
+    Last Update: 2020-02-05
     License: GNU General Public License v3.0 - https://www.gnu.org/licenses/gpl-3.0.html
 
     Description:
@@ -22,8 +22,8 @@
 */
 
 // Dialog controls
-private _dialog = findDisplay KPCF_IDC_DIALOG;
-private _ctrlGroups = _dialog displayCtrl KPCF_IDC_COMBOGROUPS;
+private _dialog = findDisplay KP_CRATEFILLER_IDC_DIALOG;
+private _ctrlGroups = _dialog displayCtrl KP_CRATEFILLER_IDC_COMBOGROUPS;
 
 // Clear the lists
 lbClear _ctrlGroups;

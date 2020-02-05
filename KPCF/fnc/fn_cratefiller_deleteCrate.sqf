@@ -26,14 +26,12 @@ private _storage = [] call KP_fnc_cratefiller_getStorage;
 
 // Check for empty variable
 if (isNull _storage) exitWith {
-    hint localize "STR_KPCF_HINTSELECTION";
-    [{hintSilent "";}, [], 3] call CBA_fnc_waitAndExecute;
+    [localize "STR_KP_CRATEFILLER_HINTSELECTION"] call CBA_fnc_notify;
 };
 
 // Check if the active storage is a pre defined crate
 if (!((typeOf _storage) in CGVAR("crates", []))) exitWith {
-    hint localize "STR_KPCF_HINTNONDELETEABLE";
-    [{hintSilent "";}, [], 3] call CBA_fnc_waitAndExecute;
+    [localize "STR_KP_CRATEFILLER_HINTNONDELETEABLE"] call CBA_fnc_notify;
 };
 
 // Delete crate
@@ -47,7 +45,6 @@ _storage = objNull;
 [] remoteExecCall ["KP_fnc_cratefiller_getInventory", (allPlayers - entities "HeadlessClient_F")];
 [{[] remoteExecCall ["KP_fnc_cratefiller_getNearStorages", (allPlayers - entities "HeadlessClient_F")];}, [], 1] call CBA_fnc_waitAndExecute;
 
-hint format [localize "STR_KPCF_HINTDELETE", _name];
-[{hintSilent "";}, [], 3] call CBA_fnc_waitAndExecute;
+[localize "STR_KP_CRATEFILLER_HINTDELETE"] call CBA_fnc_notify;
 
 true

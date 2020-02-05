@@ -22,8 +22,8 @@
 */
 
 // Dialog controls
-private _dialog = findDisplay KPCF_IDC_DIALOG;
-private _ctrlStorage = _dialog displayCtrl KPCF_IDC_COMBOSTORAGE;
+private _dialog = findDisplay KP_CRATEFILLER_IDC_DIALOG;
+private _ctrlStorage = _dialog displayCtrl KP_CRATEFILLER_IDC_COMBOSTORAGE;
 
 // Read controls
 private _storageIndex = lbCurSel _ctrlStorage;
@@ -39,8 +39,7 @@ private _storage = objectFromNetId (_ctrlStorage lbData _storageIndex);
 // Check if the storage is in range
 private _object = CCGVAR("object", objNull);
 if ((_object distance2D _object) > KP_param_cratefiller_usageRadius) exitWith {
-    hint localize "STR_KPCF_HINTRANGE";
-    [{hintSilent "";}, [], 3] call CBA_fnc_waitAndExecute;
+    [localize "STR_KP_CRATEFILLER_HINTRANGE"] call CBA_fnc_notify;
     [] remoteExecCall ["KP_fnc_cratefiller_getNearStorages", (allPlayers - entities "HeadlessClient_F")];
     objNull
 };
