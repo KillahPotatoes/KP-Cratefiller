@@ -4,7 +4,7 @@
     File: functions.hpp
     Author: Dubjunk - https://github.com/KillahPotatoes
     Date: 2019-05-09
-    Last Update: 2020-02-05
+    Last Update: 2020-02-10
     License: GNU General Public License v3.0 - https://www.gnu.org/licenses/gpl-3.0.html
 
     Description:
@@ -54,6 +54,9 @@ class cratefiller {
     // Scans the spawn area for possible storages
     class cratefiller_getNearStorages {};
 
+	// Gets all weapons of the selected player
+	class cratefiller_getPlayerInventory {};
+
     // Gets all players from the selected group and adds them to the listbox
     class cratefiller_getPlayers {};
 
@@ -77,6 +80,9 @@ class cratefiller {
 
     // Removes the given amount of the selected item in the crate.
     class cratefiller_removeEquipment {};
+
+	// Search for a weapon with the name entered in the search bar
+	class cratefiller_search {};
 
     // Adds the items to the active crate
     class cratefiller_setInventory {};

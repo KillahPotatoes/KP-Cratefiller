@@ -8,7 +8,7 @@
     File: fn_cratefiller_spawnCrate.sqf
     Author: Dubjunk - https://github.com/KillahPotatoes
     Date: 2020-02-05
-    Last Update: 2020-02-05
+    Last Update: 2020-02-10
     License: GNU General Public License v3.0 - https://www.gnu.org/licenses/gpl-3.0.html
 
     Description:
@@ -40,12 +40,12 @@ private _object = CCGVAR("object", objNull);
 
 private _checkSpawn = false;
 
-if (!(((getPos _object) nearEntities 5) isEqualTo [])) exitWith {
+if (!((((getPos _object) nearEntities 5) select {!(typeOf _x in CGVAR("buildings", []))}) isEqualTo [])) exitWith {
     [localize "STR_KP_CRATEFILLER_HINTZONE"] call CBA_fnc_notify;
 };
 
 // Spawn crate
-private _crate = createVehicle [_crateType, ((getPos _object) findEmptyPosition [0, 10, _crateType]), [], 0, "NONE"];
+private _crate = createVehicle [_crateType, ((getPos _object) findEmptyPosition [0, KP_param_cratefiller_usageRadius, _crateType]), [], 0, "NONE"];
 
 // Clear the storage
 clearWeaponCargoGlobal _crate;
@@ -54,8 +54,8 @@ clearItemCargoGlobal _crate;
 clearBackpackCargoGlobal _crate;
 
 private _config = [_crateType] call KP_fnc_cratefiller_getConfigPath;
-private _name = (getText (configFile >> _config >> _crateType >> "displayName"));
-[localize "STR_KP_CRATEFILLER_HINTSPAWN"] call CBA_fnc_notify;
+private _name = (getText (_config >> "displayName"));
+[format [localize "STR_KP_CRATEFILLER_HINTSPAWN", _name]] call CBA_fnc_notify;
 
 [] call KP_fnc_cratefiller_getNearStorages;
 

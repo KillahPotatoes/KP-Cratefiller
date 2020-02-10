@@ -9,7 +9,7 @@
     File: fn_cratefiller_getNearStorages.sqf
     Author: Dubjunk - https://github.com/KillahPotatoes
     Date: 2020-01-21
-    Last Update: 2020-02-05
+    Last Update: 2020-02-10
     License: GNU General Public License v3.0 - https://www.gnu.org/licenses/gpl-3.0.html
 
     Description:
@@ -40,7 +40,8 @@ private _blacklist = [
     "WeaponHolderSimulated",
     ""
 ];
-private _objects = CCGVAR("object", objNull) nearObjects KP_param_cratefiller_usageRadius;
+private _object = CCGVAR("object", objNull);
+private _objects = _object nearObjects KP_param_cratefiller_usageRadius;
 
 // Get near objects and check for storage capacity
 {
@@ -49,7 +50,7 @@ private _objects = CCGVAR("object", objNull) nearObjects KP_param_cratefiller_us
     _number = getNumber (_config >> "maximumLoad");
     // If the object has an inventory add it to the list
     if (_number > 0) then {
-        _index = _ctrlStorage lbAdd format ["%1m - %2", round ((getPos player) distance2D _x), getText (_config >> "displayName")];
+        _index = _ctrlStorage lbAdd format ["%1m - %2", round ((getPos _object) distance2D _x), getText (_config >> "displayName")];
         _ctrlStorage lbSetData [_index, netId _x];
         _picture = getText (_config >> "picture");
         if (_picture isEqualTo "pictureThing") then {
@@ -58,7 +59,7 @@ private _objects = CCGVAR("object", objNull) nearObjects KP_param_cratefiller_us
             _ctrlStorage lbSetPicture [_index, _picture];
         };
     };
-} forEach (_objects select {!(typeOf _x in _blacklist) && !((typeOf _x select [0,1]) isEqualTo "#") && !(_x isKindOf "Building")});
+} forEach (_objects select {!(typeOf _x in _blacklist) && !((typeOf _x select [0,1]) isEqualTo "#") && !(_x isKindOf "Building") && !(typeOf _x in CGVAR("buildings", []))});
 
 
 true

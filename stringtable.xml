@@ -30,6 +30,10 @@
                 <German>Inventar</German>
                 <Polish>Ekwipunek</Polish>
             </Key>
+			<Key ID="STR_KP_CRATEFILLER_TITLEOVERVIEW">
+				<English>Equipment overview</English>
+				<German>Ausrüstungsübersicht</German>
+			</Key>
         </Container>
 
         <Container name="Dialog controls">
@@ -121,15 +125,23 @@
                 <German>Zeigt den aktuellen Laderaumstand.</German>
                 <Polish>Pokazuje aktualny stan załadunku.</Polish>
             </Key>
+			<Key ID="STR_KP_CRATEFILLER_GROUPS_TT">
+				<English>Select a group, whose players should be shown.</English>
+				<German>Wähle eine Gruppe, deren Spieler angezeigt werden sollen.</German>
+			</Key>
+			<Key ID="STR_KP_CRATEFILLER_PLAYERS_TT">
+				<English>Select a player, whose weapons should be shown.</English>
+				<German>Wähle einen Spieler, dessen Waffen angezeigt werden sollen.</German>
+			</Key>
             <Key ID="STR_KP_CRATEFILLER_DELETE_TT">
                 <English>Deletes the selected preset.</English>
                 <German>Löscht das ausgewählte Ausrüstungsset.</German>
                 <Polish>Usuwa wybrany szablon.</Polish>
             </Key>
             <Key ID="STR_KP_CRATEFILLER_HELP_TT">
-                <English>KP-Cratefiller v1.1.0\nBy Dubjunk</English>
-                <German>KP-Kistenfüller v1.1.0\nBy Dubjunk</German>
-                <Polish>KP-Cratefiller v1.1.0\nBy Dubjunk</Polish>
+                <English>KP-Cratefiller v1.2.0\nBy Dubjunk</English>
+                <German>KP-Kistenfüller v1.2.0\nBy Dubjunk</German>
+                <Polish>KP-Cratefiller v1.2.0\nBy Dubjunk</Polish>
             </Key>
             <Key ID="STR_KP_CRATEFILLER_EXPORT_TT">
                 <English>Enter the name of the preset to be exported.</English>
@@ -141,6 +153,10 @@
                 <German>Wähle das zu importierende Ausrüstungsset.</German>
                 <Polish>Wybierz szablon do zaimportowania.</Polish>
             </Key>
+			<Key ID="STR_KP_CRATEFILLER_SEARCH_TT">
+				<English>Search for a specified weapon.</English>
+				<German>Suche nach einer bestimmten Waffe.</German>
+			</Key>
             <Key ID="STR_KP_CRATEFILLER_SPAWNDELETE_TT">
                 <English>Enables/Disables the spawning and deleting of the pre defined crates.</English>
                 <German>Aktiviert/Deaktiviert das spawnen und löschen von definierten Kisten.</German>
@@ -178,8 +194,8 @@
                 <German>Definiert die Reichweite, in der man auf den Kistenfüller zugreifen kann.</German>
             </Key>
             <Key ID="STR_KP_CRATEFILLER_ACTIVATEOVERVIEW_TT">
-                <English>Enables/Disables the Liberation cratefiller equipment overview.</English>
-                <German>Aktiviert/Deaktiviert die Liberation Kistenfüller Ausrüstungsübersicht.</German>
+                <English>Enables/Disables the cratefiller equipment overview.</English>
+                <German>Aktiviert/Deaktiviert die Kistenfüller Ausrüstungsübersicht.</German>
             </Key>
             <Key ID="STR_KP_CRATEFILLER_USEACEACTIONS_TT">
                 <English>Enables/Disables the usage of the ACE interaction instead of the BI scrollmenu.</English>
@@ -208,11 +224,6 @@
                 <German>%1 wurde eingelagert.</German>
                 <Polish>%1 został zeskładowany.</Polish>
             </Key>
-            <Key ID="STR_KP_CRATEFILLER_HINTCLEARFULL">
-                <English>Selected storage is emptied.</English>
-                <German>Ausgewählter Laderaum wurde geleert.</German>
-                <Polish>Wybrana skrzynia została opróżniona.</Polish>
-            </Key>
             <Key ID="STR_KP_CRATEFILLER_HINTCLEAR">
                 <English>%1 was unloaded %2 times.</English>
                 <German>%1 wurde %2 mal entladen.</German>
@@ -232,11 +243,6 @@
                 <English>The selected storage doesn't have sufficient space.</English>
                 <German>Der ausgewählte Laderaum hat keinen ausreichenden Platz.</German>
                 <Polish>Wybrany kontener nie ma dość wolnego miejsca.</Polish>
-            </Key>
-            <Key ID="STR_KP_CRATEFILLER_HINTNOSPAWN">
-                <English>No loading zone available, base object is used instead.</English>
-                <German>Keine Ladezone vorhanden, das Basis Objekt wird stattdessen benutzt.</German>
-                <Polish>Strefa załadunku nie jest dostępna, obiekt bazy zostanie wykorzystany w zastępstwie.</Polish>
             </Key>
             <Key ID="STR_KP_CRATEFILLER_HINTNOSTORAGE">
                 <English>No storage selected.</English>

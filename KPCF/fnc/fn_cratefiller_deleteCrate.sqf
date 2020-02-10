@@ -8,7 +8,7 @@
     File: fn_cratefiller_deleteCrate.sqf
     Author: Dubjunk - https://github.com/KillahPotatoes
     Date: 2020-02-05
-    Last Update: 2020-02-05
+    Last Update: 2020-02-10
     License: GNU General Public License v3.0 - https://www.gnu.org/licenses/gpl-3.0.html
 
     Description:
@@ -30,7 +30,7 @@ if (isNull _storage) exitWith {
 };
 
 // Check if the active storage is a pre defined crate
-if (!((typeOf _storage) in CGVAR("crates", []))) exitWith {
+if ((typeOf _storage) in CGVAR("crates", [])) exitWith {
     [localize "STR_KP_CRATEFILLER_HINTNONDELETEABLE"] call CBA_fnc_notify;
 };
 
@@ -38,13 +38,13 @@ if (!((typeOf _storage) in CGVAR("crates", []))) exitWith {
 deleteVehicle _storage;
 
 private _config = [typeOf _storage] call KP_fnc_cratefiller_getConfigPath;
-private _name = (getText (configFile >> _config >> typeOf _storage >> "displayName"));
+private _name = (getText (_config >> "displayName"));
 
 _storage = objNull;
 
 [] remoteExecCall ["KP_fnc_cratefiller_getInventory", (allPlayers - entities "HeadlessClient_F")];
 [{[] remoteExecCall ["KP_fnc_cratefiller_getNearStorages", (allPlayers - entities "HeadlessClient_F")];}, [], 1] call CBA_fnc_waitAndExecute;
 
-[localize "STR_KP_CRATEFILLER_HINTDELETE"] call CBA_fnc_notify;
+[format [localize "STR_KP_CRATEFILLER_HINTDELETE", _name]] call CBA_fnc_notify;
 
 true

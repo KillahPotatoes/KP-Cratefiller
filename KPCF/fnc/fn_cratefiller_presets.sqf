@@ -7,7 +7,7 @@
     File: fn_cratefiller_presets.sqf
     Author: Dubjunk - https://github.com/KillahPotatoes
     Date: 2020-01-21
-    Last Update: 2020-02-05
+    Last Update: 2020-02-10
     License: GNU General Public License v3.0 - https://www.gnu.org/licenses/gpl-3.0.html
 
     Description:
@@ -26,23 +26,17 @@ private _grenades = [];
 private _explosives = [];
 private _items = [];
 private _backpacks = [];
-private _classNames = [];
 private _type = [];
 private _specialItems = [];
-private _additional = [];
-private _blacklist = [];
 
 // Convert CBA settings array
-_classNames = KP_param_cratefiller_items splitString ",";
-_additional = KP_param_cratefiller_additional splitString ",";
-_blacklist = KP_param_cratefiller_blacklist splitString ",";
+private _classNames = KP_param_cratefiller_items splitString ", ";
+private _additional = KP_param_cratefiller_additional splitString ", ";
+private _blacklist = KP_param_cratefiller_blacklist splitString ", ";
 
-CSVAR("items", _classNames);
+CSVAR("classNames", _classNames);
 CSVAR("additional", _additional);
 CSVAR("blacklist", _blacklist);
-
-CSVAR("buildings", KP_param_cratefiller_buildings splitString ",");
-CSVAR("crates", [KP_param_cratefiller_crates splitString ","] call KP_fnc_cratefiller_sortList);
 
 if (KP_param_cratefiller_generatePreset) then {
     _classNames = [];

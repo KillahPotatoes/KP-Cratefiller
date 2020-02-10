@@ -9,7 +9,7 @@
     File: fn_cratefiller_addEquipment.sqf
     Author: Dubjunk - https://github.com/KillahPotatoes
     Date: 2020-02-05
-    Last Update: 2020-02-05
+    Last Update: 2020-02-10
     License: GNU General Public License v3.0 - https://www.gnu.org/licenses/gpl-3.0.html
 
     Description:
@@ -42,6 +42,11 @@ if (_indexActive isEqualTo -1 || ((lnbSize _ctrlActive) select 0) isEqualTo 0) e
 private _storage = [] call KP_fnc_cratefiller_getStorage;
 private _inventory = [] call KP_fnc_cratefiller_getInventory;
 
+// Exit on missing storage
+if (isNull _storage) exitWith {
+	[localize "STR_KP_CRATEFILLER_HINTNOSTORAGE"] call CBA_fnc_notify;
+};
+
 // Variables
 private _item = "";
 
@@ -67,7 +72,7 @@ if (_item isKindOf "Bag_Base") then {
     _storage addItemCargoGlobal [_item, 1];
 };
 
-[] remoteExecCall ["KPLIB_fnc_cratefiller_showInventory", (allPlayers - entities "HeadlessClient_F")];
+[] remoteExecCall ["KP_fnc_cratefiller_showInventory", (allPlayers - entities "HeadlessClient_F")];
 
 private _config = [_item] call KP_fnc_cratefiller_getConfigPath;
 private _name = (getText (_config >> "displayName"));

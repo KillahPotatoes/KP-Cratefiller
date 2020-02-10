@@ -8,7 +8,7 @@
     File: fn_cratefiller_search.sqf
     Author: Dubjunk - https://github.com/KillahPotatoes
     Date: 2020-02-05
-    Last Update: 2020-02-05
+    Last Update: 2020-02-10
     License: GNU General Public License v3.0 - https://www.gnu.org/licenses/gpl-3.0.html
 
     Description:
@@ -28,6 +28,7 @@ private _ctrlSearch = _dialog displayCtrl KP_CRATEFILLER_IDC_SEARCHBAR;
 
 // Clear the listBox
 lbClear _ctrlWeapon;
+_ctrlWeapon lbSetCurSel -1;
 
 // Get the editBox Data
 private _search = toLower (ctrlText _ctrlSearch);

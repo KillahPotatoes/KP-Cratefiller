@@ -4,7 +4,7 @@
     File: fn_cratefiller_settings.sqf
     Author: Dubjunk - https://github.com/KillahPotatoes
     Date: 2019-05-09
-    Last Update: 2020-01-21
+    Last Update: 2020-02-10
     License: GNU General Public License v3.0 - https://www.gnu.org/licenses/gpl-3.0.html
 
     Description:
@@ -40,7 +40,8 @@
     localize "STR_KP_CRATEFILLER_SETTINGS",
     true,
     1,
-    {}
+    {},
+	true
 ] call CBA_Settings_fnc_init;
 
 // KP_param_cratefiller_buildings
@@ -54,7 +55,8 @@
     localize "STR_KP_CRATEFILLER_SETTINGS",
     "Land_RepairDepot_01_tan_F, Land_RepairDepot_01_green_F, Land_RepairDepot_01_civ_F",
     1,
-    {}
+    {},
+	true
 ] call CBA_Settings_fnc_init;
 
 // KP_param_cratefiller_crates
@@ -68,7 +70,8 @@
     localize "STR_KP_CRATEFILLER_SETTINGS",
     "B_supplyCrate_F, CargoNet_01_box_F",
     1,
-    {}
+    {},
+	true
 ] call CBA_Settings_fnc_init;
 
 // KP_param_cratefiller_items
@@ -82,7 +85,8 @@
     localize "STR_KP_CRATEFILLER_SETTINGS",
     "arifle_SPAR_01_snd_F, MMG_01_tan_F, HandGrenade, MiniGrenade, DemoCharge_Remote_Mag, ATMine_Range_Mag, FirstAidKit, ToolKit, B_FieldPack_cbr, B_AssaultPack_cbr",
     1,
-    {}
+    {},
+	true
 ] call CBA_Settings_fnc_init;
 
 // KP_param_cratefiller_blacklist
@@ -96,7 +100,8 @@
     localize "STR_KP_CRATEFILLER_SETTINGS",
     "",
     1,
-    {}
+    {},
+	true
 ] call CBA_Settings_fnc_init;
 
 // KP_param_cratefiller_additional
@@ -110,7 +115,8 @@
     localize "STR_KP_CRATEFILLER_SETTINGS",
     "",
     1,
-    {}
+    {},
+	true
 ] call CBA_Settings_fnc_init;
 
 // KP_param_cratefiller_usageRadius
@@ -162,7 +168,8 @@
     localize "STR_KP_CRATEFILLER_SETTINGS",
     true,
     1,
-    {}
+    {},
+	true
 ] call CBA_Settings_fnc_init;
 
 true

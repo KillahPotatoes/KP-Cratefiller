@@ -91,8 +91,8 @@ class KP_cratefiller {
     class controls {
 
         class KPCF_Help: KPGUI_PRE_DialogCrossS {
-            text = "KPCF\img\icon_help.paa";
-            x = safeZoneX + safeZoneW * (KP_X_VAL_S + KP_WIDTH_VAL_S - 0.04)
+            text = "KPGUI\res\icon_help.paa";
+            x = safeZoneX + safeZoneW * (KP_X_VAL_S + KP_WIDTH_VAL_S - 0.04);
             y = KP_GETY_CROSS(KP_Y_VAL_S);
             tooltip = "$STR_KP_CRATEFILLER_HELP_TT";
             action = "";
@@ -102,7 +102,7 @@ class KP_cratefiller {
             idc = KP_CRATEFILLER_IDC_BUTTONOVERVIEW;
             text = "KPGUI\res\icon_tools.paa";
             x = safeZoneX + safeZoneW * (KP_X_VAL_S + KP_WIDTH_VAL_S - 0.08);
-            tooltip = "$STR_KP_CRATEFILLER_OVERVIEW_TT";
+            tooltip = "$STR_KP_CRATEFILLER_ACTIVATEOVERVIEW_TT";
             action = "[] call KP_fnc_cratefiller_showOverview";
         };
 
@@ -134,7 +134,7 @@ class KP_cratefiller {
         };
 
         class KPCF_RefreshCargo: KPGUI_PRE_CloseCross {
-            text = "KPCF\img\icon_refresh.paa";
+            text = "KPGUI\res\icon_refresh.paa";
             x = KP_GETCX(KP_X_VAL_S,KP_WIDTH_VAL_S,23,24);
             y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,3,48);
             w = KP_GETW(KP_WIDTH_VAL_S,24);
@@ -175,7 +175,7 @@ class KP_cratefiller {
             y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,10,48);
             w = KP_GETW(KP_WIDTH_VAL_S,2);
             h = KP_GETH(KP_HEIGHT_VAL_S,24);
-            tooltip = "$STR_KP_CRATEFILLER_TOOLTIPCATEGORY";
+            tooltip = "$STR_KP_CRATEFILLER_CATEGORY_TT";
             onLBSelChanged = "[] call KP_fnc_cratefiller_createEquipmentList";
         };
 
@@ -183,7 +183,7 @@ class KP_cratefiller {
             idc = KP_CRATEFILLER_IDC_COMBOWEAPONS;
             y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,12,48);
             w = KP_GETW(KP_WIDTH_VAL_S,3);
-            tooltip = "$STR_KP_CRATEFILLER_TOOLTIPWEAPONSELECTION";
+            tooltip = "$STR_KP_CRATEFILLER_WEAPONSELECTION_TT";
             onLBSelChanged = "[] call KP_fnc_cratefiller_createSubList";
         };
 
@@ -237,7 +237,7 @@ class KP_cratefiller {
             y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,10,48);
             w = KP_GETW(KP_WIDTH_VAL_S,4);
             h = KP_GETH(KP_HEIGHT_VAL_S,24);
-            tooltip = "$STR_KP_CRATEFILLER_EXPORT_T";
+            tooltip = "$STR_KP_CRATEFILLER_EXPORT_TT";
         };
 
         class KPCF_ImportName: KPGUI_PRE_Combo {
@@ -266,7 +266,7 @@ class KP_cratefiller {
         };
 
         class KPCF_DeletePreset: KPGUI_PRE_CloseCross {
-            text = "KPCF\img\icon_recyclebin.paa";
+            text = "KPGUI\res\icon_recyclebin.paa";
             x = KP_GETCX(KP_X_VAL_S,KP_WIDTH_VAL_S,23,24);
             y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,12,48);
             w = KP_GETW(KP_WIDTH_VAL_S,24);
@@ -287,7 +287,7 @@ class KP_cratefiller {
             onButtonClick = "[687421] call KP_fnc_cratefiller_addEquipment";
         };
 
-        class KPCF_InventoryList: KPGUI_PRE_ListBox {
+        class KPCF_InventoryList: KPGUI_PRE_ListNBox {
             idc = KP_CRATEFILLER_IDC_INVENTORYLIST;
             x = KP_GETCX(KP_X_VAL_S,KP_WIDTH_VAL_S,8,16);
             y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,14,48);

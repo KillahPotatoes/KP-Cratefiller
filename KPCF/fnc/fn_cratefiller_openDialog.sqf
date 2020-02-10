@@ -8,7 +8,7 @@
     File: fn_cratefiller_openDialog.sqf
     Author: Dubjunk - https://github.com/KillahPotatoes
     Date: 2020-01-21
-    Last Update: 2020-02-05
+    Last Update: 2020-02-10
     License: GNU General Public License v3.0 - https://www.gnu.org/licenses/gpl-3.0.html
 
     Description:
@@ -54,7 +54,7 @@ if !(KP_param_cratefiller_cratefillerOverview) then {
 };
 
 // Disable spawn and delete functionalities on disabled param
-if (!KP_param_cratefiller_spawnAndDelete) then {
+if !(!KP_param_cratefiller_spawnAndDelete) then {
     _ctrlCrate ctrlShow false;
     _ctrlSpawn ctrlShow false;
     _ctrlDelete ctrlShow false;
@@ -66,11 +66,6 @@ if (!KP_param_cratefiller_spawnAndDelete) then {
     } forEach CGVAR("crates", []);
 };
 
-// Disable the tools button on deactivation
-if !(KP_param_cratefiller_cratefillerOverview) then {
-    _ctrlToggleOverview ctrlShow false;
-};
-
 // Add category strings
 _ctrlCategory lbAdd localize "STR_KP_CRATEFILLER_LISTWEAPONS";
 _ctrlCategory lbAdd localize "STR_KP_CRATEFILLER_LISTMAGAZINES";
@@ -80,7 +75,7 @@ _ctrlCategory lbAdd localize "STR_KP_CRATEFILLER_LISTEXPLOSIVES";
 _ctrlCategory lbAdd localize "STR_KP_CRATEFILLER_LISTVARIOUS";
 _ctrlCategory lbAdd localize "STR_KP_CRATEFILLER_LISTBACKPACKS";
 
-//[] call KP_fnc_cratefiller_showPresets;
+[] call KP_fnc_cratefiller_showPresets;
 [] call KP_fnc_cratefiller_getNearStorages;
 
 true
