@@ -16,7 +16,8 @@
         "KP_param_cratefiller_usageRadius",
         "KP_param_cratefiller_interactRadius",
         "KP_param_cratefiller_cratefillerOverview",
-        "KP_param_cratefiller_useAceActions"
+        "KP_param_cratefiller_useAceActions",
+        "KP_param_cratefiller_inventoryblacklist"
     ],
     "psi-header.lang-config": [
         {

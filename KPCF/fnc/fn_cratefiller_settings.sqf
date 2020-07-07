@@ -74,6 +74,21 @@
 	true
 ] call CBA_Settings_fnc_init;
 
+// KP_param_cratefiller_inventoryBlacklist
+// Classnames of the inventories which will be ignored as valid storage.
+// Note: The classnames must be added without the "" !
+// Default: ""
+[
+    "KP_param_cratefiller_inventoryBlacklist",
+    "EDITBOX",
+    [localize "STR_KP_CRATEFILLER_INVENTORYBLACKLIST", localize "STR_KP_CRATEFILLER_INVENTORYBLACKLIST_TT"],
+    localize "STR_KP_CRATEFILLER_SETTINGS",
+    "",
+    1,
+    {},
+	true
+] call CBA_Settings_fnc_init;
+
 // KP_param_cratefiller_items
 // Classnames of the items which should be available at the cratefiller on deactivated preset generation.
 // Note: The classnames must be added without the "" !

@@ -168,6 +168,10 @@
                 <German>Wähle einen Laderaum aus, den du bearbeiten möchtest.</German>
                 <Polish>Wybierz ekwipunek który chcesz edytować.</Polish>
             </Key>
+            <Key ID="STR_KP_CRATEFILLER_INVENTORYBLACKLIST_tt">
+                <English>This inventories won't be filled with the cratefiller.</English>
+                <German>Diese Frachträume sind nicht mit dem Kistenfüller nutzbar.</German>
+            </Key>
             <Key ID="STR_KP_CRATEFILLER_ITEMS_TT">
                 <English>Defines the cratefiller items.</English>
                 <German>Definiert die Kistenfüller Gegenstände.</German>
@@ -290,6 +294,10 @@
             <Key ID="STR_KP_CRATEFILLER_INTERACTRADIUS">
                 <English>Defines the interaction radius</English>
                 <German>Definiert den Interaktions Radius</German>
+            </Key>
+            <Key ID="STR_KP_CRATEFILLER_INVENTORYBLACKLIST">
+                <English>Inventory blacklist</English>
+                <German>Gesperrte Frachträume</German>
             </Key>
             <Key ID="STR_KP_CRATEFILLER_ITEMS">
                 <English>Cratefiller items</English>
