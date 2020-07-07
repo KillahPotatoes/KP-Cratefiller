@@ -7,7 +7,7 @@
     File: fn_cratefiller_preInit.sqf
     Author: Dubjunk - https://github.com/KillahPotatoes
     Date: 2019-05-09
-    Last Update: 2020-02-10
+    Last Update: 2020-07-07
     License: GNU General Public License v3.0 - https://www.gnu.org/licenses/gpl-3.0.html
 
     Description:
@@ -40,13 +40,6 @@ if (isServer) then {
 
     KP_cratefiller_cache = true call CBA_fnc_createNamespace;
     publicVariable "KP_cratefiller_cache";
-
-	// Convert CBA settings to useable array
-	private _buildings = KP_param_cratefiller_buildings splitString ", ";
-	CSVAR("buildings", _buildings);
-
-	private _crates = [KP_param_cratefiller_crates splitString ", "] call KP_fnc_cratefiller_sortList;
-	CSVAR("crates", _crates);
 
 };
 

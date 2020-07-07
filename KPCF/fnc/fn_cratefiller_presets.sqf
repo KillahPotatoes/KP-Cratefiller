@@ -28,18 +28,36 @@ private _items = [];
 private _backpacks = [];
 private _type = [];
 private _specialItems = [];
+private _buildings = [];
+private _crates = [];
+private _inventoryBlacklist = [];
+private _classNames = [];
+private _additional = [];
+private _blacklist = [];
 
-// Convert CBA settings array
-private _classNames = KP_param_cratefiller_items splitString ", ";
-private _additional = KP_param_cratefiller_additional splitString ", ";
-private _blacklist = KP_param_cratefiller_blacklist splitString ", ";
-private _inventoryBlacklist = KP_param_cratefiller_inventoryBlacklist splitString ", ";
+// Convert CBA settings array on deactivated config override
+if !(KP_cratefiller_configOverride) then {
+    _buildings = KP_param_cratefiller_buildings splitString ", ";
+    _crates = [KP_param_cratefiller_crates splitString ", "] call KP_fnc_cratefiller_sortList;
+    _inventoryBlacklist = KP_param_cratefiller_inventoryBlacklist splitString ", ";
+    _classNames = KP_param_cratefiller_items splitString ", ";
+    _additional = KP_param_cratefiller_additional splitString ", ";
+    _blacklist = KP_param_cratefiller_blacklist splitString ", ";
+} else {
+    _buildings = KP_cratefiller_buildings;
+    _crates = [KP_cratefiller_crates] call KP_fnc_cratefiller_sortList;
+    _inventoryBlacklist = KP_cratefiller_inventoryBlacklist;
+    _classNames = KP_cratefiller_items;
+    _additional = KP_cratefiller_additional;
+    _blacklist = KP_cratefiller_blacklist;
+};
 
-
+CSVAR("buildings", _buildings);
+CSVAR("crates", _crates);
+CSVAR("inventoryBlacklist", _inventoryBlacklist);
 CSVAR("classNames", _classNames);
 CSVAR("additional", _additional);
 CSVAR("blacklist", _blacklist);
-CSVAR("inventoryBlacklist", _inventoryBlacklist);
 
 if (KP_param_cratefiller_generatePreset) then {
     _classNames = [];
