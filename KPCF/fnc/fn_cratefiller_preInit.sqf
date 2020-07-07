@@ -41,6 +41,9 @@ if (isServer) then {
     KP_cratefiller_cache = true call CBA_fnc_createNamespace;
     publicVariable "KP_cratefiller_cache";
 
+    // Read the config file
+    [] call compile preprocessFileLineNumbers "KP_cratefiller_config.sqf";
+
 };
 
 // Player section
