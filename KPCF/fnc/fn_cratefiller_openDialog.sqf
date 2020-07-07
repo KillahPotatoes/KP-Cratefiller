@@ -8,7 +8,7 @@
     File: fn_cratefiller_openDialog.sqf
     Author: Dubjunk - https://github.com/KillahPotatoes
     Date: 2020-01-21
-    Last Update: 2020-02-10
+    Last Update: 2020-07-07
     License: GNU General Public License v3.0 - https://www.gnu.org/licenses/gpl-3.0.html
 
     Description:
@@ -54,7 +54,7 @@ if !(KP_param_cratefiller_cratefillerOverview) then {
 };
 
 // Disable spawn and delete functionalities on disabled param
-if !(!KP_param_cratefiller_spawnAndDelete) then {
+if !(KP_param_cratefiller_spawnAndDelete) then {
     _ctrlCrate ctrlShow false;
     _ctrlSpawn ctrlShow false;
     _ctrlDelete ctrlShow false;
