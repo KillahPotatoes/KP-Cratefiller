@@ -62,7 +62,6 @@ _blacklist append (KP_param_cratefiller_inventoryBlacklist splitString ", ");
             _ctrlStorage lbSetPicture [_index, _picture];
         };
     };
-} forEach (_objects select {!(typeOf _x in _blacklist) && !((typeOf _x select [0,1]) isEqualTo "#") && !(_x isKindOf "Building") && !(typeOf _x in CGVAR("buildings", []))});
-
+} forEach (_objects select {!(typeOf _x in _blacklist) && !((typeOf _x select [0,1]) isEqualTo "#") && !(_x isKindOf "Building") && !(typeOf _x in CGVAR("buildings", [])) && ((attachedTo _x) isEqualTo objNull)});
 
 true
