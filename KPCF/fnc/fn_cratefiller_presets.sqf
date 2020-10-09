@@ -7,7 +7,7 @@
     File: fn_cratefiller_presets.sqf
     Author: Dubjunk - https://github.com/KillahPotatoes
     Date: 2020-01-21
-    Last Update: 2020-07-07
+    Last Update: 2020-10-09
     License: GNU General Public License v3.0 - https://www.gnu.org/licenses/gpl-3.0.html
 
     Description:
@@ -37,12 +37,12 @@ private _blacklist = [];
 
 // Convert CBA settings array on deactivated config override
 if !(KP_cratefiller_configOverride) then {
-    _buildings = KP_param_cratefiller_buildings splitString ", ";
-    _crates = [KP_param_cratefiller_crates splitString ", "] call KP_fnc_cratefiller_sortList;
-    _inventoryBlacklist = KP_param_cratefiller_inventoryBlacklist splitString ", ";
-    _classNames = KP_param_cratefiller_items splitString ", ";
-    _additional = KP_param_cratefiller_additional splitString ", ";
-    _blacklist = KP_param_cratefiller_blacklist splitString ", ";
+    _buildings = parseSimpleArray KP_param_cratefiller_buildings;
+    _crates = [parseSimpleArray KP_param_cratefiller_crates] call KP_fnc_cratefiller_sortList;
+    _inventoryBlacklist = parseSimpleArray KP_param_cratefiller_inventoryBlacklist;
+    _classNames = parseSimpleArray KP_param_cratefiller_items;
+    _additional = parseSimpleArray KP_param_cratefiller_additional;
+    _blacklist = parseSimpleArray KP_param_cratefiller_blacklist;
 } else {
     _buildings = KP_cratefiller_buildings;
     _crates = [KP_cratefiller_crates] call KP_fnc_cratefiller_sortList;

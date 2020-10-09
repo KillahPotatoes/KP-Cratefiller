@@ -40,98 +40,85 @@
     localize "STR_KP_CRATEFILLER_SETTINGS",
     true,
     1,
-    {[] call KP_fnc_cratefiller_presets;},
-	true
+    {[] call KP_fnc_cratefiller_presets;}
 ] call CBA_Settings_fnc_init;
 
 // KP_param_cratefiller_buildings
 // Classnames of the buildings which will get the cratefiller action.
-// Note: The classnames must be added without the "" !
-// Default: "Land_RepairDepot_01_tan_F, Land_RepairDepot_01_green_F, Land_RepairDepot_01_civ_F"
+// Default: ["Land_RepairDepot_01_tan_F", "Land_RepairDepot_01_green_F", "Land_RepairDepot_01_civ_F"]
 [
     "KP_param_cratefiller_buildings",
     "EDITBOX",
     [localize "STR_KP_CRATEFILLER_BUILDINGS", localize "STR_KP_CRATEFILLER_BUILDINGS_TT"],
     localize "STR_KP_CRATEFILLER_SETTINGS",
-    "Land_RepairDepot_01_tan_F, Land_RepairDepot_01_green_F, Land_RepairDepot_01_civ_F",
+    "[""Land_RepairDepot_01_tan_F"", ""Land_RepairDepot_01_green_F"", ""Land_RepairDepot_01_civ_F""]",
     1,
-    {},
-	true
+    {}
 ] call CBA_Settings_fnc_init;
 
 // KP_param_cratefiller_crates
 // Classnames of the crates which will be available for spawn and delete.
-// Note: The classnames must be added without the "" !
-// Default: "B_supplyCrate_F, CargoNet_01_box_F"
+// Default: ["B_supplyCrate_F", "CargoNet_01_box_F"]
 [
     "KP_param_cratefiller_crates",
     "EDITBOX",
     [localize "STR_KP_CRATEFILLER_CRATES", localize "STR_KP_CRATEFILLER_CRATES_TT"],
     localize "STR_KP_CRATEFILLER_SETTINGS",
-    "B_supplyCrate_F, CargoNet_01_box_F",
+    "[""B_supplyCrate_F"", ""CargoNet_01_box_F""]",
     1,
-    {},
-	true
+    {}
 ] call CBA_Settings_fnc_init;
 
 // KP_param_cratefiller_inventoryBlacklist
 // Classnames of the inventories which will be ignored as valid storage.
-// Note: The classnames must be added without the "" !
-// Default: ""
+// Default: []
 [
     "KP_param_cratefiller_inventoryBlacklist",
     "EDITBOX",
     [localize "STR_KP_CRATEFILLER_INVENTORYBLACKLIST", localize "STR_KP_CRATEFILLER_INVENTORYBLACKLIST_TT"],
     localize "STR_KP_CRATEFILLER_SETTINGS",
-    "",
+    "[]",
     1,
-    {},
-	true
+    {}
 ] call CBA_Settings_fnc_init;
 
 // KP_param_cratefiller_items
 // Classnames of the items which should be available at the cratefiller on deactivated preset generation.
-// Note: The classnames must be added without the "" !
-// Default: "arifle_SPAR_01_snd_F, MMG_01_tan_F, HandGrenade, MiniGrenade, DemoCharge_Remote_Mag, ATMine_Range_Mag, FirstAidKit, ToolKit, B_FieldPack_cbr, B_AssaultPack_cbr"
+// Default: ["arifle_SPAR_01_snd_F", "MMG_01_tan_F", "HandGrenade", "MiniGrenade", "DemoCharge_Remote_Mag", "ATMine_Range_Mag", "FirstAidKit", "ToolKit", "B_FieldPack_cbr", "B_AssaultPack_cbr"]
 [
     "KP_param_cratefiller_items",
     "EDITBOX",
     [localize "STR_KP_CRATEFILLER_ITEMS", localize "STR_KP_CRATEFILLER_ITEMS_TT"],
     localize "STR_KP_CRATEFILLER_SETTINGS",
-    "arifle_SPAR_01_snd_F, MMG_01_tan_F, HandGrenade, MiniGrenade, DemoCharge_Remote_Mag, ATMine_Range_Mag, FirstAidKit, ToolKit, B_FieldPack_cbr, B_AssaultPack_cbr",
+    "[""arifle_SPAR_01_snd_F"", ""MMG_01_tan_F"", ""HandGrenade"", ""MiniGrenade"", ""DemoCharge_Remote_Mag"", ""ATMine_Range_Mag"", ""FirstAidKit"", ""ToolKit"", ""B_FieldPack_cbr"", ""B_AssaultPack_cbr""]",
     1,
-    {},
-	true
+    {}
 ] call CBA_Settings_fnc_init;
 
 // KP_param_cratefiller_blacklist
 // Classnames of the items which should be blacklisted from the cratefiller.
-// Note: The classnames must be added without the "" !
-// Default: ""
+// Default: []
 [
     "KP_param_cratefiller_blacklist",
     "EDITBOX",
     [localize "STR_KP_CRATEFILLER_BLACKLIST", localize "STR_KP_CRATEFILLER_BLACKLIST_TT"],
     localize "STR_KP_CRATEFILLER_SETTINGS",
-    "",
+    "[]",
     1,
-    {},
-	true
+    {}
 ] call CBA_Settings_fnc_init;
 
 // KP_param_cratefiller_additional
 // Classnames of the items which should be added after the generated to presets to prevent missing items due to bad config entries.
-// Note: The classnames must be added without the "" !
-// Default: ""
+// Default: []
 [
     "KP_param_cratefiller_additional",
     "EDITBOX",
     [localize "STR_KP_CRATEFILLER_ADDITIONAL", localize "STR_KP_CRATEFILLER_ADDITIONAL_TT"],
     localize "STR_KP_CRATEFILLER_SETTINGS",
-    "",
+    "[]",
     1,
-    {},
-	true
+    {}
 ] call CBA_Settings_fnc_init;
 
 // KP_param_cratefiller_usageRadius
