@@ -38,6 +38,10 @@
         </Container>
 
         <Container name="Dialog controls">
+            <Key ID="STR_KP_CRATEFILLER_CLEARINVENTORY">
+                <English>Clear storage</English>
+                <German>Laderaum leeren/German>
+            </Key>
             <Key ID="STR_KP_CRATEFILLER_DELETECRATE">
                 <English>Store crate</English>
                 <German>Kiste einlagern</German>

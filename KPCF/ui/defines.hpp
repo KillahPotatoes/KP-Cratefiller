@@ -4,7 +4,7 @@
     File: defines.hpp
     Author: Dubjunk - https://github.com/KillahPotatoes
     Date: 2019-08-06
-    Last Update: 2020-02-05
+    Last Update: 2020-10-09
     License: GNU General Public License v3.0 - https://www.gnu.org/licenses/gpl-3.0.html
 
     Description:
@@ -39,5 +39,6 @@
 #define KP_CRATEFILLER_IDC_BUTTONLEFTINVENTORY    687419
 #define KP_CRATEFILLER_IDC_BUTTONRIGHTINVENTORY   687420
 #define KP_CRATEFILLER_IDC_INVENTORYLIST          687421
+#define KP_CRATEFILLER_IDC_BUTTONCLEARINVENTORY   687422
 
-#define KP_CRATEFILLER_IDC_PROGRESSBAR            687422
+#define KP_CRATEFILLER_IDC_PROGRESSBAR            687423

@@ -300,6 +300,16 @@ class KP_cratefiller {
             idcRight = KP_CRATEFILLER_IDC_BUTTONRIGHTINVENTORY;
         };
 
+        class KPCF_ClearInventory: KPGUI_PRE_InlineButton {
+            idc = KP_CRATEFILLER_IDC_BUTTONCLEARINVENTORY;
+            text = "$STR_KP_CRATEFILLER_CLEARINVENTORY";
+            x = KP_GETCX(KP_X_VAL_S,KP_WIDTH_VAL_S,8,16);
+            y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,44,48);
+            w = KP_GETW(KP_WIDTH_VAL_S,2);
+            h = KP_GETH(KP_HEIGHT_VAL_S,24);
+            onbuttonClick = "[] call KP_fnc_cratefiller_setInventory";
+        };
+
         class KPCF_ProgressBar : KPGUI_PRE_ProgressBar {
             idc = KP_CRATEFILLER_IDC_PROGRESSBAR;
             x = KP_GETCX(KP_X_VAL_S,KP_WIDTH_VAL_S,0,1);
