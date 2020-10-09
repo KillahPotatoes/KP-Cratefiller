@@ -4,7 +4,7 @@
     File: fn_cratefiller_settings.sqf
     Author: Dubjunk - https://github.com/KillahPotatoes
     Date: 2019-05-09
-    Last Update: 2020-07-07
+    Last Update: 2020-10-09
     License: GNU General Public License v3.0 - https://www.gnu.org/licenses/gpl-3.0.html
 
     Description:
@@ -40,7 +40,7 @@
     localize "STR_KP_CRATEFILLER_SETTINGS",
     true,
     1,
-    {[] call KP_fnc_cratefiller_settings;},
+    {[] call KP_fnc_cratefiller_presets;},
 	true
 ] call CBA_Settings_fnc_init;
 
