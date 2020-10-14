@@ -7,7 +7,7 @@
     File: fn_cratefiller_preInit.sqf
     Author: Dubjunk - https://github.com/KillahPotatoes
     Date: 2019-05-09
-    Last Update: 2020-10-09
+    Last Update: 2020-10-14
     License: GNU General Public License v3.0 - https://www.gnu.org/licenses/gpl-3.0.html
 
     Description:
@@ -40,9 +40,6 @@ if (isServer) then {
 
     KP_cratefiller_cache = true call CBA_fnc_createNamespace;
     publicVariable "KP_cratefiller_cache";
-
-    // Read the config file
-    [] call compile preprocessFileLineNumbers "KP_cratefiller_config.sqf";
 
 };
 
