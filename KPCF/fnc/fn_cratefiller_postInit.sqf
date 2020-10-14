@@ -6,7 +6,7 @@
     File: fn_cratefiller_postInit.sqf
     Author: Dubjunk - https://github.com/KillahPotatoes
     Date: 2019-05-09
-    Last Update: 2020-10-09
+    Last Update: 2020-10-14
     License: GNU General Public License v3.0 - https://www.gnu.org/licenses/gpl-3.0.html
 
     Description:
@@ -22,7 +22,7 @@
 
 if (isServer) then {
 
-    diag_log format ["[KPDS] [%1] [POST] [CRATEFILLER] Module initializing...", diag_tickTime];
+    diag_log format ["[KP] [%1] [POST] [CRATEFILLER] Module initializing...", diag_tickTime];
 
     // Create cratefiller presets on startup
     [] call KP_fnc_cratefiller_presets;
@@ -39,6 +39,6 @@ if (hasInterface) then {
 
 };
 
-if (isServer) then {diag_log format ["[KPDS] [%1] [POST] [CRATEFILLER] Module initialized", diag_tickTime];};
+if (isServer) then {diag_log format ["[KP] [%1] [POST] [CRATEFILLER] Module initialized", diag_tickTime];};
 
 true

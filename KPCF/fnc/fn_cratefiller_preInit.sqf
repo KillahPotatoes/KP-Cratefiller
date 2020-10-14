@@ -20,7 +20,7 @@
         PreInit finished [BOOL]
 */
 
-if (isServer) then {diag_log format ["[KPDS] [%1] [PRE] [CRATEFILLER] Module initializing...", diag_tickTime];};
+if (isServer) then {diag_log format ["[KP] [%1] [PRE] [CRATEFILLER] Module initializing...", diag_tickTime];};
 
 /*
     ----- Module Initialization -----
@@ -43,6 +43,6 @@ if (isServer) then {
 
 };
 
-if (isServer) then {diag_log format ["[KPDS] [%1] [PRE] [CRATEFILLER] Module initialized", diag_tickTime];};
+if (isServer) then {diag_log format ["[KP] [%1] [PRE] [CRATEFILLER] Module initialized", diag_tickTime];};
 
 true

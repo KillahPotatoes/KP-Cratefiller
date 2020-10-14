@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Project name="KPDS">
-    <!-- English and German localization by Dubjunk: https://github.com/Dubjunk -->
-    <!-- Polish localization by veteran29: https://github.com/veteran29 -->
+<Project name="KP">
 
     <Package name="KPCF">
+    <!-- English and German localization by Dubjunk: https://github.com/Dubjunk -->
+    <!-- Polish localization by veteran29: https://github.com/veteran29 -->
 
         <Container name="Titles">
             <Key ID="STR_KP_CRATEFILLER_ACTIONOPEN">
