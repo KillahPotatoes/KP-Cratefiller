@@ -14,7 +14,12 @@
 */
 
 class CfgFunctions {
-    #include "KP_functions.hpp"
+    class KP {
+        #include "KP\KPCF\functions.hpp"
+    };
 };
 
-#include "KP_ui.hpp"
+#include "KP\KPGUI\KPGUI_defines.hpp"
+
+#include "KP\KPCF\ui\defines.hpp"
+#include "KP\KPCF\ui\KP_cratefiller_dialog.hpp"

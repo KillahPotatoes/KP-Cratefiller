@@ -8,7 +8,7 @@
     File: fn_cratefiller_getNearStorages.sqf
     Author: Dubjunk - https://github.com/KillahPotatoes
     Date: 2020-01-21
-    Last Update: 2020-07-07
+    Last Update: 2020-10-20
     License: GNU General Public License v3.0 - https://www.gnu.org/licenses/gpl-3.0.html
 
     Description:
@@ -57,7 +57,7 @@ _blacklist append (KP_param_cratefiller_inventoryBlacklist splitString ", ");
         _ctrlStorage lbSetData [_index, netId _x];
         _picture = getText (_config >> "picture");
         if (_picture isEqualTo "pictureThing") then {
-            _ctrlStorage lbSetPicture [_index, "KPGUI\res\icon_help.paa"];
+            _ctrlStorage lbSetPicture [_index, "KP\KPGUI\res\icon_help.paa"];
         } else {
             _ctrlStorage lbSetPicture [_index, _picture];
         };

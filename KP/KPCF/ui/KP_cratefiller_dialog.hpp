@@ -91,7 +91,7 @@ class KP_cratefiller {
     class controls {
 
         class KPCF_Help: KPGUI_PRE_DialogCrossS {
-            text = "KPGUI\res\icon_help.paa";
+            text = "KP\KPGUI\res\icon_help.paa";
             x = safeZoneX + safeZoneW * (KP_X_VAL_S + KP_WIDTH_VAL_S - 0.04);
             y = KP_GETY_CROSS(KP_Y_VAL_S);
             tooltip = "$STR_KP_CRATEFILLER_HELP_TT";
@@ -100,7 +100,7 @@ class KP_cratefiller {
 
         class KPCF_ButtonTools: KPGUI_PRE_DialogCrossS {
             idc = KP_CRATEFILLER_IDC_BUTTONOVERVIEW;
-            text = "KPGUI\res\icon_tools.paa";
+            text = "KP\KPGUI\res\icon_tools.paa";
             x = safeZoneX + safeZoneW * (KP_X_VAL_S + KP_WIDTH_VAL_S - 0.08);
             tooltip = "$STR_KP_CRATEFILLER_ACTIVATEOVERVIEW_TT";
             action = "[] call KP_fnc_cratefiller_showOverview";
@@ -134,7 +134,7 @@ class KP_cratefiller {
         };
 
         class KPCF_RefreshCargo: KPGUI_PRE_CloseCross {
-            text = "KPGUI\res\icon_refresh.paa";
+            text = "KP\KPGUI\res\icon_refresh.paa";
             x = KP_GETCX(KP_X_VAL_S,KP_WIDTH_VAL_S,23,24);
             y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,3,48);
             w = KP_GETW(KP_WIDTH_VAL_S,24);
@@ -266,7 +266,7 @@ class KP_cratefiller {
         };
 
         class KPCF_DeletePreset: KPGUI_PRE_CloseCross {
-            text = "KPGUI\res\icon_recyclebin.paa";
+            text = "KP\KPGUI\res\icon_recyclebin.paa";
             x = KP_GETCX(KP_X_VAL_S,KP_WIDTH_VAL_S,23,24);
             y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,12,48);
             w = KP_GETW(KP_WIDTH_VAL_S,24);
