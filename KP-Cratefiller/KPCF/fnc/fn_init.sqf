@@ -11,8 +11,8 @@
     Dependencies:
         * KPGUI
 */
-private _uid = getPlayerUID player;
-// Only run, when we've a real player
+private _uid = getPlayerUID player; //get player STEAM64ID
+// Only run, when we've a real player & player has correct Steam64ID
 if (hasInterface && _uid == ("MYSTEAMID" OR "STEAMID" OR "STEAMID") then {
 
     // Read the config file
