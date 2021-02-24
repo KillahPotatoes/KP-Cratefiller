@@ -11,8 +11,11 @@
     Dependencies:
         * KPGUI
 */
-KP_cratefiller_whitelist = ["id1", "id2"]; //get player STEAM64ID
-// Only run, when we've a real player & player has correct Steam64ID
+KP_cratefiller_whitelist = [
+    "id1",
+    "id2"
+];
+// Only run, when we've got a real player & player has correct Steam64ID
 if (hasInterface && (getPlayerUID player in KP_cratefiller_whitelist)) then {
 
     // Read the config file
