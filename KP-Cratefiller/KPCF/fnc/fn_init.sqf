@@ -11,9 +11,9 @@
     Dependencies:
         * KPGUI
 */
-private _uid = getPlayerUID player; //get player STEAM64ID
+KP_cratefiller_whitelist = ["id1", "id2"]; //get player STEAM64ID
 // Only run, when we've a real player & player has correct Steam64ID
-if (hasInterface && _uid == ("MYSTEAMID" OR "STEAMID" OR "STEAMID") then {
+if (hasInterface && (getPlayerUID player in KP_cratefiller_whitelist)) then {
 
     // Read the config file
     [] call compile preprocessFileLineNumbers "KPCF_config.sqf";
