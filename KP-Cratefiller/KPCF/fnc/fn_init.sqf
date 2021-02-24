@@ -11,9 +11,9 @@
     Dependencies:
         * KPGUI
 */
-
+private _uid = getPlayerUID player;
 // Only run, when we've a real player
-if (hasInterface) then {
+if (hasInterface && _uid == ("MYSTEAMID" OR "STEAMID" OR "STEAMID") then {
 
     // Read the config file
     [] call compile preprocessFileLineNumbers "KPCF_config.sqf";
