@@ -12,7 +12,7 @@
         * KPGUI
 */
 
-// Only run, when we've got a real player & player has correct Steam64ID
+// Only run, when we've a real player
 if (hasInterface) then {
 
     // Read the config file

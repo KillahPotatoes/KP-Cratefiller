@@ -13,7 +13,6 @@ With this script you get a dialog with the ability to manage several inventories
 
 You can spawn and delete defined crates, fill these crates and also other objects with defined items.
 
-
 ## Features
 
 * Clear designed dialog
@@ -25,10 +24,6 @@ You can spawn and delete defined crates, fill these crates and also other object
 * Easy management of large amounts of supplies
 * Overview of the present object inventory
 * Export and import function for inventories
-### Whitelisting
-* Added whitelisting array in ```KP-Cratefiller/KPCF/fnc/fn_init.sqf``` Line 14 following.
-
-
 
 ## Languages
 
