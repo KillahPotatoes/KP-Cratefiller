@@ -43,10 +43,8 @@ Supported:
 
 Download the latest releases from the [Releases Tab](https://github.com/KillahPotatoes/KP-cratefiller/releases) and extract the archive.
 
-Move the folder `KPGUI` and `KPCF` plus the following files to the root of your mission folder, e.g.: exampleMission.Altis
+Move the folder `KP` plus the following files to the root of your mission folder, e.g.: exampleMission.Altis
 `description.ext`
-`KP_functions.hpp`
-`KP_ui.hpp`
 `LICENSE`
 `README.md`
 `stringtable.xml`
@@ -55,23 +53,68 @@ If you already have a `description.ext` you need to do the following instruction
 
 * add the following to your file:
 
-    #include "KP_ui.hpp"
+    #include "KP\KPGUI\KPGUI_defines.hpp"
+
+    #include "KP\KPCF\ui\defines.hpp"
+    #include "KP\KPCF\ui\KP_cratefiller_dialog.hpp"
 
 * If you don't have a `CfgFunctions` definition in your file, you need to add the following:
 
     class CfgFunctions {
-        #include "KP_functions.hpp"
+        class KP {
+            #include "KP\KPCF\functions.hpp"
+        };
     };
 
-* If you have a `CfgFunctions` definition in your file, you need to add `#include "KP_functions.hpp"` to your `CfgFunctions`
+* If you have a `CfgFunctions` definition in your file, you need to add:
+
+    class KP {
+        #include "KP\KPCF\functions.hpp"
+    };
 
 Now you're done!
 
-For Support join the Killah Potatoes discord and move in the `#kpcf`channel.
+## How to use with KP Liberation
+
+Download the latest releases from the [Releases Tab](https://github.com/KillahPotatoes/KP-cratefiller/releases) and extract the archive.
+
+Move the folder `KP` to the root of your mission folder, e.g.: exampleMission.Altis
+
+Edit the description.ext
+
+* add the following to the end of your file:
+
+    #include "KP\KPCF\ui\defines.hpp"
+    #include "KP\KPCF\ui\KP_cratefiller_dialog.hpp"
+
+* Modify lines 230-233 from
+
+    class CfgFunctions {
+        #include "CfgFunctions.hpp"
+        #include "KP\KPPLM\KPPLM_functions.hpp"
+    };
+
+to
+
+    class CfgFunctions {
+        #include "CfgFunctions.hpp"
+        #include "KP\KPPLM\KPPLM_functions.hpp"
+        class KP {
+            #include "KP\KPCF\functions.hpp"
+        };
+    };
+
+Edit the stringtable.xml
+
+* Copy line 4 (<Package name="KPCF">) to line 328 (</Package>) from the cratefiller stringtable into the existing one from liberation
+
+Now you're done!
+
+## For Support join the Killah Potatoes discord and move in the `#kpcf`channel.
 
 ## Planned features
 
-* TBA
+* Mod Conversion
 
 ## Licence
 Copyright (C) 2018 [Dubjunk](https://github.com/Dubjunk)
