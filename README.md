@@ -1,10 +1,8 @@
-# Dubjunks Scripts
-[![GitHub release](https://img.shields.io/github/release/KillahPotatoes/dubjunks-scripts.svg)](https://github.com/KillahPotatoes/dubjunks-scripts/releases)
-[![Github All Releases](https://img.shields.io/github/downloads/KillahPotatoes/dubjunks-scripts/total.svg)](https://github.com/KillahPotatoes/dubjunks-scripts)
+# KP Cratefiller
+[![GitHub release](https://img.shields.io/github/release/KillahPotatoes/KP-cratefiller.svg)](https://github.com/KillahPotatoes/KP-cratefiller/releases)
+[![Github All Releases](https://img.shields.io/github/downloads/KillahPotatoes/KP-cratefiller/total.svg)](https://github.com/KillahPotatoes/KP-cratefiller)
 
 [Killah Potatoes Discord](https://discord.gg/fjSPn8t)
-
-# KP Cratefiller
 
 ## Description
 ![cfpreview](https://i.imgur.com/f1SBQzP.jpg)
@@ -17,20 +15,21 @@ You can spawn and delete defined crates, fill these crates and also other object
 
 * Clear designed dialog
 * detection of cratefiller objects via classname
-* Own config file for several things (base and spawn object, working radius, crates and available items)
+* CBA settings integration
 * Spawn and delete defined crates
 * Generated selection of magazines and attachments for a pre selected weapon
 * Generated item lists
 * Easy management of large amounts of supplies
 * Overview of the present object inventory
 * Export and import function for inventories
+* Squad and Player overview for easy supplies of several players
 
 ## Languages
 
 Currently the module is localized for:
 * English
 * German
-* Polish
+* Polish (outdated)
 
 ## Mods
 
@@ -42,32 +41,80 @@ Supported:
 
 ## How to use
 
-Download the latest releases from the [Releases Tab](https://github.com/KillahPotatoes/dubjunks-scripts/releases) and extract the archive.
+Download the latest releases from the [Releases Tab](https://github.com/KillahPotatoes/KP-cratefiller/releases) and extract the archive.
 
-Move the folder `KPGUI` and `KPCF` plus the files `description.ext` `KPCF_config.sqf` and `stringtable.xml` to the root of your mission folder, e.g.: exampleMission.Altis
+Move the folder `KP` plus the following files to the root of your mission folder, e.g.: exampleMission.Altis
+`description.ext`
+`LICENSE`
+`README.md`
+`stringtable.xml`
 
 If you already have a `description.ext` you need to do the following instructions:
 
 * add the following to your file:
 
-    #include "KPGUI\KPGUI_defines.hpp"
-    #include "KPCF\ui\KPCF_dialog.hpp"
+    #include "KP\KPGUI\KPGUI_defines.hpp"
+
+    #include "KP\KPCF\ui\defines.hpp"
+    #include "KP\KPCF\ui\KP_cratefiller_dialog.hpp"
 
 * If you don't have a `CfgFunctions` definition in your file, you need to add the following:
 
     class CfgFunctions {
-        #include "KPCF\KPCF_functions.hpp"
+        class KP {
+            #include "KP\KPCF\functions.hpp"
+        };
     };
 
-* If you have a `CfgFunctions` definition in your file, you need to add `#include "KPCF\KPCF_functions.hpp"` to your `CfgFunctions`
+* If you have a `CfgFunctions` definition in your file, you need to add:
+
+    class KP {
+        #include "KP\KPCF\functions.hpp"
+    };
 
 Now you're done!
 
-For Support join the Killah Potatoes discord and move in the `#kp-mods`channel.
+## How to use with KP Liberation
+
+Download the latest releases from the [Releases Tab](https://github.com/KillahPotatoes/KP-cratefiller/releases) and extract the archive.
+
+Move the folder `KP` to the root of your mission folder, e.g.: exampleMission.Altis
+
+Edit the description.ext
+
+* add the following to the end of your file:
+
+    #include "KP\KPCF\ui\defines.hpp"
+    #include "KP\KPCF\ui\KP_cratefiller_dialog.hpp"
+
+* Modify lines 230-233 from
+
+    class CfgFunctions {
+        #include "CfgFunctions.hpp"
+        #include "KP\KPPLM\KPPLM_functions.hpp"
+    };
+
+to
+
+    class CfgFunctions {
+        #include "CfgFunctions.hpp"
+        #include "KP\KPPLM\KPPLM_functions.hpp"
+        class KP {
+            #include "KP\KPCF\functions.hpp"
+        };
+    };
+
+Edit the stringtable.xml
+
+* Copy line 4 (<Package name="KPCF">) to line 328 (</Package>) from the cratefiller stringtable into the existing one from liberation
+
+Now you're done!
+
+## For Support join the Killah Potatoes discord and move in the `#kpcf`channel.
 
 ## Planned features
 
-* TBA
+* Mod Conversion
 
 ## Licence
 Copyright (C) 2018 [Dubjunk](https://github.com/Dubjunk)
