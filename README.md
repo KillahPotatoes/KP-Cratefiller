@@ -24,6 +24,7 @@ You can spawn and delete defined crates, fill these crates and also other object
 * Easy management of large amounts of supplies
 * Overview of the present object inventory
 * Export and import function for inventories
+* Whitelist for players to access cratefiller
 
 ## Languages
 
@@ -44,7 +45,7 @@ Supported:
 
 Download the latest releases from the [Releases Tab](https://github.com/KillahPotatoes/dubjunks-scripts/releases) and extract the archive.
 
-Move the folder `KPGUI` and `KPCF` plus the files `description.ext` `KPCF_config.sqf` and `stringtable.xml` to the root of your mission folder, e.g.: exampleMission.Altis
+Move the folder `KPGUI` and `KPCF` plus the files `description.ext` `KPCF_config.sqf` `KPCF_whitelist.sqf` and `stringtable.xml` to the root of your mission folder, e.g.: exampleMission.Altis
 
 If you already have a `description.ext` you need to do the following instructions:
 

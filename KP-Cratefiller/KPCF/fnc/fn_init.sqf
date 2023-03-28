@@ -2,7 +2,8 @@
     Killah Potatoes Cratefiller v1.1.0
 
     Author: Dubjunk - https://github.com/KillahPotatoes
-
+    Edited by Mildly_Interested - https://github.com/MildlyInterested
+    
     License: GNU General Public License v3.0 - https://www.gnu.org/licenses/gpl-3.0.html
 
     Description:
@@ -11,9 +12,21 @@
     Dependencies:
         * KPGUI
 */
+// Runs on every client to check if whitelisting is enabled/init whitelist lists
+KPCF_whitelisted = false;
+[] call compileFinal preprocessFileLineNumbers "KPCF_whitelist.sqf";
 
-// Only run, when we've a real player
-if (hasInterface) then {
+// Check if player is in any of the three whitelists
+if (KPCF_enable_whitelist &&  (
+        (getPlayerUID player in KP_cratefiller_whitelist_steam_id)
+    ||  (name player in KP_cratefiller_whitelist_player_name)
+    ||  (groupId (group player) in KP_cratefiller_whitelist_group_name)
+)) then {
+    KPCF_whitelisted = true;
+};
+
+// Only run, when we've got a real player & and has been whitelisted OR Whitelist is disabled
+if (hasInterface && (KPCF_whitelisted || !KPCF_enable_whitelist)) then {
 
     // Read the config file
     [] call compile preprocessFileLineNumbers "KPCF_config.sqf";
