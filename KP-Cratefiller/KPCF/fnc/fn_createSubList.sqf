@@ -42,6 +42,8 @@ switch (_catIndex) do {
 
     // Magazines
     case 1 : {
+        // Exit if not of type CfgWeapons
+        if (!isArray (configfile >> "CfgWeapons" >> _weaponType >> "muzzles")) exitWith {};
         // Get compatible magazines
         private _glType = (getArray (configfile >> "CfgWeapons" >> _weaponType >> "muzzles")) select 1;
         private _magazines = [_weaponType] call CBA_fnc_compatibleMagazines;

@@ -60,6 +60,8 @@ switch (_catIndex) do {
             _config = [_x select 1] call KPCF_fnc_getConfigPath;
             _ctrlWeapon lbSetPicture [_index, getText (configFile >> _config >> (_x select 1) >> "picture")];
         } forEach KPCF_sortedWeapons;
+        // Select first weapon
+        _ctrlWeapon lbSetCurSel 0;
     };
 
     // Attachments
@@ -71,6 +73,8 @@ switch (_catIndex) do {
             _config = [_x select 1] call KPCF_fnc_getConfigPath;
             _ctrlWeapon lbSetPicture [_index, getText (configFile >> _config >> (_x select 1) >> "picture")];
         } forEach KPCF_sortedWeapons;
+        // Select first weapon
+        _ctrlWeapon lbSetCurSel 0;
     };
 
     // Grenades
