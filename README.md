@@ -24,6 +24,7 @@ You can spawn and delete defined crates, fill these crates and also other object
 * Easy management of large amounts of supplies
 * Overview of the present object inventory
 * Export and import function for inventories
+* Configurable ACE3 Carry, Drag and Cargo Size settings
 
 ## Languages
 
