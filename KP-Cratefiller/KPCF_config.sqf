@@ -20,6 +20,7 @@ KPCF_cratefillerSpawn = "Land_HelipadCivil_F";
 KPCF_canSpawnAndDelete = true;
 
 // If set to "true" the item lists will be generated from the config
+// If set to "false" only items defined in KPCF_weapons and the folliwng lists will be available
 KPCF_generateLists = true;
 
 // These variable defines the range where inventories can be edited
@@ -51,12 +52,24 @@ KPCF_whitelistedItems = [
     ""
 ];
 
-// ----- These Variables will be replaced with activated generatedLists -----
+// ----- The following Variables will be replaced with activated generatedLists -----
 
 // Defines the available weapons
 KPCF_weapons = [
     "arifle_SPAR_01_snd_F",
     "MMG_01_tan_F"
+];
+
+// Defines the available magazines
+KPCF_magazines = [
+    "Placeholder",
+    "Placeholder"
+];
+
+// Defines the available attachments
+KPCF_attachments = [
+    "Placeholder",
+    "Placeholder"
 ];
 
 // Defines the available grenades

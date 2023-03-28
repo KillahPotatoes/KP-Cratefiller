@@ -2,6 +2,8 @@
     Killah Potatoes Cratefiller v1.1.0
 
     Author: Dubjunk - https://github.com/KillahPotatoes
+    Edited by Mildly_Interested - https://github.com/MildlyInterested
+    
     License: GNU General Public License v3.0 - https://www.gnu.org/licenses/gpl-3.0.html
 
     Description:
@@ -46,7 +48,14 @@ switch (_catIndex) do {
         private _glType = (getArray (configfile >> "CfgWeapons" >> _weaponType >> "muzzles")) select 1;
         private _magazines = [_weaponType] call CBA_fnc_compatibleMagazines;
         _magazines append ([configfile >> "CfgWeapons" >> _weaponType >> _glType] call CBA_fnc_compatibleMagazines);
-        private _sortedMagazines = [_magazines] call KPCF_fnc_sortList;
+        private "_filteredMagazines";
+        if (!KPCF_generateLists) then {
+            _filteredMagazines = _magazines arrayIntersect KPCF_magazines;
+        }
+        else {
+            _filteredMagazines = _magazines;
+        };
+        private _sortedMagazines = [_filteredMagazines] call KPCF_fnc_sortList;
 
         private _index = 0;
 
@@ -63,7 +72,14 @@ switch (_catIndex) do {
     case 2 : {
         // Get compatible attachments
         private _attachments = [_weaponType] call BIS_fnc_compatibleItems;
-        private _sortedAttachments = [_attachments] call KPCF_fnc_sortList;
+        private "_filteredAttachments";
+        if (!KPCF_generateLists) then {
+            _filteredAttachments = _attachments arrayIntersect KPCF_attachments;
+        }
+        else {
+            _filteredAttachments = _attachments;
+        };
+        private _sortedAttachments = [_filteredAttachments] call KPCF_fnc_sortList;
 
         private _index = 0;
 
@@ -76,3 +92,6 @@ switch (_catIndex) do {
         } forEach _sortedAttachments;
     };
 };
+
+// Select first entry
+_ctrlEquipment lbSetCurSel 0;
