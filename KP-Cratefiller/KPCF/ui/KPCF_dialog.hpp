@@ -53,7 +53,7 @@ class KPCF_dialog {
 
         class KP_Help: KPGUI_PRE_DialogCrossS {
             text = "KPCF\img\icon_help.paa";
-            x = safeZoneX + safeZoneW * (KP_X_VAL_S + KP_WIDTH_VAL_S - 0.04)
+            x = safeZoneX + safeZoneW * (KP_X_VAL_S + KP_WIDTH_VAL_S - 0.04);
             y = KP_GETY_CROSS(KP_Y_VAL_S);
             tooltip = "$STR_KPCF_TOOLTIPHELP";
             action = "";
@@ -247,7 +247,7 @@ class KPCF_dialog {
             y = KP_GETCY(KP_Y_VAL_S,KP_HEIGHT_VAL_S,46,48);
             w = KP_GETW(KP_WIDTH_VAL_S,1);
             h = KP_GETH(KP_HEIGHT_VAL_S,24);
-            tooltip = "$STR_KPCF_TOOLTIPFILLLEVEL"
+            tooltip = "$STR_KPCF_TOOLTIPFILLLEVEL";
         };
 
             class KP_DialogCross: KPGUI_PRE_DialogCrossS {};
