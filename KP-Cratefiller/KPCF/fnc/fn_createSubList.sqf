@@ -48,6 +48,7 @@ switch (_catIndex) do {
         private _glType = (getArray (configfile >> "CfgWeapons" >> _weaponType >> "muzzles")) select 1;
         private _magazines = [_weaponType] call CBA_fnc_compatibleMagazines;
         _magazines append ([configfile >> "CfgWeapons" >> _weaponType >> _glType] call CBA_fnc_compatibleMagazines);
+        _magazines = _magazines - KPCF_blacklistedItems;
         private "_filteredMagazines";
         if (!KPCF_generateLists) then {
             _filteredMagazines = _magazines arrayIntersect KPCF_magazines;
@@ -72,6 +73,7 @@ switch (_catIndex) do {
     case 2 : {
         // Get compatible attachments
         private _attachments = [_weaponType] call BIS_fnc_compatibleItems;
+        _attachments = _attachments - KPCF_blacklistedItems;
         private "_filteredAttachments";
         if (!KPCF_generateLists) then {
             _filteredAttachments = _attachments arrayIntersect KPCF_attachments;
