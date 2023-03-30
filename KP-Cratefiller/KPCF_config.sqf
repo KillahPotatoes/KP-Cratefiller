@@ -27,7 +27,7 @@ KPCF_generateLists = true;
 KPCF_spawnRadius = 10;
 
 // Defines the distance for the scrollwheel interaction
-KPCF_interactRadius = 1;
+KPCF_interactRadius = 5;
 
 // Defines the available crates
 KPCF_crates = [
