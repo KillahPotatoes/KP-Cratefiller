@@ -2,11 +2,18 @@
     Killah Potatoes Cratefiller v1.1.0
 
     Author: Dubjunk - https://github.com/KillahPotatoes
+    Edited by Mildly_Interested - https://github.com/MildlyInterested
+    
     License: GNU General Public License v3.0 - https://www.gnu.org/licenses/gpl-3.0.html
 
     Description:
     Configuration file for various variables of the KP cratefiller.
 */
+
+//Configure ACE specific settings, these settings won't affect any other crates or objects in your mission, only objects spawned by KP Cratefiller
+KPCF_ace_drag_all = false;      // If you want to be able to ACE DRAG every crate (created by Cratefiller) regardless of weight set to "true"
+KPCF_ace_carry_all = false;     // If you want to be able to ACE CARRY every crate (created by Cratefiller) regardless of weight set to "true"
+KPCF_ace_cargo_one = false;     // Sets required cargo space to 1 for every crate (created by Catefiller) if set to "true"
 
 // The Base object is for the player interaction, so at these object you can open the dialog
 KPCF_cratefillerBase = [
