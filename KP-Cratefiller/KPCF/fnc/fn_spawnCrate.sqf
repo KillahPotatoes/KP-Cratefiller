@@ -41,7 +41,7 @@ if (_spawnPosition isEqualTo []) exitWith {
 };
 
 // Spawn crate
-private _crate = createVehicle [_crateType, _spawnPosition, [], 0, "NONE"]; //TODO deal with empty array return
+private _crate = createVehicle [_crateType, _spawnPosition, [], 0, "NONE"];
 
 // Clear the storage
 clearWeaponCargoGlobal _crate;
