@@ -2,6 +2,8 @@
     Killah Potatoes Cratefiller v1.1.0
 
     Author: Dubjunk - https://github.com/KillahPotatoes
+    Edited by Mildly_Interested - https://github.com/MildlyInterested
+
     License: GNU General Public License v3.0 - https://www.gnu.org/licenses/gpl-3.0.html
 
     Description:
@@ -30,20 +32,16 @@ if (_crateIndex == -1) exitWith {
 // Crate selection
 private _crateType = _ctrlCrate lbData _crateIndex;
 
-private _checkSpawn = false;
-
 // Check if spawnpoint is clear
-if (KPCF_activeSpawn != KPCF_activeBase) then {
-    _checkSpawn = true;
-};
+private _spawnPosition = (getPos KPCF_activeSpawn) findEmptyPosition [0, KPCF_spawnRadius, _crateType]
 
-if ((!(((getPos KPCF_activeSpawn) nearEntities 5) isEqualTo [])) && _checkSpawn) exitWith {
+if (_spawnPosition isEqualTo []) exitWith {
     hint localize "STR_KPCF_HINTZONE";
     [{hintSilent "";}, [], 3] call CBA_fnc_waitAndExecute;
 };
 
 // Spawn crate
-private _crate = createVehicle [_crateType, ((getPos KPCF_activeSpawn) findEmptyPosition [0, 10, _crateType]), [], 0, "NONE"];
+private _crate = createVehicle [_crateType, _spawnPosition, [], 0, "NONE"];
 
 // Clear the storage
 clearWeaponCargoGlobal _crate;

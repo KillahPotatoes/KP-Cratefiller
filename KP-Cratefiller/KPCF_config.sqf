@@ -22,11 +22,11 @@ KPCF_canSpawnAndDelete = true;
 // If set to "true" the item lists will be generated from the config
 KPCF_generateLists = true;
 
-// These variable defines the range where inventories can be edited
+// These variable defines the range where inventories can be edited and spawned in
 // Example: With an setting of 10 all objects in a radius of 10m from the center of the spawn object can be edited
 KPCF_spawnRadius = 10;
 
-// Defines the distance for the interaction (addAction / ACE)
+// Defines the distance for the scrollwheel interaction
 KPCF_interactRadius = 5;
 
 // Defines the available crates
